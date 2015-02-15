@@ -1,0 +1,31 @@
+<script type="text/template" id="episodio">
+    <div class="form-group">
+    <form role="form" id="<%= componentId %>-episodioForm">
+    <% if(episodio.id) {%>
+    <input type="hidden" name="id" value="<%= episodio.id %>"/>
+    <% }%>
+		<div class="form-group" >
+		<label for="name">Name</label>
+    	<input type="text" class="form-control" id="name" name="name" placeholder="Enter value" value="<%= episodio.get('name') %>"/>	
+		</div>
+		<div class="form-group" >
+			<label for="fecha">Fecha</label>
+    		<input type="text" data-converter="date" data-date-format="dd/mm/yyyy" class="form-control" id="fecha"  name="fecha" placeholder="Enter value" />
+    		<%= '<scr'+'ipt>' %>
+        	$('#fecha').datepicker({autoclose:true});
+        	$('#fecha').datepicker('setDate',App.Utils.Converter.date.toDate("<%= episodio.get('fecha') %>"));
+    		<%= '</scr'+'ipt>' %>
+		</div>
+		<div class="form-group" >
+ 
+			<label for="actividadidId">Actividad Id</label> 
+            <select class="form-control" id="actividadId" name="actividadId">
+			  <option value="">None</option>
+            <% actividad.each(function(actividadid) { %> 
+              <option value="<%=actividadid.get('id')%>" <% if(episodio.get('actividadId')==actividadid.get('id')) {%>selected<%}%> ><%=actividadid.get('name')%></option>
+            <% }); %>                
+            </select>  
+		</div>
+    </form>
+    </div>
+</script> 

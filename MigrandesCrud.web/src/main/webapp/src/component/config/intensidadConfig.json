@@ -1,0 +1,11 @@
+{
+    "displayName" : "Intensidad",
+    "name" : "intensidad",
+    "templateName" : "intensidad",
+    "url" : "user.html",
+    "server": "localhost:8080",
+    
+	"context": "/MigrandesCrud.web/webresources/Intensidad",
+    
+    "el" : "#main"
+}

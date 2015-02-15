@@ -1,0 +1,11 @@
+{
+    "displayName" : "NotaDeVoz",
+    "name" : "notaDeVoz",
+    "templateName" : "notaDeVoz",
+    "url" : "user.html",
+    "server": "localhost:8080",
+    
+	"context": "/MigrandesCrud.web/webresources/NotaDeVoz",
+    
+    "el" : "#main"
+}

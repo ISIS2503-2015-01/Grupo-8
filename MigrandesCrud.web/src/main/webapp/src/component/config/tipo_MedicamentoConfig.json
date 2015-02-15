@@ -1,0 +1,11 @@
+{
+    "displayName" : "Tipo_Medicamento",
+    "name" : "tipo_Medicamento",
+    "templateName" : "tipo_Medicamento",
+    "url" : "user.html",
+    "server": "localhost:8080",
+    
+	"context": "/MigrandesCrud.web/webresources/Tipo_Medicamento",
+    
+    "el" : "#main"
+}
