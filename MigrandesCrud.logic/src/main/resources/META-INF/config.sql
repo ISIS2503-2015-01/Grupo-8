@@ -1,0 +1,7 @@
+ 
+
+   ALTER TABLE APP.PacienteactividadEntity ADD FOREIGN KEY (pacienteId) REFERENCES  APP.PacienteEntity(id) ON DELETE CASCADE ON UPDATE RESTRICT;
+   ALTER TABLE APP.PacienteactividadEntity ADD FOREIGN KEY (actividadId) REFERENCES  APP.ActividadEntity(id) ON DELETE CASCADE ON UPDATE RESTRICT;
+   ALTER TABLE APP.PacienteepisodioEntity ADD FOREIGN KEY (pacienteId) REFERENCES  APP.PacienteEntity(id) ON DELETE CASCADE ON UPDATE RESTRICT;
+   ALTER TABLE APP.PacienteepisodioEntity ADD FOREIGN KEY (episodioId) REFERENCES  APP.EpisodioEntity(id) ON DELETE CASCADE ON UPDATE RESTRICT;
+		
