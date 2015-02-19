@@ -7,27 +7,27 @@
 		revision="1.0-SNAPSHOT"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20150217184711"/>
+		date="20150218182329"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="play-java-ws_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003640" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="59">
+			<revision name="2.3.8" status="release" pubdate="20150217003640" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="59">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="3518" time="438" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-ws_2.11/2.3.8/play-java-ws_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="4152" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-ws_2.11/2.3.8/play-java-ws_2.11-2.3.8.pom"/>
 				<caller organisation="playmigrandes" name="playmigrandes_2.11" conf="optional, compile, provided, compile-internal" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="play-java-ws_2.11" type="jar" ext="jar" status="successful" details="" size="28482" time="684" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\jars\play-java-ws_2.11-2.3.8.jar">
+					<artifact name="play-java-ws_2.11" type="jar" ext="jar" status="no" details="" size="28482" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\jars\play-java-ws_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-ws_2.11/2.3.8/play-java-ws_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-ws_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003642" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="60">
+			<revision name="2.3.8" status="release" pubdate="20150217003642" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="60">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="3352" time="431" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-ws_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-ws_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-ws_2.11/2.3.8/play-ws_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="3971" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-ws_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-ws_2.11/2.3.8/play-ws_2.11-2.3.8.pom"/>
 				<caller organisation="com.typesafe.play" name="play-java-ws_2.11" conf="default, compile, runtime, master" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<artifacts>
-					<artifact name="play-ws_2.11" type="jar" ext="jar" status="successful" details="" size="600199" time="3732" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-ws_2.11\jars\play-ws_2.11-2.3.8.jar">
+					<artifact name="play-ws_2.11" type="jar" ext="jar" status="no" details="" size="600199" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-ws_2.11\jars\play-ws_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-ws_2.11/2.3.8/play-ws_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
@@ -87,25 +87,25 @@
 			</revision>
 		</module>
 		<module organisation="com.ning" name="async-http-client">
-			<revision name="1.8.15" status="release" pubdate="20141128090500" resolver="public" artresolver="public" homepage="http://github.com/AsyncHttpClient/async-http-client" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="61">
+			<revision name="1.8.15" status="release" pubdate="20141128090500" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/AsyncHttpClient/async-http-client" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="61">
 				<license name="Apache License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="24523" time="663" location="C:\Users\template\.ivy2\cache\com.ning\async-http-client\ivy-1.8.15.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.ning\async-http-client\ivy-1.8.15.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/ning/async-http-client/1.8.15/async-http-client-1.8.15.pom"/>
+				<metadata-artifact status="no" details="" size="6868" time="0" location="C:\Users\template\.ivy2\cache\com.ning\async-http-client\ivy-1.8.15.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/ning/async-http-client/1.8.15/async-http-client-1.8.15.pom"/>
 				<caller organisation="com.typesafe.play" name="play-ws_2.11" conf="compile, runtime" rev="1.8.15" rev-constraint-default="1.8.15" rev-constraint-dynamic="1.8.15" callerrev="2.3.8"/>
 				<caller organisation="com.typesafe.play" name="play-java-ws_2.11" conf="default, compile, runtime, master" rev="1.8.15" rev-constraint-default="1.8.15" rev-constraint-dynamic="1.8.15" callerrev="2.3.8"/>
 				<artifacts>
-					<artifact name="async-http-client" type="jar" ext="jar" status="successful" details="" size="535018" time="1702" location="C:\Users\template\.ivy2\cache\com.ning\async-http-client\jars\async-http-client-1.8.15.jar">
+					<artifact name="async-http-client" type="jar" ext="jar" status="no" details="" size="535018" time="0" location="C:\Users\template\.ivy2\cache\com.ning\async-http-client\jars\async-http-client-1.8.15.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/ning/async-http-client/1.8.15/async-http-client-1.8.15.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-cache_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003637" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="57">
+			<revision name="2.3.8" status="release" pubdate="20150217003637" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="57">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="2598" time="443" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-cache_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-cache_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.11/2.3.8/play-cache_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="3437" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-cache_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.11/2.3.8/play-cache_2.11-2.3.8.pom"/>
 				<caller organisation="playmigrandes" name="playmigrandes_2.11" conf="optional, compile, provided, compile-internal" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="play-cache_2.11" type="jar" ext="jar" status="successful" details="" size="43413" time="678" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-cache_2.11\jars\play-cache_2.11-2.3.8.jar">
+					<artifact name="play-cache_2.11" type="jar" ext="jar" status="no" details="" size="43413" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-cache_2.11\jars\play-cache_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.11/2.3.8/play-cache_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
@@ -124,12 +124,12 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-java-ebean_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003635" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="53">
+			<revision name="2.3.8" status="release" pubdate="20150217003635" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="53">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="2410" time="443" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ebean_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ebean_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-ebean_2.11/2.3.8/play-java-ebean_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="3448" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ebean_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-ebean_2.11/2.3.8/play-java-ebean_2.11-2.3.8.pom"/>
 				<caller organisation="playmigrandes" name="playmigrandes_2.11" conf="optional, compile, provided, compile-internal" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="play-java-ebean_2.11" type="jar" ext="jar" status="successful" details="" size="12748" time="523" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ebean_2.11\jars\play-java-ebean_2.11-2.3.8.jar">
+					<artifact name="play-java-ebean_2.11" type="jar" ext="jar" status="no" details="" size="12748" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ebean_2.11\jars\play-java-ebean_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-ebean_2.11/2.3.8/play-java-ebean_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
@@ -172,25 +172,25 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-java-jdbc_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003631" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="48">
+			<revision name="2.3.8" status="release" pubdate="20150217003631" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="48">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="1531" time="445" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-jdbc_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-jdbc_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-jdbc_2.11/2.3.8/play-java-jdbc_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="2855" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-jdbc_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-jdbc_2.11/2.3.8/play-java-jdbc_2.11-2.3.8.pom"/>
 				<caller organisation="com.typesafe.play" name="play-java-ebean_2.11" conf="default, compile, runtime, master" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<caller organisation="playmigrandes" name="playmigrandes_2.11" conf="optional, compile, provided, compile-internal" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="play-java-jdbc_2.11" type="jar" ext="jar" status="successful" details="" size="1168" time="433" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-jdbc_2.11\jars\play-java-jdbc_2.11-2.3.8.jar">
+					<artifact name="play-java-jdbc_2.11" type="jar" ext="jar" status="no" details="" size="1168" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-jdbc_2.11\jars\play-java-jdbc_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java-jdbc_2.11/2.3.8/play-java-jdbc_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-jdbc_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003633" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="49">
+			<revision name="2.3.8" status="release" pubdate="20150217003633" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="49">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="3145" time="445" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-jdbc_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-jdbc_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-jdbc_2.11/2.3.8/play-jdbc_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="3805" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-jdbc_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-jdbc_2.11/2.3.8/play-jdbc_2.11-2.3.8.pom"/>
 				<caller organisation="com.typesafe.play" name="play-java-jdbc_2.11" conf="default, compile, runtime, master" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<artifacts>
-					<artifact name="play-jdbc_2.11" type="jar" ext="jar" status="successful" details="" size="197550" time="1509" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-jdbc_2.11\jars\play-jdbc_2.11-2.3.8.jar">
+					<artifact name="play-jdbc_2.11" type="jar" ext="jar" status="no" details="" size="197550" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-jdbc_2.11\jars\play-jdbc_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-jdbc_2.11/2.3.8/play-jdbc_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
@@ -231,14 +231,14 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-java_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003621" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="33">
+			<revision name="2.3.8" status="release" pubdate="20150217003621" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="33">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="6881" time="440" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java_2.11/2.3.8/play-java_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="6286" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java_2.11/2.3.8/play-java_2.11-2.3.8.pom"/>
 				<caller organisation="playmigrandes" name="playmigrandes_2.11" conf="optional, compile, provided, compile-internal" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-java-jdbc_2.11" conf="default, compile, runtime, master" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<caller organisation="com.typesafe.play" name="play-java-ws_2.11" conf="default, compile, runtime, master" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<artifacts>
-					<artifact name="play-java_2.11" type="jar" ext="jar" status="successful" details="" size="83592" time="1417" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java_2.11\jars\play-java_2.11-2.3.8.jar">
+					<artifact name="play-java_2.11" type="jar" ext="jar" status="no" details="" size="83592" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java_2.11\jars\play-java_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java_2.11/2.3.8/play-java_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
@@ -280,15 +280,15 @@
 			</revision>
 		</module>
 		<module organisation="org.javassist" name="javassist">
-			<revision name="3.19.0-GA" status="release" pubdate="20150106220522" resolver="public" artresolver="public" homepage="http://www.javassist.org/" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="42">
+			<revision name="3.19.0-GA" status="release" pubdate="20150106220522" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="42">
 				<license name="MPL 1.1" url="http://www.mozilla.org/MPL/MPL-1.1.html"/>
 				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.html"/>
 				<license name="Apache License 2.0" url="http://www.apache.org/licenses/"/>
-				<metadata-artifact status="successful" details="" size="9585" time="382" location="C:\Users\template\.ivy2\cache\org.javassist\javassist\ivy-3.19.0-GA.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\org.javassist\javassist\ivy-3.19.0-GA.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.pom"/>
+				<metadata-artifact status="no" details="" size="3102" time="0" location="C:\Users\template\.ivy2\cache\org.javassist\javassist\ivy-3.19.0-GA.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.pom"/>
 				<caller organisation="com.typesafe.play" name="play-java_2.11" conf="default, compile, runtime, master" rev="3.19.0-GA" rev-constraint-default="3.19.0-GA" rev-constraint-dynamic="3.19.0-GA" callerrev="2.3.8"/>
 				<caller organisation="com.typesafe.play" name="build-link" conf="compile, runtime" rev="3.18.2-GA" rev-constraint-default="3.18.2-GA" rev-constraint-dynamic="3.18.2-GA" callerrev="2.3.8"/>
 				<artifacts>
-					<artifact name="javassist" type="bundle" ext="jar" status="successful" details="" size="749499" time="1578" location="C:\Users\template\.ivy2\cache\org.javassist\javassist\bundles\javassist-3.19.0-GA.jar">
+					<artifact name="javassist" type="bundle" ext="jar" status="no" details="" size="749499" time="0" location="C:\Users\template\.ivy2\cache\org.javassist\javassist\bundles\javassist-3.19.0-GA.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.jar"/>
 					</artifact>
 				</artifacts>
@@ -410,9 +410,9 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003436" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="4">
+			<revision name="2.3.8" status="release" pubdate="20150217003436" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="4">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="8075" time="442" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play_2.11/2.3.8/play_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="7389" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play_2.11/2.3.8/play_2.11-2.3.8.pom"/>
 				<caller organisation="com.typesafe.play" name="play-ws_2.11" conf="compile, runtime" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<caller organisation="com.typesafe.play" name="play-jdbc_2.11" conf="compile, runtime" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<caller organisation="com.typesafe.play" name="play-java_2.11" conf="default, compile, runtime, master" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
@@ -420,7 +420,7 @@
 				<caller organisation="com.typesafe.play" name="play-java-ws_2.11" conf="default, compile, runtime, master" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<caller organisation="com.typesafe.play" name="play-cache_2.11" conf="default, compile, runtime, master" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<artifacts>
-					<artifact name="play_2.11" type="jar" ext="jar" status="successful" details="" size="3773060" time="12232" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play_2.11\jars\play_2.11-2.3.8.jar">
+					<artifact name="play_2.11" type="jar" ext="jar" status="no" details="" size="3773060" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play_2.11\jars\play_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play_2.11/2.3.8/play_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
@@ -708,12 +708,12 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-json_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003440" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="10">
+			<revision name="2.3.8" status="release" pubdate="20150217003440" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="10">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="3707" time="440" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-json_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-json_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-json_2.11/2.3.8/play-json_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="4356" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-json_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-json_2.11/2.3.8/play-json_2.11-2.3.8.pom"/>
 				<caller organisation="com.typesafe.play" name="play_2.11" conf="default, compile, runtime, master" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<artifacts>
-					<artifact name="play-json_2.11" type="jar" ext="jar" status="successful" details="" size="630454" time="1954" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-json_2.11\jars\play-json_2.11-2.3.8.jar">
+					<artifact name="play-json_2.11" type="jar" ext="jar" status="no" details="" size="630454" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-json_2.11\jars\play-json_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-json_2.11/2.3.8/play-json_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
@@ -803,37 +803,37 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-datacommons_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003445" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="12">
+			<revision name="2.3.8" status="release" pubdate="20150217003445" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="12">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="1165" time="450" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-datacommons_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-datacommons_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-datacommons_2.11/2.3.8/play-datacommons_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="2571" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-datacommons_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-datacommons_2.11/2.3.8/play-datacommons_2.11-2.3.8.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="compile, runtime" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<artifacts>
-					<artifact name="play-datacommons_2.11" type="jar" ext="jar" status="successful" details="" size="5329" time="442" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-datacommons_2.11\jars\play-datacommons_2.11-2.3.8.jar">
+					<artifact name="play-datacommons_2.11" type="jar" ext="jar" status="no" details="" size="5329" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-datacommons_2.11\jars\play-datacommons_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-datacommons_2.11/2.3.8/play-datacommons_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-functional_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003443" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="11">
+			<revision name="2.3.8" status="release" pubdate="20150217003443" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="11">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="1162" time="442" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-functional_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-functional_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-functional_2.11/2.3.8/play-functional_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="2568" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-functional_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-functional_2.11/2.3.8/play-functional_2.11-2.3.8.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="compile, runtime" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<artifacts>
-					<artifact name="play-functional_2.11" type="jar" ext="jar" status="successful" details="" size="373182" time="3245" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-functional_2.11\jars\play-functional_2.11-2.3.8.jar">
+					<artifact name="play-functional_2.11" type="jar" ext="jar" status="no" details="" size="373182" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-functional_2.11\jars\play-functional_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-functional_2.11/2.3.8/play-functional_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-iteratees_2.11">
-			<revision name="2.3.8" status="release" pubdate="20150217003438" resolver="typesafe-releases" artresolver="typesafe-releases" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="7">
+			<revision name="2.3.8" status="release" pubdate="20150217003438" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="7">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="2382" time="433" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-iteratees_2.11/2.3.8/play-iteratees_2.11-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="3318" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-iteratees_2.11/2.3.8/play-iteratees_2.11-2.3.8.pom"/>
 				<caller organisation="com.typesafe.play" name="play_2.11" conf="default, compile, runtime, master" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="compile, runtime" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="2.3.8"/>
 				<artifacts>
-					<artifact name="play-iteratees_2.11" type="jar" ext="jar" status="successful" details="" size="731026" time="2258" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\jars\play-iteratees_2.11-2.3.8.jar">
+					<artifact name="play-iteratees_2.11" type="jar" ext="jar" status="no" details="" size="731026" time="0" location="C:\Users\template\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\jars\play-iteratees_2.11-2.3.8.jar">
 						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-iteratees_2.11/2.3.8/play-iteratees_2.11-2.3.8.jar"/>
 					</artifact>
 				</artifacts>

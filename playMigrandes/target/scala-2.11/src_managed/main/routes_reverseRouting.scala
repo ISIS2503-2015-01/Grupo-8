@@ -1,6 +1,6 @@
 // @SOURCE:C:/Programas/activator/playMigrandes/conf/routes
-// @HASH:d42bfdab9ee9ad83dd64407373b46e2c77b32444
-// @DATE:Wed Feb 18 11:30:09 COT 2015
+// @HASH:ccf93b46676b435c480bdbfe8fc746827ce2f725
+// @DATE:Wed Feb 18 19:47:31 COT 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -15,19 +15,28 @@ import _root_.play.libs.F
 import Router.queryString
 
 
+// @LINE:15
 // @LINE:13
 // @LINE:9
 // @LINE:6
 package controllers {
 
+// @LINE:15
 // @LINE:13
-class ReversePacienteController {
+class ReverseDoctorController {
 
 
-// @LINE:13
-def buscarPacientePorId(id:Long): Call = {
+// @LINE:15
+def buscarPacientePorId(id:Long, idp:Long): Call = {
    import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "paciente" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+   Call("GET", _prefix + { _defaultPrefix } + "getDoloresPaciente" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)), Some(implicitly[QueryStringBindable[Long]].unbind("idp", idp)))))
+}
+                        
+
+// @LINE:13
+def delete(id:Long): Call = {
+   import ReverseRouteContext.empty
+   Call("DELETE", _prefix + { _defaultPrefix } + "doctores" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
 }
                         
 
@@ -65,22 +74,35 @@ def index(): Call = {
                   
 
 
+// @LINE:15
 // @LINE:13
 // @LINE:9
 // @LINE:6
 package controllers.javascript {
 import ReverseRouteContext.empty
 
+// @LINE:15
 // @LINE:13
-class ReversePacienteController {
+class ReverseDoctorController {
 
 
-// @LINE:13
+// @LINE:15
 def buscarPacientePorId : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.PacienteController.buscarPacientePorId",
+   "controllers.DoctorController.buscarPacientePorId",
+   """
+      function(id,idp) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "getDoloresPaciente" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id), (""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("idp", idp)])})
+      }
+   """
+)
+                        
+
+// @LINE:13
+def delete : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.DoctorController.delete",
    """
       function(id) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "paciente" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id)])})
+      return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "doctores" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id)])})
       }
    """
 )
@@ -128,20 +150,27 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:15
 // @LINE:13
 // @LINE:9
 // @LINE:6
 package controllers.ref {
 
 
+// @LINE:15
 // @LINE:13
-class ReversePacienteController {
+class ReverseDoctorController {
 
 
+// @LINE:15
+def buscarPacientePorId(id:Long, idp:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.DoctorController.buscarPacientePorId(id, idp), HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "buscarPacientePorId", Seq(classOf[Long], classOf[Long]), "GET", """""", _prefix + """getDoloresPaciente""")
+)
+                      
+
 // @LINE:13
-def buscarPacientePorId(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.PacienteController.buscarPacientePorId(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "buscarPacientePorId", Seq(classOf[Long]), "GET", """Aplicaciones del doctor
-Buscar paciente por id""", _prefix + """paciente""")
+def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.DoctorController.delete(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "delete", Seq(classOf[Long]), "DELETE", """""", _prefix + """doctores""")
 )
                       
 

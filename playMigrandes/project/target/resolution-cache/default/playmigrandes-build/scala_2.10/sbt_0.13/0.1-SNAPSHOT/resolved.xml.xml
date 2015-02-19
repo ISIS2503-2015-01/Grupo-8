@@ -4,7 +4,7 @@
 		module="playmigrandes-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20150218115252"
+		publication="20150218182301"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>
@@ -43,7 +43,5 @@
 		<dependency org="com.typesafe.sbt" name="sbt-rjs" rev="1.0.1" conf="compile->default(compile)" e:scalaVersion="2.10" e:sbtVersion="0.13"/>
 		<dependency org="com.typesafe.sbt" name="sbt-digest" rev="1.0.0" conf="compile->default(compile)" e:scalaVersion="2.10" e:sbtVersion="0.13"/>
 		<dependency org="com.typesafe.sbt" name="sbt-mocha" rev="1.0.0" conf="compile->default(compile)" e:scalaVersion="2.10" e:sbtVersion="0.13"/>
-		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="3.6.9.Final" conf="compile->default(compile)"/>
-		<dependency org="mysql" name="mysql-connector-java" rev="5.1.31" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

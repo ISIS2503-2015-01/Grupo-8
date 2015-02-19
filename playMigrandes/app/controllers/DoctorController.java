@@ -8,6 +8,7 @@ import java.util.Random;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
+import play.libs.Json;
 import play.mvc.*;
 import modelos.Doctor;
 import modelos.Episodio;
@@ -16,44 +17,48 @@ import modelos.Principal;
 
 public class DoctorController
 {
-	private static ArrayList<Doctor> doctores;
-	private static ArrayList<Paciente> pacientes;
+	private static ArrayList<Doctor> doctores= new ArrayList<Doctor>();
+	private static ArrayList<Paciente> pacientes=new ArrayList<Paciente>();
 
 
-	public static Result create()
+	public static void create()
 	{
 
 
 		JsonNode nodo = Controller.request().body().asJson();
 
-
+		/*
 		Long id = Long.parseLong(nodo.findPath("id").asText());
 		String nombres = nodo.findPath("nombres").asText();
-		String telefono=nodo.findPath("telefono").asText();
+		//String telefono=nodo.findPath("telefono").asText();
 		String usuario= nodo.findPath("usuario").asText();
 		String perfil = nodo.findPath("perfil").asText();
 		String foto= nodo.findPath("foto").asText();
+		*/
+		
 
 		//se llena la lista de pacientes
 		ArrayList<Paciente> pacientes= new ArrayList();
+		/*
 		while(pacientes.size()<11)
 		{
 			Random random = new Random();
 			long idP = Math.abs(random.nextLong()*1000000000);
 			Paciente nvo=new Paciente(idP, "Juan", "asf", "asfd", "asf", "asf");
 			pacientes.add(nvo);
-		}
-		
-	
-		Doctor n = new Doctor( id, nombres, usuario,  pacientes,  perfil, foto);
+		}*/
+		pacientes.add(new Paciente(1, "Juan", "asf", "asfd", "asf", "asf"));
+
+
+		Doctor n = new Doctor( 2, "asd", "asf",  pacientes,  "sdfa", "asfasd");
 		doctores.add(n);
 
 
-	
-	    return Results.created();
-	
+
+		//return Results.created();
+
 	}
-	
+
 	public static  Result delete(long id)
 	{
 		boolean eliminado=false;
@@ -65,16 +70,16 @@ public class DoctorController
 				doctores.remove(i);
 				eliminado=true;
 			}
-			
+
 		}
 		return Results.ok();
 	}	
-	
+
 	public static Result update(long id)
 	{
 		Doctor temp=null;
 		boolean eliminado=false;
-		
+
 		for(int i=0; i<doctores.size() && eliminado==false;i++)
 		{
 			Doctor act=doctores.get(i);
@@ -89,26 +94,70 @@ public class DoctorController
 				String usuario= nodo.findPath("usuario").asText();
 				String perfil = nodo.findPath("perfil").asText();
 				String foto= nodo.findPath("foto").asText();
-				
+
 				act.setFoto(foto);
 				act.setIdentificacion(id);
 				act.setNombres(nombres);
 				act.setTelefono(telefono);
-				
+
 				doctores.remove(i);
 				doctores.add(i,act);
 			}
-			
+
 		}
-		
+
 		return Results.created();
-		
+
 	}
-	
-	public static ArrayList buscarPacientePorId(Long id,Long idp)
+
+	public static Result buscarPacientePorId(Long id,Long idp) throws  Exception 
 	{
+		create();
+
+		
 		ArrayList<Episodio> episodios=new ArrayList();
 		
+
+		
+		if( id==null | idp==null)
+		{
+			throw new Exception("parametros nulos");
+		}
+		else
+		{
+			create();
+			
+
+			boolean encontradoD=false;
+			for(int i=0; i<doctores.size() && encontradoD==false;i++)
+			{
+				Doctor act=doctores.get(i);
+				if(act!=null && act.getIdentificacion() == id)
+				{
+					encontradoD=true;
+					List<Paciente> paci= act.getPacientes();
+
+					boolean encontrado2=false;
+					for(int j=0;j<paci.size() && encontrado2==false;i++)
+					{
+						Paciente actp=paci.get(j);
+						if(act!=null && actp.getIdentificacion() == idp)
+						{
+							episodios=(ArrayList<Episodio>) actp.getEpisodios();
+						}
+					}
+				}
+
+			}
+		}
+		
+		return Results.ok(Json.toJson(episodios));
+	}
+
+	public static ArrayList buscarPacientePorIdA(Long id,Long idp)
+	{
+		ArrayList<Episodio> episodios=new ArrayList();
+
 		boolean encontradoD=false;
 		for(int i=0; i<doctores.size() && encontradoD==false;i++)
 		{
@@ -117,7 +166,7 @@ public class DoctorController
 			{
 				encontradoD=true;
 				List<Paciente> paci= act.getPacientes();
-				
+
 				boolean encontrado2=false;
 				for(int j=0;j<paci.size() && encontrado2==false;i++)
 				{
@@ -128,16 +177,16 @@ public class DoctorController
 					}
 				}
 			}
-			
+
 		}
 		return episodios;
 	}
-	
+
 	public static ArrayList revisarEpisodiosEntre(Date fechaIn, Date fechaFin, Long docid,Long pacid)
 	{
 		ArrayList resp=new ArrayList();
-		
-		ArrayList<Episodio> ant=buscarPacientePorId(docid,pacid);
+
+		ArrayList<Episodio> ant=buscarPacientePorIdA(docid,pacid);
 		for(int i=0; i<ant.size();i++)
 		{
 			Episodio actl=ant.get(i);

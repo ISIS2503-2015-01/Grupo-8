@@ -1,6 +1,6 @@
 // @SOURCE:C:/Programas/activator/playMigrandes/conf/routes
-// @HASH:d42bfdab9ee9ad83dd64407373b46e2c77b32444
-// @DATE:Wed Feb 18 11:30:09 COT 2015
+// @HASH:ccf93b46676b435c480bdbfe8fc746827ce2f725
+// @DATE:Wed Feb 18 19:47:31 COT 2015
 
 
 import play.core._
@@ -47,13 +47,19 @@ HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(cla
         
 
 // @LINE:13
-private[this] lazy val controllers_PacienteController_buscarPacientePorId2_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("paciente"))))
-private[this] lazy val controllers_PacienteController_buscarPacientePorId2_invoker = createInvoker(
-controllers.PacienteController.buscarPacientePorId(fakeValue[Long]),
-HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "buscarPacientePorId", Seq(classOf[Long]),"GET", """Aplicaciones del doctor
-Buscar paciente por id""", Routes.prefix + """paciente"""))
+private[this] lazy val controllers_DoctorController_delete2_route = Route("DELETE", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("doctores"))))
+private[this] lazy val controllers_DoctorController_delete2_invoker = createInvoker(
+controllers.DoctorController.delete(fakeValue[Long]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "delete", Seq(classOf[Long]),"DELETE", """""", Routes.prefix + """doctores"""))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente""","""controllers.PacienteController.buscarPacientePorId(id:Long)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:15
+private[this] lazy val controllers_DoctorController_buscarPacientePorId3_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("getDoloresPaciente"))))
+private[this] lazy val controllers_DoctorController_buscarPacientePorId3_invoker = createInvoker(
+controllers.DoctorController.buscarPacientePorId(fakeValue[Long], fakeValue[Long]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "buscarPacientePorId", Seq(classOf[Long], classOf[Long]),"GET", """""", Routes.prefix + """getDoloresPaciente"""))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """doctores""","""controllers.DoctorController.delete(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """getDoloresPaciente""","""controllers.DoctorController.buscarPacientePorId(id:Long, idp:Long)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -78,9 +84,17 @@ case controllers_Assets_at1_route(params) => {
         
 
 // @LINE:13
-case controllers_PacienteController_buscarPacientePorId2_route(params) => {
+case controllers_DoctorController_delete2_route(params) => {
    call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_PacienteController_buscarPacientePorId2_invoker.call(controllers.PacienteController.buscarPacientePorId(id))
+        controllers_DoctorController_delete2_invoker.call(controllers.DoctorController.delete(id))
+   }
+}
+        
+
+// @LINE:15
+case controllers_DoctorController_buscarPacientePorId3_route(params) => {
+   call(params.fromQuery[Long]("id", None), params.fromQuery[Long]("idp", None)) { (id, idp) =>
+        controllers_DoctorController_buscarPacientePorId3_invoker.call(controllers.DoctorController.buscarPacientePorId(id, idp))
    }
 }
         

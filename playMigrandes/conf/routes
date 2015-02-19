@@ -9,12 +9,7 @@ GET     /                           controllers.Application.index()
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 #Aplicaciones del doctor
-#Buscar paciente por id
-GET		/paciente					controllers.PacienteController.buscarPacientePorId(id:Long)
 
+DELETE 	/doctores			controllers.DoctorController.delete(id: Long)
 
-GET     /getDoloresPaciente         controllers.DoctorController.getEpisodiosPaciente(idDoctor:Long,idPaciente:Long)
-
-GET     /getDoloresTiempo			controllers.DoctorController.getEpisodiosTiempo(idDoctor:Long,idPaciente:Long)
-
-GET     /getEpisodioDolor           controllers.DoctorController.getEpisodio(episodioId:Long)
+GET 	/getDoloresPaciente		controllers.DoctorController.buscarPacientePorId(id: Long, idp: Long)
