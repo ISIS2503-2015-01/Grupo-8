@@ -16,10 +16,11 @@ package modelos;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Clase que modela un doctor dentro del sistema.
- * @author Juan Sebastián Urrego
- */
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Doctor
 {
 
@@ -85,7 +86,7 @@ public class Doctor
      * @param perfil Perfil del doctor
      * @param foto Nombre de la foto del doctor
      */
-    public Doctor(long id, String nombres, String usuario, List<Paciente> pacientes, double salario, double comisionVentas, String perfil, String foto)
+    public Doctor(long id, String nombres, String usuario, List<Paciente> pacientes, String perfil, String foto)
     {
         this.id = id;
         this.nombres = nombres;

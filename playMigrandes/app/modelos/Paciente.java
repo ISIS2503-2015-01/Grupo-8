@@ -50,7 +50,15 @@ public class Paciente
      */
     private List<Episodio> episodios;
 
-    /**
+    public List<Episodio> getEpisodios() {
+		return episodios;
+	}
+
+	public void setEpisodios(List<Episodio> episodios) {
+		this.episodios = episodios;
+	}
+
+	/**
      * Usuario del paciente.
      */
     private String usuario;
@@ -93,7 +101,7 @@ public class Paciente
      * @param foto Nombre de la foto del paciente
      * @param telefono telefono del paciente
      */
-    public Paciente(long id, String nombres, String usuario, double salario, double comisionVentas, String perfil, String foto, String telefono)
+    public Paciente(long id, String nombres, String usuario, String perfil, String foto, String telefono)
     {
         this.id = id;
         this.nombres = nombres;

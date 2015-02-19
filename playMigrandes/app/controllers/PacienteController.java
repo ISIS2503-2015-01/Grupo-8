@@ -12,9 +12,5 @@ import play.mvc.Results;
 
 public class PacienteController {
 
-	public static Result buscarPacientePorId(Long id)
-	{
-		Query query = JPA.em().createQuery("select * from Article");
-		
-	}
+	
 }
