@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/C:/Programas/activator/playMigrandes/}root...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/template/workspace/playMigrandes/}root...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@36ae4b6f[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@481e9d02[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.11.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.1 in sbt-chain[0m
@@ -7032,12 +7032,10 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.netty#netty;3.9.3.Final!netty.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.netty#netty-http-pipelining;1.1.2!netty-http-pipelining.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.6!slf4j-api.jar(test-jar)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.6!slf4j-api.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#jul-to-slf4j;1.7.6!jul-to-slf4j.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#jcl-over-slf4j;1.7.6!jcl-over-slf4j.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] ch.qos.logback#logback-core;1.1.1!logback-core.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] ch.qos.logback#logback-core;1.1.1!logback-core.jar(test-jar)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] ch.qos.logback#logback-classic;1.1.1!logback-classic.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.4!akka-actor_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-slf4j_2.11;2.3.4!akka-slf4j_2.11.jar[0m
@@ -7082,7 +7080,6 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-ws_2.11;2.3.8!play-ws_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.ning#async-http-client;1.8.15!async-http-client.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] oauth.signpost#signpost-core;1.2.1.2!signpost-core.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] oauth.signpost#signpost-core;1.2.1.2!signpost-core.jar(test-jar)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] oauth.signpost#signpost-commonshttp4;1.2.1.2!signpost-commonshttp4.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.httpcomponents#httpcore;4.0.1!httpcore.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.httpcomponents#httpclient;4.0.1!httpclient.jar[0m
@@ -7157,19 +7154,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.1!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.2!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.11!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 8244ms :: artifacts dl 440ms[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT compile produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT runtime produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT test produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT provided produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT optional produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT compile-internal produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT runtime-internal produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT test-internal produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT plugin produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT sources produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT docs produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT pom produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT scala-tool produced in C:\Programas\activator\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (8244ms resolve - 440ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 6338ms :: artifacts dl 390ms[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT compile produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT runtime produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT test produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT provided produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT optional produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT compile-internal produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT runtime-internal produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT test-internal produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT plugin produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT sources produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT docs produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT pom produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT scala-tool produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (6338ms resolve - 390ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

@@ -9,7 +9,7 @@
 		extra-scalaVersion="2.10"
 		conf="provided"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20150218182301"/>
+		date="20150219201647"/>
 	<dependencies>
 		<module organisation="org.scala-sbt" name="sbt">
 			<revision name="0.13.5" status="release" pubdate="20140527094603" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="1">
@@ -439,14 +439,14 @@
 			</revision>
 		</module>
 		<module organisation="jline" name="jline">
-			<revision name="2.11" status="release" pubdate="20130519140100" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="13">
+			<revision name="2.11" status="release" pubdate="20130519150100" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="13">
 				<license name="The BSD License" url="http://www.opensource.org/licenses/bsd-license.php"/>
-				<metadata-artifact status="no" details="" size="3807" time="0" location="C:\Users\template\.ivy2\cache\jline\jline\ivy-2.11.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/jline/jline/2.11/jline-2.11.pom"/>
+				<metadata-artifact status="no" details="" size="3757" time="0" location="C:\Users\template\.ivy2\cache\jline\jline\ivy-2.11.xml" searched="false" origin-is-local="false" origin-location="file:////C:/act/repository/jline/jline/2.11/ivys/ivy.xml"/>
 				<caller organisation="org.scala-sbt" name="logging" conf="compile" rev="2.11" rev-constraint-default="2.11" rev-constraint-dynamic="2.11" callerrev="0.13.5"/>
 				<caller organisation="org.scala-sbt" name="completion" conf="compile" rev="2.11" rev-constraint-default="2.11" rev-constraint-dynamic="2.11" callerrev="0.13.5"/>
 				<artifacts>
 					<artifact name="jline" type="jar" ext="jar" status="no" details="" size="208781" time="0" location="C:\Users\template\.ivy2\cache\jline\jline\jars\jline-2.11.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/jline/jline/2.11/jline-2.11.jar"/>
+						<origin-location is-local="false" location="file:////C:/act/repository/jline/jline/2.11/jars/jline.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -549,7 +549,7 @@
 		</module>
 		<module organisation="org.scala-sbt" name="launcher-interface">
 			<revision name="0.13.5" status="release" pubdate="20140527094257" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="7">
-				<metadata-artifact status="no" details="" size="1243" time="0" location="C:\Users\template\.ivy2\cache\org.scala-sbt\launcher-interface\ivy-0.13.5.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/launcher-interface/0.13.5/ivys/ivy.xml"/>
+				<metadata-artifact status="no" details="" size="1243" time="0" location="C:\Users\template\.ivy2\cache\org.scala-sbt\launcher-interface\ivy-0.13.5.xml" searched="false" origin-is-local="false" origin-location="file:////C:/act/repository/org.scala-sbt/launcher-interface/0.13.5/ivys/ivy.xml"/>
 				<caller organisation="org.scala-sbt" name="compile" conf="compile" rev="0.13.5" rev-constraint-default="0.13.5" rev-constraint-dynamic="0.13.5" callerrev="0.13.5"/>
 				<caller organisation="org.scala-sbt" name="main" conf="compile" rev="0.13.5" rev-constraint-default="0.13.5" rev-constraint-dynamic="0.13.5" callerrev="0.13.5"/>
 				<caller organisation="org.scala-sbt" name="ivy" conf="compile" rev="0.13.5" rev-constraint-default="0.13.5" rev-constraint-dynamic="0.13.5" callerrev="0.13.5"/>
@@ -558,7 +558,7 @@
 				<caller organisation="org.scala-sbt" name="testing" conf="compile" rev="0.13.5" rev-constraint-default="0.13.5" rev-constraint-dynamic="0.13.5" callerrev="0.13.5"/>
 				<artifacts>
 					<artifact name="launcher-interface" type="jar" ext="jar" status="no" details="" size="9762" time="0" location="C:\Users\template\.ivy2\cache\org.scala-sbt\launcher-interface\jars\launcher-interface-0.13.5.jar">
-						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/launcher-interface/0.13.5/jars/launcher-interface.jar"/>
+						<origin-location is-local="false" location="file:////C:/act/repository/org.scala-sbt/launcher-interface/0.13.5/jars/launcher-interface.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
