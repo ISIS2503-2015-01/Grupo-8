@@ -12,6 +12,8 @@
 
 package modelos;
 
+import javax.persistence.Id;
+
 /**
  * Clase que representa la información sobre el dolor de una migraña
  * @author Juan Sebastián Urrego
@@ -27,6 +29,7 @@ public class Medicamento
     /**
      * Nombre comercial del medicamento.
      */
+	@Id
     private String nombre;
     
     /**

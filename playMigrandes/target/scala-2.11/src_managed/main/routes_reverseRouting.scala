@@ -1,6 +1,6 @@
-// @SOURCE:C:/Users/template/workspace/playMigrandes/conf/routes
-// @HASH:ccf93b46676b435c480bdbfe8fc746827ce2f725
-// @DATE:Thu Feb 19 11:14:33 COT 2015
+// @SOURCE:C:/Users/template/Desktop/Grupo-8-master/playMigrandes/conf/routes
+// @HASH:98f64e8217d144f487329be0341348621e5197e7
+// @DATE:Fri Feb 27 11:18:56 COT 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -15,30 +15,53 @@ import _root_.play.libs.F
 import Router.queryString
 
 
-// @LINE:15
+// @LINE:41
+// @LINE:37
+// @LINE:25
 // @LINE:13
 // @LINE:9
 // @LINE:6
 package controllers {
 
-// @LINE:15
 // @LINE:13
 class ReverseDoctorController {
 
 
-// @LINE:15
-def buscarPacientePorId(id:Long, idp:Long): Call = {
+// @LINE:13
+def create(): Call = {
    import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "getDoloresPaciente" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)), Some(implicitly[QueryStringBindable[Long]].unbind("idp", idp)))))
+   Call("POST", _prefix + { _defaultPrefix } + "doctor")
 }
                         
 
-// @LINE:13
-def delete(id:Long): Call = {
+}
+                          
+
+// @LINE:41
+// @LINE:37
+// @LINE:25
+class ReversePacienteController {
+
+
+// @LINE:25
+def create(): Call = {
    import ReverseRouteContext.empty
-   Call("DELETE", _prefix + { _defaultPrefix } + "doctores" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+   Call("POST", _prefix + { _defaultPrefix } + "paciente/new")
 }
                         
+
+// @LINE:41
+// @LINE:37
+def verEpisodiosPaciente(id:Long): Call = {
+   (id: @unchecked) match {
+// @LINE:37
+case (id)  =>
+  import ReverseRouteContext.empty
+  Call("GET", _prefix + { _defaultPrefix } + "paciente/getEpisodio" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+                                         
+   }
+}
+                                                
 
 }
                           
@@ -74,35 +97,62 @@ def index(): Call = {
                   
 
 
-// @LINE:15
+// @LINE:41
+// @LINE:37
+// @LINE:25
 // @LINE:13
 // @LINE:9
 // @LINE:6
 package controllers.javascript {
 import ReverseRouteContext.empty
 
-// @LINE:15
 // @LINE:13
 class ReverseDoctorController {
 
 
-// @LINE:15
-def buscarPacientePorId : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.DoctorController.buscarPacientePorId",
+// @LINE:13
+def create : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.DoctorController.create",
    """
-      function(id,idp) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "getDoloresPaciente" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id), (""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("idp", idp)])})
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "doctor"})
       }
    """
 )
                         
 
-// @LINE:13
-def delete : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.DoctorController.delete",
+}
+              
+
+// @LINE:41
+// @LINE:37
+// @LINE:25
+class ReversePacienteController {
+
+
+// @LINE:25
+def create : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.PacienteController.create",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "paciente/new"})
+      }
+   """
+)
+                        
+
+// @LINE:41
+// @LINE:37
+def verEpisodiosPaciente : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.PacienteController.verEpisodiosPaciente",
    """
       function(id) {
-      return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "doctores" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id)])})
+      if (true) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "paciente/getEpisodio" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id)])})
+      }
+      if (true) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "paciente/getDoloresPaciente" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("idp", id)])})
+      }
       }
    """
 )
@@ -150,27 +200,44 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:15
+// @LINE:41
+// @LINE:37
+// @LINE:25
 // @LINE:13
 // @LINE:9
 // @LINE:6
 package controllers.ref {
 
 
-// @LINE:15
 // @LINE:13
 class ReverseDoctorController {
 
 
-// @LINE:15
-def buscarPacientePorId(id:Long, idp:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.DoctorController.buscarPacientePorId(id, idp), HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "buscarPacientePorId", Seq(classOf[Long], classOf[Long]), "GET", """""", _prefix + """getDoloresPaciente""")
+// @LINE:13
+def create(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.DoctorController.create(), HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "create", Seq(), "POST", """--------------------------------DOCTOR----------------------------------------------------------------------------
+Crear Doctor""", _prefix + """doctor""")
 )
                       
 
-// @LINE:13
-def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.DoctorController.delete(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "delete", Seq(classOf[Long]), "DELETE", """""", _prefix + """doctores""")
+}
+                          
+
+// @LINE:41
+// @LINE:37
+// @LINE:25
+class ReversePacienteController {
+
+
+// @LINE:25
+def create(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.PacienteController.create(), HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "create", Seq(), "POST", """Crear Paciente""", _prefix + """paciente/new""")
+)
+                      
+
+// @LINE:37
+def verEpisodiosPaciente(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.PacienteController.verEpisodiosPaciente(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "verEpisodiosPaciente", Seq(classOf[Long]), "GET", """Ver todos los episodios de un paciente""", _prefix + """paciente/getEpisodio""")
 )
                       
 

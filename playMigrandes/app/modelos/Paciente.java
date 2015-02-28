@@ -16,6 +16,8 @@ package modelos;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Id;
+
 /**
  * Clase que modela un paciente dentro del sistema.
  * @author Juan Sebastián Urrego
@@ -30,6 +32,7 @@ public class Paciente
     /**
      * Número de identificación del paciente
      */
+	@Id
     private long id;
 
     /**
@@ -48,14 +51,14 @@ public class Paciente
     /**
      * Lista de ítems de episodios del paciente.
      */
-    private List<Episodio> episodios;
+    private ArrayList<Episodio> episodios;
 
     public List<Episodio> getEpisodios() {
 		return episodios;
 	}
 
-	public void setEpisodios(List<Episodio> episodios) {
-		this.episodios = episodios;
+	public void setEpisodios(ArrayList<Episodio> episodios2) {
+		this.episodios = episodios2;
 	}
 
 	/**

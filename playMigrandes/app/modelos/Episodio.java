@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Id;
+
 /**
  * Clase que modela un evento de migrania del paciente
  * @author David Mayorga
@@ -30,6 +32,7 @@ public class Episodio
     /**
      * Fecha en la que sucedio la migrana
      */
+	@Id
     private Date fecha;
 
     /**

@@ -15,47 +15,45 @@ import modelos.Episodio;
 import modelos.Paciente;
 import modelos.Principal;
 
-public class DoctorController
+public class DoctorController extends Controller
 {
 	private static ArrayList<Doctor> doctores= new ArrayList<Doctor>();
 	private static ArrayList<Paciente> pacientes=new ArrayList<Paciente>();
 
 
-	public static void create()
+    @BodyParser.Of(BodyParser.Json.class)
+	public static Result create()
 	{
 
 
 		JsonNode nodo = Controller.request().body().asJson();
-
-		/*
 		Long id = Long.parseLong(nodo.findPath("id").asText());
-		String nombres = nodo.findPath("nombres").asText();
-		//String telefono=nodo.findPath("telefono").asText();
-		String usuario= nodo.findPath("usuario").asText();
-		String perfil = nodo.findPath("perfil").asText();
-		String foto= nodo.findPath("foto").asText();
-		*/
 		
-
+		
+		
+		/*
 		//se llena la lista de pacientes
 		ArrayList<Paciente> pacientes= new ArrayList();
-		/*
+		
 		while(pacientes.size()<11)
 		{
 			Random random = new Random();
 			long idP = Math.abs(random.nextLong()*1000000000);
 			Paciente nvo=new Paciente(idP, "Juan", "asf", "asfd", "asf", "asf");
 			pacientes.add(nvo);
-		}*/
-		pacientes.add(new Paciente(1, "Juan", "asf", "asfd", "asf", "asf"));
-
-
-		Doctor n = new Doctor( 2, "asd", "asf",  pacientes,  "sdfa", "asfasd");
-		doctores.add(n);
-
-
-
-		//return Results.created();
+		}
+		
+		
+		//pacientes.add(new Paciente(1, "Juan", "asf", "asfd", "asf", "asf"));
+		//Doctor n = new Doctor( 2, "asd", "asf",  pacientes,  "sdfa", "asfasd");
+		
+		//Doctor n=new Doctor(id,nombres, usuario, pacientes, perfil,  foto);
+		
+		Doctor n=new Doctor(id,null, null, null, null,  null);
+		*/
+		//doctores.add(n);
+		
+		return Results.created();
 
 	}
 
@@ -110,22 +108,22 @@ public class DoctorController
 
 	}
 
-	public static Result buscarPacientePorId(Long id,Long idp) throws  Exception 
+	public static Result verEpisodiosPaciente(Long id,Long idp) throws  Exception 
 	{
-		create();
-
 		
-		ArrayList<Episodio> episodios=new ArrayList();
+		
+		ArrayList episodios=null;
 		
 
 		
 		if( id==null | idp==null)
 		{
 			throw new Exception("parametros nulos");
+			
 		}
 		else
 		{
-			create();
+			//create();
 			
 
 			boolean encontradoD=false;
@@ -149,12 +147,14 @@ public class DoctorController
 				}
 
 			}
+			
+			
 		}
 		
 		return Results.ok(Json.toJson(episodios));
 	}
 
-	public static ArrayList buscarPacientePorIdA(Long id,Long idp)
+	public static ArrayList verEpisodiosPacienteA(Long id,Long idp)
 	{
 		ArrayList<Episodio> episodios=new ArrayList();
 
@@ -186,7 +186,7 @@ public class DoctorController
 	{
 		ArrayList resp=new ArrayList();
 
-		ArrayList<Episodio> ant=buscarPacientePorIdA(docid,pacid);
+		ArrayList<Episodio> ant=verEpisodiosPacienteA(docid,pacid);
 		for(int i=0; i<ant.size();i++)
 		{
 			Episodio actl=ant.get(i);

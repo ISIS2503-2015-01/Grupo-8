@@ -124,7 +124,6 @@
 	<classpathentry kind="lib" path="C:/Users/template/.ivy2/cache/org.easytesting/fest-assert/jars/fest-assert-1.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/template/.ivy2/cache/org.easytesting/fest-util/jars/fest-util-1.1.6.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/template/Desktop/pp/target/scala-2.11/classes_managed/classes_managed"/>
 	<classpathentry kind="lib" path="C:/Users/template/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

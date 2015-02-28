@@ -8,8 +8,34 @@ GET     /                           controllers.Application.index()
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
-#Aplicaciones del doctor
+#--------------------------------DOCTOR----------------------------------------------------------------------------
+#Crear Doctor
+POST    /doctor               controllers.DoctorController.create()
 
-DELETE 	/doctores			controllers.DoctorController.delete(id: Long)
+#Ver doctor
+#GET     /doctor/:id
 
-GET 	/getDoloresPaciente		controllers.DoctorController.buscarPacientePorId(id: Long, idp: Long)
+#eliminar Doctor
+#DELETE /doctor/:id
+
+
+#-------------------------------PACIENTE-----------------------------------------------------------
+
+#Crear Paciente
+POST		/paciente/new							controllers.PacienteController.create()
+
+#Ver Paciente
+#GET			/paciente/:id						controllers
+
+#Eliminar Paciente
+#DELETE		/paciente/:id
+
+#Ver un episodio de un paciente
+#GET 		/paciente/episodio/:id			
+
+#Ver todos los episodios de un paciente
+GET			/paciente/getEpisodio					controllers.PacienteController.verEpisodiosPaciente(id: Long)
+
+
+#Ver episodio
+GET 	    /paciente/getDoloresPaciente			controllers.PacienteController.verEpisodiosPaciente( idp: Long)

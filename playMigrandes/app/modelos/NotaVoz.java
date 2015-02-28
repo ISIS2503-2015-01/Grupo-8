@@ -14,6 +14,10 @@ package modelos;
 
 import java.util.Date;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Clase que modela una grabacion por parte del paciente 
  * @author David Mayroga
@@ -25,10 +29,14 @@ public class NotaVoz
     // Atributos
     //-----------------------------------------------------------
 
+	@Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+	
     /**
      * Identificador del item de actividad.
      */
-    private long id;
+    private long ida;
 
     /**
      * Nombre de la empresa que ceritifica la actividad laboral.

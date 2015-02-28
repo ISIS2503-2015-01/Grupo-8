@@ -15,6 +15,9 @@ package modelos;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import play.db.ebean.Model;
 
@@ -29,7 +32,10 @@ public class Actividad extends Model
     /**
      * Identificador del item de actividad.
      */
-    private long id;
+	@Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+ 
 
     /**
      * Nombre de la empresa que ceritifica la actividad laboral.

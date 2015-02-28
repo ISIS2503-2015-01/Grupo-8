@@ -1,6 +1,6 @@
-// @SOURCE:C:/Users/template/workspace/playMigrandes/conf/routes
-// @HASH:ccf93b46676b435c480bdbfe8fc746827ce2f725
-// @DATE:Thu Feb 19 11:14:33 COT 2015
+// @SOURCE:C:/Users/template/Desktop/Grupo-8-master/playMigrandes/conf/routes
+// @HASH:98f64e8217d144f487329be0341348621e5197e7
+// @DATE:Fri Feb 27 11:18:56 COT 2015
 
 
 import play.core._
@@ -47,19 +47,34 @@ HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(cla
         
 
 // @LINE:13
-private[this] lazy val controllers_DoctorController_delete2_route = Route("DELETE", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("doctores"))))
-private[this] lazy val controllers_DoctorController_delete2_invoker = createInvoker(
-controllers.DoctorController.delete(fakeValue[Long]),
-HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "delete", Seq(classOf[Long]),"DELETE", """""", Routes.prefix + """doctores"""))
+private[this] lazy val controllers_DoctorController_create2_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("doctor"))))
+private[this] lazy val controllers_DoctorController_create2_invoker = createInvoker(
+controllers.DoctorController.create(),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "create", Nil,"POST", """--------------------------------DOCTOR----------------------------------------------------------------------------
+Crear Doctor""", Routes.prefix + """doctor"""))
         
 
-// @LINE:15
-private[this] lazy val controllers_DoctorController_buscarPacientePorId3_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("getDoloresPaciente"))))
-private[this] lazy val controllers_DoctorController_buscarPacientePorId3_invoker = createInvoker(
-controllers.DoctorController.buscarPacientePorId(fakeValue[Long], fakeValue[Long]),
-HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "buscarPacientePorId", Seq(classOf[Long], classOf[Long]),"GET", """""", Routes.prefix + """getDoloresPaciente"""))
+// @LINE:25
+private[this] lazy val controllers_PacienteController_create3_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("paciente/new"))))
+private[this] lazy val controllers_PacienteController_create3_invoker = createInvoker(
+controllers.PacienteController.create(),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "create", Nil,"POST", """Crear Paciente""", Routes.prefix + """paciente/new"""))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """doctores""","""controllers.DoctorController.delete(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """getDoloresPaciente""","""controllers.DoctorController.buscarPacientePorId(id:Long, idp:Long)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:37
+private[this] lazy val controllers_PacienteController_verEpisodiosPaciente4_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("paciente/getEpisodio"))))
+private[this] lazy val controllers_PacienteController_verEpisodiosPaciente4_invoker = createInvoker(
+controllers.PacienteController.verEpisodiosPaciente(fakeValue[Long]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "verEpisodiosPaciente", Seq(classOf[Long]),"GET", """Ver todos los episodios de un paciente""", Routes.prefix + """paciente/getEpisodio"""))
+        
+
+// @LINE:41
+private[this] lazy val controllers_PacienteController_verEpisodiosPaciente5_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("paciente/getDoloresPaciente"))))
+private[this] lazy val controllers_PacienteController_verEpisodiosPaciente5_invoker = createInvoker(
+controllers.PacienteController.verEpisodiosPaciente(fakeValue[Long]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "verEpisodiosPaciente", Seq(classOf[Long]),"GET", """Ver episodio""", Routes.prefix + """paciente/getDoloresPaciente"""))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """doctor""","""controllers.DoctorController.create()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente/new""","""controllers.PacienteController.create()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente/getEpisodio""","""controllers.PacienteController.verEpisodiosPaciente(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente/getDoloresPaciente""","""controllers.PacienteController.verEpisodiosPaciente(idp:Long)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -84,17 +99,33 @@ case controllers_Assets_at1_route(params) => {
         
 
 // @LINE:13
-case controllers_DoctorController_delete2_route(params) => {
-   call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_DoctorController_delete2_invoker.call(controllers.DoctorController.delete(id))
+case controllers_DoctorController_create2_route(params) => {
+   call { 
+        controllers_DoctorController_create2_invoker.call(controllers.DoctorController.create())
    }
 }
         
 
-// @LINE:15
-case controllers_DoctorController_buscarPacientePorId3_route(params) => {
-   call(params.fromQuery[Long]("id", None), params.fromQuery[Long]("idp", None)) { (id, idp) =>
-        controllers_DoctorController_buscarPacientePorId3_invoker.call(controllers.DoctorController.buscarPacientePorId(id, idp))
+// @LINE:25
+case controllers_PacienteController_create3_route(params) => {
+   call { 
+        controllers_PacienteController_create3_invoker.call(controllers.PacienteController.create())
+   }
+}
+        
+
+// @LINE:37
+case controllers_PacienteController_verEpisodiosPaciente4_route(params) => {
+   call(params.fromQuery[Long]("id", None)) { (id) =>
+        controllers_PacienteController_verEpisodiosPaciente4_invoker.call(controllers.PacienteController.verEpisodiosPaciente(id))
+   }
+}
+        
+
+// @LINE:41
+case controllers_PacienteController_verEpisodiosPaciente5_route(params) => {
+   call(params.fromQuery[Long]("idp", None)) { (idp) =>
+        controllers_PacienteController_verEpisodiosPaciente5_invoker.call(controllers.PacienteController.verEpisodiosPaciente(idp))
    }
 }
         

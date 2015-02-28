@@ -12,6 +12,10 @@
 
 package modelos;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Clase que representa la información sobre el dolor de una migraña
  * @author Juan Sebastián Urrego
@@ -23,6 +27,9 @@ public class Dolor
     // Atributos
     //-----------------------------------------------------------
 
+	@Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * Descripción del dolor.
