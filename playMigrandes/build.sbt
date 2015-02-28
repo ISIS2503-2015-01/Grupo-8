@@ -12,8 +12,13 @@ libraryDependencies ++= Seq(
   cache,
   javaWs,
   javaJpa,
-  "org.hibernate" % "hibernate-entitymanager" % "4.3.6.Final",
-  "org.mindrot" % "jbcrypt" % "0.3m"
+  "org.hibernate" % "hibernate-entitymanager" % "4.3.8.Final",
+  "org.mindrot" % "jbcrypt" % "0.3m",
+  javaJpa.exclude("org.hibernate.javax.persistence", "hibernate-jpa-2.0-api"),
+  "org.hibernate" % "hibernate-entitymanager" % "4.3.8.Final"
 )
 
 
+
+
+fork in run := true
