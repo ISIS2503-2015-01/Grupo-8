@@ -4,7 +4,7 @@
 		module="playmigrandes_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20150227105824"
+		publication="20150228172212"
 	>
 		<description>
 		playMigrandes
@@ -24,6 +24,7 @@
 		<conf name="docs" visibility="private" description=""/>
 		<conf name="pom" visibility="public" description=""/>
 		<conf name="scala-tool" visibility="private" description=""/>
+		<conf name="fork-run" visibility="private" description=""/>
 	</configurations>
 	<publications>
 		<artifact name="playmigrandes_2.11" type="pom" ext="pom" conf="pom"/>
@@ -39,12 +40,15 @@
 		<dependency org="com.typesafe.play" name="play-test_2.11" rev="2.3.8" conf="test->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-docs_2.11" rev="2.3.8" conf="docs->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java_2.11" rev="2.3.8" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="fork-run_2.11" rev="2.3.8" conf="fork-run->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ebean_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.3.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-java-jpa_2.11" rev="2.3.8" conf="compile->default(compile)"/>
-		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.3.6.Final" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-java-jpa_2.11" rev="2.3.8" conf="compile->default(compile)">
+			<exclude org="org.hibernate.javax.persistence" module="hibernate-jpa-2.0-api" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.3.8.Final" conf="compile->default(compile)"/>
 		<dependency org="org.mindrot" name="jbcrypt" rev="0.3m" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

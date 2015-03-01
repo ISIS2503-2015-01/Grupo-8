@@ -8,6 +8,7 @@ import java.util.Random;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
+import play.db.jpa.JPA;
 import play.libs.Json;
 import play.mvc.*;
 import modelos.Doctor;
@@ -17,8 +18,8 @@ import modelos.Principal;
 
 public class DoctorController extends Controller
 {
-	private static ArrayList<Doctor> doctores= new ArrayList<Doctor>();
-	private static ArrayList<Paciente> pacientes=new ArrayList<Paciente>();
+	//private static ArrayList<Doctor> doctores= new ArrayList<Doctor>();
+	//private static ArrayList<Paciente> pacientes=new ArrayList<Paciente>();
 
 
     @BodyParser.Of(BodyParser.Json.class)
@@ -27,9 +28,20 @@ public class DoctorController extends Controller
 
 
 		JsonNode nodo = Controller.request().body().asJson();
+		
 		Long id = Long.parseLong(nodo.findPath("id").asText());
+		String nombres=nodo.findPath("nombres").asText();
+		String usuario=nodo.findPath("login").asText();
+		String perfil=nodo.findPath("perfil").asText();
+		String foto=nodo.findPath("foto").asText();
 		
+		Doctor n=JPA.em().find(Doctor.class, id);
+		if(n!=null)
+			return Results.ok("Su tal Doctor ya existe");
 		
+		n=new Doctor(id, nombres, usuario, perfil, foto);
+		JPA.em().persist(n);
+		return Results.created();
 		
 		/*
 		//se llena la lista de pacientes
@@ -52,13 +64,18 @@ public class DoctorController extends Controller
 		Doctor n=new Doctor(id,null, null, null, null,  null);
 		*/
 		//doctores.add(n);
-		
-		return Results.created();
-
 	}
 
 	public static  Result delete(long id)
 	{
+		Doctor n=JPA.em().find(Doctor.class, id);
+		if(n==null)
+			return Results.notFound("Su tal Doctor no existe");
+		
+		JPA.em().remove(n);
+		return Results.ok();
+		
+		/*
 		boolean eliminado=false;
 		for(int i=0; i<doctores.size() && eliminado==false;i++)
 		{
@@ -71,10 +88,35 @@ public class DoctorController extends Controller
 
 		}
 		return Results.ok();
+		*/
 	}	
 
 	public static Result update(long id)
 	{
+		JsonNode nodo = Controller.request().body().asJson();
+
+
+		Long idn = Long.parseLong(nodo.findPath("id").asText());
+		String nombres = nodo.findPath("nombres").asText();
+		String telefono=nodo.findPath("telefono").asText();
+		String usuario= nodo.findPath("usuario").asText();
+		String perfil = nodo.findPath("perfil").asText();
+		String foto= nodo.findPath("foto").asText();
+		
+		Doctor n=JPA.em().find(Doctor.class, id);
+		if(n==null)
+			return Results.notFound();
+		
+		Doctor d=JPA.em().getReference(Doctor.class,n);
+		d=JPA.em().getReference(Doctor.class,n);
+		d.setFoto(foto);
+		d.setIdentificacion(id);
+		d.setNombres(nombres);
+		d.setUsuario(usuario);
+		return Results.ok();
+		
+		
+		/*
 		Doctor temp=null;
 		boolean eliminado=false;
 
@@ -105,9 +147,11 @@ public class DoctorController extends Controller
 		}
 
 		return Results.created();
+		*/
 
 	}
 
+	/*
 	public static Result verEpisodiosPaciente(Long id,Long idp) throws  Exception 
 	{
 		
@@ -195,6 +239,7 @@ public class DoctorController extends Controller
 		}
 		return resp;
 	}
+	*/
 }
 
 

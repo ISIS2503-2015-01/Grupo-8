@@ -1,0 +1,25 @@
+[debug] 
+[debug] Initial source changes: 
+[debug] 	removed:Set()
+[debug] 	added: Set()
+[debug] 	modified: Set(C:\Users\template\workspace\playMigrandes\app\modelos\Doctor.java, C:\Users\template\workspace\playMigrandes\app\controllers\DoctorController.java)
+[debug] Removed products: Set()
+[debug] External API changes: API Changes: Set()
+[debug] Modified binary dependencies: Set()
+[debug] Initial directly invalidated sources: Set(C:\Users\template\workspace\playMigrandes\app\modelos\Doctor.java, C:\Users\template\workspace\playMigrandes\app\controllers\DoctorController.java)
+[debug] 
+[debug] Sources indirectly invalidated by:
+[debug] 	product: Set()
+[debug] 	binary dep: Set()
+[debug] 	external source: Set()
+[debug] All initially invalidated sources: Set(C:\Users\template\workspace\playMigrandes\app\modelos\Doctor.java, C:\Users\template\workspace\playMigrandes\app\controllers\DoctorController.java)
+[info] Compiling 2 Java sources to C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes...
+[debug] Java compilation took 3.380523083 s
+[debug] Java analysis took 0.016309614 s
+[debug] Java compile + analysis took 3.414784979 s
+[debug] New invalidations:
+[debug] 	Set()
+[debug] Initial set of included nodes: Set()
+[debug] Previously invalidated, but (transitively) depend on new invalidations:
+[debug] 	Set()
+[debug] All newly invalidated sources after taking into account (previously) recompiled sources:Set()

@@ -2,7 +2,10 @@ package controllers;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Random;
 
@@ -24,19 +27,13 @@ import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Results;
-
-//TODO el import no funca y es lo de la guia !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 import play.db.jpa.JPA;
 
 
 
 public class PacienteController extends Controller
 {
-
-	static ArrayList<Paciente> pacientes=new ArrayList<Paciente>();
-	
-
-
+	//static ArrayList<Paciente> pacientes=new ArrayList<Paciente>();	
 	
 	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
@@ -45,7 +42,28 @@ public class PacienteController extends Controller
 		JsonNode nodo = Controller.request().body().asJson();
 
 		Long id = Long.parseLong(nodo.findPath("id").asText());
+		String nombres=nodo.findPath("nombres").asText();
+		String usuario=nodo.findPath("login").asText();
+		String perfil=nodo.findPath("perfil").asText();
+		String foto=nodo.findPath("foto").asText();
+		String telefono=nodo.findPath("telefono").asText();
+		
+		
 
+		Paciente n= JPA.em().find(Paciente.class, id);
+		
+		if(n!=null)
+		{
+			return Results.ok("El paciente ya existe");
+		}
+		else
+		{
+			n=new Paciente(id, nombres, usuario, perfil, foto, telefono);
+			JPA.em().persist(n);
+		}
+
+		return Results.created();
+		
 		/*
 		//se llena la lista de episodios
 		ArrayList<Episodio>  episodios= new ArrayList();
@@ -65,29 +83,72 @@ public class PacienteController extends Controller
 		}
 		/*
 		 */
+	}
+	
+	public static Result delete(Long idp)
+	{
+		Paciente p=JPA.em().find(Paciente.class, idp);//8513148
+		if(p==null)
+			return Results.notFound("Su tal paciente no existe");
 		
+     	JPA.em().remove(p);
+     	return Results.ok();
+     	
 		
-		//TODO No funciona !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		Paciente n= JPA.em().find(Paciente.class, id);
-		//n.setEpisodios(episodios);
+	}
+	
+	public static Result verEpisodiosPacienteFecha(Long idp, String fechaIn, String fechaFin)
+	{
+		List<Episodio> resp=null;
 		
-		if(n==null)
-		{
-			return Results.ok("El paciente ya existe");
-		}
-		else
-		{
-			pacientes.add(n);
+		SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
+		Date Fi = null;
+		Date Ff = null;
+		try {
+
+		Fi = formatoDelTexto.parse(fechaIn);
+		Ff = formatoDelTexto.parse(fechaFin);
+		} 
+		catch (ParseException ex) {
+
+		return Results.ok("error formateando fecha");
+
 		}
 
-		return Results.created();
-
+		
+		Paciente p=JPA.em().find(Paciente.class, idp);
+		if(p==null)
+		{
+			return Results.notFound("Su tal paciente no existe");
+		}
+		else if(p.getEpisodios()!=null)
+		{
+			Query query = JPA.em().createQuery("SELECT e FROM Episodio e WHERE e.fecha <="+Ff+" AND e.fecha >= "+Fi+" AND e.pacienteID = "+idp);
+			resp=query.getResultList();
+		}
+		
+		return Results.ok(Json.toJson(resp));
 	}
 
 	public static Result verEpisodiosPaciente(Long idp)
 	{
+		List<Episodio> resp=null;
+		Paciente p=JPA.em().find(Paciente.class, idp);
 		
-		ArrayList<Episodio>  episodios= new ArrayList<Episodio>();
+		if(p==null)
+		{
+			return Results.notFound("Su tal paciente no existe");
+		}
+		else if(p.getEpisodios()!=null)
+		{
+			Query query = JPA.em().createQuery("SELECT e FROM Episodio e WHERE e.idPaciente = "+idp);
+			resp=query.getResultList();
+		}
+		
+		return Results.ok(Json.toJson(resp));
+		
+		
+		//ArrayList<Episodio>  episodios= new ArrayList<Episodio>();
 		
 		//se crea el paciente de prueba
 		/*
@@ -121,23 +182,5 @@ public class PacienteController extends Controller
 			}
 		}
 		*/
-		
-		//TODO no funciona !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		Paciente p=JPA.em().find(Paciente.class, idp);
-		
-		if(p==null)
-		{
-			Results.ok("Paciente no encontrado");
-		}
-		else
-		{
-			episodios=(ArrayList<Episodio>) p.getEpisodios();
-		}
-
-		
-		return Results.ok(Json.toJson(episodios));
-
-		
 	}
-
 }
