@@ -1,5 +1,0 @@
-[debug] Copy resource mappings: 
-[debug] 	(C:\Users\template\workspace\playMigrandes\conf\application.conf,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\application.conf)
-[debug] 	(C:\Users\template\workspace\playMigrandes\conf\META-INF,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\META-INF)
-[debug] 	(C:\Users\template\workspace\playMigrandes\conf\routes,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\routes)
-[debug] 	(C:\Users\template\workspace\playMigrandes\conf\META-INF\persistence.xml,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\META-INF\persistence.xml)
