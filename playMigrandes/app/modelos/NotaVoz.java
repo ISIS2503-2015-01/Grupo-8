@@ -14,14 +14,19 @@ package modelos;
 
 import java.util.Date;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
+
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.NoSql;
 
 /**
  * Clase que modela una grabacion por parte del paciente 
  * @author David Mayroga
  */
+@Embeddable
+@NoSql(dataFormat=DataFormatType.MAPPED)
 public class NotaVoz
 {
 
@@ -29,29 +34,25 @@ public class NotaVoz
     // Atributos
     //-----------------------------------------------------------
 
-	@Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
-	
-    /**
-     * Identificador del item de actividad.
-     */
-    private long ida;
+
 
     /**
-     * Nombre de la empresa que ceritifica la actividad laboral.
+     * Nombre del archivo
      */
+	@Basic
     private String nombre;
 
    
     /**
      * Descripción de laa actividad.
      */
+	@Basic
     private String descripcion;
 
     /**
      * Ruta de la nota de voz
      */
+	@Basic
     private String archivo;
 
     //-----------------------------------------------------------
@@ -73,10 +74,9 @@ public class NotaVoz
      * @param descripcion Descripción de la nota de voz
      * @param archivo archivo donde quedo grabada la nota
      */
-    public NotaVoz(long id, String nombre, String cargo, String descripcion, String archivo)
+    public NotaVoz( String nombre, String cargo, String descripcion, String archivo)
     {
-        this.id = id;
-        this.nombre = nombre;
+        this.setNombre(nombre);
         this.descripcion = descripcion;
         this.archivo = archivo;
     }
@@ -85,23 +85,6 @@ public class NotaVoz
     // Getters y setters
     //-----------------------------------------------------------
 
-    /**
-     * Devuelve el identificador único del paciente
-     * @return id Identificador del paciente
-     */
-    public long getId()
-    {
-        return id;
-    }
-
-    /**
-     * Modifica el identificador único del jugador
-     * @param id Nuevo identificador del paciente
-     */
-    public void setId(long id)
-    {
-        this.id = id;
-    }
 
     /**
      * Devuelve la ruta de la nota de voz
@@ -140,6 +123,14 @@ public class NotaVoz
     {
         this.descripcion = descripcion;
     }
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
    
 

@@ -13,58 +13,79 @@ package modelos;
  */
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.Field;
+import org.eclipse.persistence.nosql.annotations.NoSql;
+
+import play.db.ebean.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.internal.NotNull;
 
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Doctor
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@NoSql(dataFormat=DataFormatType.MAPPED)
+public class Doctor extends Model
 {
 
     //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
 
-    /**
+	
+	 /**
+     * Usuario del doctor.
+     */
+    @NotNull //A pesar de q el Play ya crea el id, es necesario el _id para Mongo
+    @Id
+    @GeneratedValue
+    @Field(name="_id")
+    private String usuario;
+   
+	/**
      * Número de identificación del doctor
      */
-	@Id
+    @Basic
     private long id;
 
     /**
      * Nombres del doctor.
      */
+	@NotNull
+    @Basic
     private String nombres;
 
     /**
      * Lista de ítems de pacientes del doctor.
      */
+	@OneToMany(fetch = FetchType.LAZY) //carga cada atributo a medida que se lo pida. No todo de una (Eager)
+    @ElementCollection
     private List<Paciente> pacientes;
-
-    /**
-     * Usuario del doctor.
-     */
-    private String usuario;
+   
     
     /**
      * Telefono del doctor
      */
+	@Basic
     private String telefono;
 
     /**
      * Perfil de doctor.
      */
+	@Basic
     private String perfil;
 
     /**
      * Foto del doctor.
      */
+	@Basic
     private String foto;
 
     //-----------------------------------------------------------

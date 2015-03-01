@@ -14,14 +14,20 @@ package modelos;
 
 import java.util.Date;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.Field;
+import org.eclipse.persistence.nosql.annotations.NoSql;
+
 import play.db.ebean.Model;
 
 @Entity
+@NoSql(dataFormat=DataFormatType.MAPPED)
 public class Actividad extends Model
 {
 
@@ -29,28 +35,28 @@ public class Actividad extends Model
     // Atributos
     //-----------------------------------------------------------
 
-    /**
-     * Identificador del item de actividad.
-     */
-	@Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
+    
  
 
     /**
      * Nombre de la empresa que ceritifica la actividad laboral.
      */
+	@Id 
+	@GeneratedValue
+	@Field(name="_id")
     private String nombre;
 
    
     /**
      * Descripción de laa actividad.
      */
+	@Basic
     private String descripcion;
 
     /**
      * Fecha del evento
      */
+	@Basic
     private Date fecha;
 
     //-----------------------------------------------------------
@@ -62,7 +68,6 @@ public class Actividad extends Model
      */
     public Actividad()
     {
-        
     }
 
     /**
@@ -72,10 +77,9 @@ public class Actividad extends Model
      * @param descripcion Descripción de las funcionaes del cargo
      * @param fecha fecha en que reporto el evento
      */
-    public Actividad(long id, String nombre, String cargo, String descripcion, Date fecha)
+    public Actividad( String nombre, String cargo, String descripcion, Date fecha)
     {
-        this.id = id;
-        this.nombre = nombre;
+        this.setNombre(nombre);
         this.descripcion = descripcion;
         this.fecha = fecha;
     }
@@ -84,23 +88,7 @@ public class Actividad extends Model
     // Getters y setters
     //-----------------------------------------------------------
 
-    /**
-     * Devuelve el identificador único del paciente
-     * @return id Identificador del paciente
-     */
-    public long getId()
-    {
-        return id;
-    }
-
-    /**
-     * Modifica el identificador único del jugador
-     * @param id Nuevo identificador del paciente
-     */
-    public void setId(long id)
-    {
-        this.id = id;
-    }
+  
 
     /**
      * Devuelve el año de terminación del vínculo laboral
@@ -139,6 +127,14 @@ public class Actividad extends Model
     {
         this.descripcion = descripcion;
     }
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
    
 

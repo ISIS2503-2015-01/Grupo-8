@@ -12,14 +12,17 @@
 
 package modelos;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.NoSql;
 
 /**
  * Clase que representa la información sobre el dolor de una migraña
  * @author Juan Sebastián Urrego
  */
+@Embeddable
+@NoSql(dataFormat=DataFormatType.MAPPED)
 public class Dolor
 {
 
@@ -27,24 +30,25 @@ public class Dolor
     // Atributos
     //-----------------------------------------------------------
 
-	@Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
+	
 
     /**
      * Descripción del dolor.
      */
+	@Basic
     private String descripcion;
 
     /**
      * Intensidad del dolor.
      */
+	@Basic
     private int intensidad;
 
 
     /**
      * Ubicacion de la migraña
      */
+	@Basic
     private String ubicacion;
 
     

@@ -13,31 +13,57 @@ package modelos;
  */
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.Field;
+import org.eclipse.persistence.nosql.annotations.NoSql;
+
+import play.db.ebean.Model;
+
+import com.sun.istack.internal.NotNull;
+
 
 /**
  * Clase que modela un paciente dentro del sistema.
  * @author Juan Sebastián Urrego
  */
-public class Paciente
+
+@Entity
+@NoSql(dataFormat=DataFormatType.MAPPED)
+public class Paciente extends Model
 {
 
-    //-----------------------------------------------------------
+    
+
+	//-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
 
+	/**
+     * Usuario del paciente.
+     */
+	@NotNull //A pesar de q el Play ya crea el id, es necesario el _id para Mongo
+    @Id
+    @GeneratedValue
+    @Field(name="_id")
+    private String usuario;
+	
     /**
      * Número de identificación del paciente
      */
-	@Id
-    private long id;
+	@Basic
+	private long id;
 
     /**
      * Nombres del paciente.
      */
+	@NotNull
+	@Basic
     private String nombres;
 
  
@@ -45,42 +71,34 @@ public class Paciente
     /**
      * Lista de ítems de actividades del paciente.
      */
+	@ElementCollection
+	@OneToMany(fetch=FetchType.LAZY)
     private List<Actividad> actividades;
     
     
     /**
      * Lista de ítems de episodios del paciente.
      */
-    private ArrayList<Episodio> episodios;
-    
-    
-
-    public List<Episodio> getEpisodios() {
-		return episodios;
-	}
-
-	public void setEpisodios(ArrayList<Episodio> episodios2) {
-		this.episodios = episodios2;
-	}
-
-	/**
-     * Usuario del paciente.
-     */
-    private String usuario;
-    
+    @OneToMany(fetch=FetchType.LAZY)
+    @ElementCollection
+    private List<Episodio> episodios;
+      
     /**
      * Telefono del paciente
      */
+    @Basic
     private String telefono;
 
     /**
      * Perfil de paciente.
      */
+    @Basic
     private String perfil;
 
     /**
      * Foto del paciente.
      */
+    @Basic
     private String foto;
 
     //-----------------------------------------------------------
@@ -122,6 +140,15 @@ public class Paciente
     // Getters y setters
     //-----------------------------------------------------------
 
+    
+    public List<Episodio> getEpisodios() {
+		return episodios;
+	}
+
+	public void setEpisodios(ArrayList<Episodio> episodios2) {
+		this.episodios = episodios2;
+	}
+	
     /**
      * Devuelve el número único de identificación del paciente
      * @return id Número de identificación

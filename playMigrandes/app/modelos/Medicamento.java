@@ -12,12 +12,17 @@
 
 package modelos;
 
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.NoSql;
 
 /**
  * Clase que representa la información sobre el dolor de una migraña
  * @author Juan Sebastián Urrego
  */
+@Embeddable
+@NoSql(dataFormat=DataFormatType.MAPPED)
 public class Medicamento
 {
 
@@ -29,28 +34,32 @@ public class Medicamento
     /**
      * Nombre comercial del medicamento.
      */
-	@Id
+	@Basic
     private String nombre;
     
     /**
      * Componente quimico del medicamento.
      */
+	@Basic
     private String componente;
     
     /**
      * Descripcion del medicamento por si algún no doctor lo lee.
      */
+	@Basic
     private String descripcion;
 
     /**
      * Tipo del medicamento sobre como se ingiere.
      */
+	@Basic
     private String presentacion;
 
 
     /**
      * Cantidad de medicamento tomado (en mg)
      */
+	@Basic
     private String posologia;
 
     

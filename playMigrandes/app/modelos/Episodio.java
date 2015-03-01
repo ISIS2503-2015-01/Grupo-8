@@ -12,42 +12,60 @@
 
 package modelos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.Field;
+import org.eclipse.persistence.nosql.annotations.NoSql;
+
+import play.db.ebean.Model;
+
+import com.sun.istack.internal.NotNull;
 
 /**
  * Clase que modela un evento de migrania del paciente
  * @author David Mayorga
  */
-public class Episodio
+@Entity
+@NoSql(dataFormat=DataFormatType.MAPPED)
+public class Episodio extends Model
 {
 
     //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
-    
-    /**
+  
+	/**
      * Fecha en la que sucedio la migrana
      */
+	@NotNull
 	@Id
-    private Date fecha;
+	@GeneratedValue
+	@Field(name="_id")
+    private Date fecha; //Si dejara que el _id sea Date?
 
     /**
      * Ciudad en la que se vendió el producto
      */
+    @ElementCollection
     private List<Medicamento> medicamentos;
 
     /**
      * Dolor descrito por el paciente
      */
+    @NotNull
+    @Embedded
     private Dolor dolor;
     
     /**
     * Nota de voz grabada por el paciente
     */
+    @Embedded
     private NotaVoz grabacion;
     
     
@@ -56,6 +74,7 @@ public class Episodio
      * Posible catalizador que pudo haber ocasionado la migraña
      * Puede disminuir el episodio haciendo lo contrario a la actividad en referencia.
      */
+    @OneToMany(fetch = FetchType.LAZY)
     private Actividad catalizador;
 
     //-----------------------------------------------------------
