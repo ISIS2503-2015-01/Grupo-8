@@ -27,6 +27,7 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
 import play.db.ebean.Model;
 
 @Entity
+//@MongoEntity
 @NoSql(dataFormat=DataFormatType.MAPPED)
 public class Actividad extends Model
 {

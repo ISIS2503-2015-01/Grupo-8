@@ -25,7 +25,7 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
 
 import play.db.ebean.Model;
 
-import com.sun.istack.internal.NotNull;
+import javax.validation.constraints.NotNull;
 
 
 /**
