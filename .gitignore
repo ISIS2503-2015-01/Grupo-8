@@ -1,2 +1,37 @@
-/mueblesdelosalpes.backend/target/
-/mueblesdelosalpes.servicios/target/
+# general
+*~
+*.log
+tmp
+dump
+.history
+dist
+/.idea
+/*.iml
+/out
+/.idea_modules
+/.classpath
+/.project
+/RUNNING_PID
+/.settings
+
+# Eclipse
+.settings
+.cache
+.project
+.classpath
+.scala_dependencies
+bin
+
+# SBT
+dist
+project/boot
+logs
+project/project
+project/target
+project/plugins/target
+target
+.target
+
+# Play
+logs
+RUNNING_PID
