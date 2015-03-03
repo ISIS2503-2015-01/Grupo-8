@@ -24,11 +24,11 @@ bin
 
 # SBT
 dist
-project/boot
+playMigrandes/boot
 logs
-project/project
-project/target
-project/plugins/target
+playMigrandes/project
+playMigrandes/target
+PlayMigrandes/plugins/target
 target
 .target
 
