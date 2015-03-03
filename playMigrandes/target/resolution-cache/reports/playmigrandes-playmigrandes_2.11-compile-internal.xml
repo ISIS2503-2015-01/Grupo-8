@@ -7,8 +7,137 @@
 		revision="1.0-SNAPSHOT"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, fork-run"
-		date="20150228172212"/>
+		date="20150303000045"/>
 	<dependencies>
+		<module organisation="org.eclipse.persistence" name="org.eclipse.persistence.nosql">
+			<revision name="2.5.0" status="release" pubdate="20130510115146" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.eclipse.org/eclipselink" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="81">
+				<license name="Eclipse Public License v1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="Eclipse Distribution License v. 1.0" url="http://www.eclipse.org/org/documents/edl-v10.php"/>
+				<metadata-artifact status="no" details="" size="3613" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.nosql\ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/eclipse/persistence/org.eclipse.persistence.nosql/2.5.0/org.eclipse.persistence.nosql-2.5.0.pom"/>
+				<caller organisation="playmigrandes" name="playmigrandes_2.11" conf="optional, compile, provided, compile-internal" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="org.eclipse.persistence.nosql" type="jar" ext="jar" status="no" details="" size="114533" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.nosql\jars\org.eclipse.persistence.nosql-2.5.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/eclipse/persistence/org.eclipse.persistence.nosql/2.5.0/org.eclipse.persistence.nosql-2.5.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.persistence" name="org.eclipse.persistence.core">
+			<revision name="2.5.0" status="release" pubdate="20130510115113" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.eclipse.org/eclipselink" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="86">
+				<license name="Eclipse Public License v1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="Eclipse Distribution License v. 1.0" url="http://www.eclipse.org/org/documents/edl-v10.php"/>
+				<metadata-artifact status="no" details="" size="2788" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.core\ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/eclipse/persistence/org.eclipse.persistence.core/2.5.0/org.eclipse.persistence.core-2.5.0.pom"/>
+				<caller organisation="org.eclipse.persistence" name="org.eclipse.persistence.nosql" conf="default, compile, runtime, master" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="2.5.0"/>
+				<artifacts>
+					<artifact name="org.eclipse.persistence.core" type="jar" ext="jar" status="no" details="" size="4977121" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.core\jars\org.eclipse.persistence.core-2.5.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/eclipse/persistence/org.eclipse.persistence.core/2.5.0/org.eclipse.persistence.core-2.5.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.persistence" name="org.eclipse.persistence.jpa.jpql">
+			<revision name="2.5.0" status="release" pubdate="20130510115050" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.eclipse.org/eclipselink" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="85">
+				<license name="Eclipse Public License v1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="Eclipse Distribution License v. 1.0" url="http://www.eclipse.org/org/documents/edl-v10.php"/>
+				<metadata-artifact status="no" details="" size="2591" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.jpa.jpql\ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/eclipse/persistence/org.eclipse.persistence.jpa.jpql/2.5.0/org.eclipse.persistence.jpa.jpql-2.5.0.pom"/>
+				<caller organisation="org.eclipse.persistence" name="org.eclipse.persistence.nosql" conf="default, compile, runtime, master" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="2.5.0"/>
+				<artifacts>
+					<artifact name="org.eclipse.persistence.jpa.jpql" type="jar" ext="jar" status="no" details="" size="1396640" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.jpa.jpql\jars\org.eclipse.persistence.jpa.jpql-2.5.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/eclipse/persistence/org.eclipse.persistence.jpa.jpql/2.5.0/org.eclipse.persistence.jpa.jpql-2.5.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.persistence" name="org.eclipse.persistence.antlr">
+			<revision name="2.5.0" status="release" pubdate="20130510115057" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.eclipse.org/eclipselink" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="84">
+				<license name="Eclipse Public License v1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="Eclipse Distribution License v. 1.0" url="http://www.eclipse.org/org/documents/edl-v10.php"/>
+				<metadata-artifact status="no" details="" size="2585" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.antlr\ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/eclipse/persistence/org.eclipse.persistence.antlr/2.5.0/org.eclipse.persistence.antlr-2.5.0.pom"/>
+				<caller organisation="org.eclipse.persistence" name="org.eclipse.persistence.nosql" conf="default, compile, runtime, master" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="2.5.0"/>
+				<artifacts>
+					<artifact name="org.eclipse.persistence.antlr" type="jar" ext="jar" status="no" details="" size="189645" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.antlr\jars\org.eclipse.persistence.antlr-2.5.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/eclipse/persistence/org.eclipse.persistence.antlr/2.5.0/org.eclipse.persistence.antlr-2.5.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.persistence" name="org.eclipse.persistence.asm">
+			<revision name="2.5.0" status="release" pubdate="20130510115104" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.eclipse.org/eclipselink" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="83">
+				<license name="Eclipse Public License v1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="Eclipse Distribution License v. 1.0" url="http://www.eclipse.org/org/documents/edl-v10.php"/>
+				<metadata-artifact status="no" details="" size="2581" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.asm\ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/eclipse/persistence/org.eclipse.persistence.asm/2.5.0/org.eclipse.persistence.asm-2.5.0.pom"/>
+				<caller organisation="org.eclipse.persistence" name="org.eclipse.persistence.core" conf="compile, runtime" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="2.5.0"/>
+				<caller organisation="org.eclipse.persistence" name="org.eclipse.persistence.nosql" conf="default, compile, runtime, master" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="2.5.0"/>
+				<artifacts>
+					<artifact name="org.eclipse.persistence.asm" type="jar" ext="jar" status="no" details="" size="271208" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.asm\jars\org.eclipse.persistence.asm-2.5.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/eclipse/persistence/org.eclipse.persistence.asm/2.5.0/org.eclipse.persistence.asm-2.5.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="javax.resource" name="connector-api">
+			<revision name="1.5" status="release" pubdate="20051108165846" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="82">
+				<metadata-artifact status="no" details="" size="2225" time="0" location="C:\Users\template\.ivy2\cache\javax.resource\connector-api\ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/resource/connector-api/1.5/connector-api-1.5.pom"/>
+				<caller organisation="org.eclipse.persistence" name="org.eclipse.persistence.nosql" conf="default, compile, runtime, master" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="2.5.0"/>
+				<artifacts>
+					<artifact name="connector-api" type="jar" ext="jar" status="no" details="" size="36479" time="0" location="C:\Users\template\.ivy2\cache\javax.resource\connector-api\jars\connector-api-1.5.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/javax/resource/connector-api/1.5/connector-api-1.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.mongodb" name="mongo-java-driver">
+			<revision name="2.8.0" status="release" pubdate="20120618140818" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.mongodb.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="80">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2413" time="0" location="C:\Users\template\.ivy2\cache\org.mongodb\mongo-java-driver\ivy-2.8.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/mongodb/mongo-java-driver/2.8.0/mongo-java-driver-2.8.0.pom"/>
+				<caller organisation="playmigrandes" name="playmigrandes_2.11" conf="optional, compile, provided, compile-internal" rev="2.8.0" rev-constraint-default="2.8.0" rev-constraint-dynamic="2.8.0" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="mongo-java-driver" type="jar" ext="jar" status="no" details="" size="344552" time="0" location="C:\Users\template\.ivy2\cache\org.mongodb\mongo-java-driver\jars\mongo-java-driver-2.8.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/mongodb/mongo-java-driver/2.8.0/mongo-java-driver-2.8.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.persistence" name="eclipselink">
+			<revision name="2.5.0" status="release" pubdate="20130510115043" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.eclipse.org/eclipselink" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="77">
+				<license name="Eclipse Public License v1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="Eclipse Distribution License v. 1.0" url="http://www.eclipse.org/org/documents/edl-v10.php"/>
+				<metadata-artifact status="no" details="" size="2886" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\eclipselink\ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/persistence/eclipselink/2.5.0/eclipselink-2.5.0.pom"/>
+				<caller organisation="playmigrandes" name="playmigrandes_2.11" conf="optional, compile, provided, compile-internal" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="eclipselink" type="jar" ext="jar" status="no" details="" size="8318722" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\eclipselink\jars\eclipselink-2.5.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/persistence/eclipselink/2.5.0/eclipselink-2.5.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.persistence" name="commonj.sdo">
+			<revision name="2.1.1" status="release" pubdate="20130411100318" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.eclipse.org/eclipselink" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="79">
+				<license name="Eclipse Public License v1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="Eclipse Distribution License v. 1.0" url="http://www.eclipse.org/org/documents/edl-v10.php"/>
+				<metadata-artifact status="no" details="" size="2549" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\commonj.sdo\ivy-2.1.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.pom"/>
+				<caller organisation="org.eclipse.persistence" name="eclipselink" conf="default, compile, runtime, master" rev="2.1.1" rev-constraint-default="2.1.1" rev-constraint-dynamic="2.1.1" callerrev="2.5.0"/>
+				<artifacts>
+					<artifact name="commonj.sdo" type="jar" ext="jar" status="no" details="" size="21007" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\commonj.sdo\jars\commonj.sdo-2.1.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.persistence" name="javax.persistence">
+			<revision name="2.1.0" status="release" pubdate="20130510114951" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.eclipse.org/eclipselink" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master(compile), master" position="78">
+				<license name="Eclipse Public License v1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="Eclipse Distribution License v. 1.0" url="http://www.eclipse.org/org/documents/edl-v10.php"/>
+				<metadata-artifact status="no" details="" size="2561" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\javax.persistence\ivy-2.1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/persistence/javax.persistence/2.1.0/javax.persistence-2.1.0.pom"/>
+				<caller organisation="org.eclipse.persistence" name="eclipselink" conf="default, compile, runtime, master" rev="2.1.0" rev-constraint-default="2.1.0" rev-constraint-dynamic="2.1.0" callerrev="2.5.0"/>
+				<caller organisation="org.eclipse.persistence" name="org.eclipse.persistence.nosql" conf="default, compile, runtime, master" rev="2.1.0" rev-constraint-default="2.1.0" rev-constraint-dynamic="2.1.0" callerrev="2.5.0"/>
+				<artifacts>
+					<artifact name="javax.persistence" type="jar" ext="jar" status="no" details="" size="162126" time="0" location="C:\Users\template\.ivy2\cache\org.eclipse.persistence\javax.persistence\jars\javax.persistence-2.1.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/persistence/javax.persistence/2.1.0/javax.persistence-2.1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.mindrot" name="jbcrypt">
 			<revision name="0.3m" status="release" pubdate="20100516214639" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.mindrot.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="76">
 				<license name="ISC/BSD License"/>

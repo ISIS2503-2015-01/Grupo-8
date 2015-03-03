@@ -5,143 +5,6 @@
 [debug] 	refresh = false
 [debug] resolving dependencies for configuration 'compile'
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->default(compile)]
-[info] Resolving org.hibernate#hibernate-entitymanager;3.6.9.Final ...
-[debug] sbt-chain: Checking cache for: dependency: org.hibernate#hibernate-entitymanager;3.6.9.Final {compile=[default(compile)]}
-[debug] sbt-chain: module revision found in cache: org.hibernate#hibernate-entitymanager;3.6.9.Final
-[debug] 	found org.hibernate#hibernate-entitymanager;3.6.9.Final in sbt-chain
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->runtime]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->master(*)]
-[info] Resolving org.hibernate#hibernate-core;3.6.9.Final ...
-[debug] sbt-chain: Checking cache for: dependency: org.hibernate#hibernate-core;3.6.9.Final {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: org.hibernate#hibernate-core;3.6.9.Final
-[debug] 	found org.hibernate#hibernate-core;3.6.9.Final in sbt-chain
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->master(*)]
-[info] Resolving antlr#antlr;2.7.6 ...
-[debug] sbt-chain: Checking cache for: dependency: antlr#antlr;2.7.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: antlr#antlr;2.7.6
-[debug] 	found antlr#antlr;2.7.6 in sbt-chain
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->master(*)]
-[info] Resolving commons-collections#commons-collections;3.1 ...
-[debug] sbt-chain: Checking cache for: dependency: commons-collections#commons-collections;3.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: commons-collections#commons-collections;3.1
-[debug] 	found commons-collections#commons-collections;3.1 in sbt-chain
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->master(*)]
-[info] Resolving dom4j#dom4j;1.6.1 ...
-[debug] sbt-chain: Checking cache for: dependency: dom4j#dom4j;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: dom4j#dom4j;1.6.1
-[debug] 	found dom4j#dom4j;1.6.1 in sbt-chain
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->compile(*)]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->master(*)]
-[info] Resolving org.hibernate#hibernate-commons-annotations;3.2.0.Final ...
-[debug] sbt-chain: Checking cache for: dependency: org.hibernate#hibernate-commons-annotations;3.2.0.Final {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: org.hibernate#hibernate-commons-annotations;3.2.0.Final
-[debug] 	found org.hibernate#hibernate-commons-annotations;3.2.0.Final in sbt-chain
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->compile(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[info] Resolving org.slf4j#slf4j-api;1.6.1 ...
-[debug] sbt-chain: Checking cache for: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: org.slf4j#slf4j-api;1.6.1
-[debug] 	found org.slf4j#slf4j-api;1.6.1 in sbt-chain
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[info] Resolving org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final ...
-[debug] sbt-chain: Checking cache for: dependency: org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final
-[debug] 	found org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final in sbt-chain
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->master(*)]
-[info] Resolving javax.transaction#jta;1.1 ...
-[debug] sbt-chain: Checking cache for: dependency: javax.transaction#jta;1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: javax.transaction#jta;1.1
-[debug] 	found javax.transaction#jta;1.1 in sbt-chain
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->compile]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->compile]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->master(*)]
-[info] Resolving cglib#cglib;2.2 ...
-[debug] sbt-chain: Checking cache for: dependency: cglib#cglib;2.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: cglib#cglib;2.2
-[debug] 	found cglib#cglib;2.2 in sbt-chain
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->compile(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->master(*)]
-[info] Resolving asm#asm;3.1 ...
-[debug] sbt-chain: Checking cache for: dependency: asm#asm;3.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: asm#asm;3.1
-[debug] 	found asm#asm;3.1 in sbt-chain
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->compile]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->master(*)]
-[info] Resolving javassist#javassist;3.12.0.GA ...
-[debug] sbt-chain: Checking cache for: dependency: javassist#javassist;3.12.0.GA {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] sbt-chain: module revision found in cache: javassist#javassist;3.12.0.GA
-[debug] 	found javassist#javassist;3.12.0.GA in sbt-chain
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->master]
 [debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->com.typesafe.play#sbt-fork-run-plugin;2.3.8 [compile->default(compile)]
 [info] Resolving com.typesafe.play#sbt-fork-run-plugin;2.3.8 ...
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.play#sbt-fork-run-plugin;2.3.8 {compile=[default(compile)]}
@@ -2311,15 +2174,13 @@
 [debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.11 {test=[runtime(*), master(*)]}
 [debug] == resolving dependencies io.apigee.trireme#trireme-core;0.7.5->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)]
 [debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.11 {test=[runtime(*), master(*)]}
-[debug] == resolving dependencies io.apigee.trireme#trireme-core;0.7.5->org.slf4j#slf4j-api;1.7.2 [compile->runtime(*)]
-[debug] == resolving dependencies io.apigee.trireme#trireme-core;0.7.5->org.slf4j#slf4j-api;1.7.2 [compile->compile]
-[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.11 {test=[runtime(*), master(*)]}
 [debug] == resolving dependencies io.apigee.trireme#trireme-core;0.7.5->org.mozilla#rhino;1.7R4 [compile->master(*)]
 [debug] == resolving dependencies io.apigee.trireme#trireme-core;0.7.5->org.mozilla#rhino;1.7R4 [compile->compile(*)]
 [debug] == resolving dependencies com.typesafe#jse_2.10;1.0.0->io.apigee.trireme#trireme-core;0.7.5 [compile->runtime(*)]
 [debug] == resolving dependencies com.typesafe#jse_2.10;1.0.0->io.apigee.trireme#trireme-core;0.7.5 [compile->compile]
 [debug] == resolving dependencies io.apigee.trireme#trireme-core;0.7.5->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)]
 [debug] == resolving dependencies io.apigee.trireme#trireme-core;0.7.5->org.slf4j#slf4j-api;1.7.2 [runtime->compile]
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.11 {test=[runtime(*), master(*)]}
 [debug] == resolving dependencies io.apigee.trireme#trireme-core;0.7.5->org.mozilla#rhino;1.7R4 [runtime->runtime(*)]
 [debug] == resolving dependencies io.apigee.trireme#trireme-core;0.7.5->org.mozilla#rhino;1.7R4 [runtime->compile]
 [debug] == resolving dependencies com.typesafe#jse_2.10;1.0.0->io.apigee.trireme#trireme-node10src;0.7.5 [compile->master(*)]
@@ -2813,8 +2674,6 @@
 [debug] sbt-chain: module revision found in cache: commons-collections#commons-collections;3.2.1
 [debug] 	found commons-collections#commons-collections;3.2.1 in sbt-chain
 [debug] == resolving dependencies net.sourceforge.htmlunit#htmlunit;2.14->commons-collections#commons-collections;3.2.1 [compile->compile(*)]
-[debug] == resolving dependencies net.sourceforge.htmlunit#htmlunit;2.14->commons-collections#commons-collections;3.2.1 [compile->runtime(*)]
-[debug] == resolving dependencies net.sourceforge.htmlunit#htmlunit;2.14->commons-collections#commons-collections;3.2.1 [compile->compile]
 [debug] == resolving dependencies net.sourceforge.htmlunit#htmlunit;2.14->org.apache.commons#commons-lang3;3.2.1 [compile->master(*)]
 [info] Resolving org.apache.commons#commons-lang3;3.2.1 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.commons#commons-lang3;3.2.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
@@ -3253,85 +3112,6 @@
 [debug] resolving dependencies for configuration 'runtime'
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [runtime]
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->default(compile)]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->runtime]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->compile(*)]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->compile(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->compile(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->master(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->compile]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->compile]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->compile]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->master]
 [debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->com.typesafe.play#sbt-fork-run-plugin;2.3.8 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.play#sbt-fork-run-plugin;2.3.8->com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.play#sbt-fork-run-plugin;2.3.8->com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8 [compile->runtime]
@@ -5660,85 +5440,6 @@
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [test]
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [runtime]
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->default(compile)]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->runtime]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->compile(*)]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->compile(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->compile(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->master(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->compile]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->compile]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->compile]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->master]
 [debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->com.typesafe.play#sbt-fork-run-plugin;2.3.8 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.play#sbt-fork-run-plugin;2.3.8->com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.play#sbt-fork-run-plugin;2.3.8->com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8 [compile->runtime]
@@ -8703,85 +8404,6 @@
 [debug] resolving dependencies for configuration 'compile-internal'
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [compile-internal]
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->default(compile)]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->runtime]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->compile(*)]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->compile(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->compile(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->master(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->compile]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->compile]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->compile]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->master]
 [debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->com.typesafe.play#sbt-fork-run-plugin;2.3.8 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.play#sbt-fork-run-plugin;2.3.8->com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.play#sbt-fork-run-plugin;2.3.8->com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8 [compile->runtime]
@@ -11457,85 +11079,6 @@
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [runtime-internal]
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [runtime]
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->default(compile)]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->runtime]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->compile(*)]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->compile(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->compile(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->master(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->compile]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->compile]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->compile]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->master]
 [debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->com.typesafe.play#sbt-fork-run-plugin;2.3.8 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.play#sbt-fork-run-plugin;2.3.8->com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.play#sbt-fork-run-plugin;2.3.8->com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8 [compile->runtime]
@@ -13866,85 +13409,6 @@
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [test]
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [runtime]
 [debug] == resolving dependencies for default#playmigrandes-build;0.1-SNAPSHOT [compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->default(compile)]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->runtime]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [compile->compile(*)]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [compile->compile(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [compile->compile(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->master(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->master(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [compile->compile(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate#hibernate-core;3.6.9.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->antlr#antlr;2.7.6 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->commons-collections#commons-collections;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->dom4j#dom4j;1.6.1 [runtime->compile]
-[debug] excluding dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate#hibernate-commons-annotations;3.2.0.Final [runtime->compile]
-[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.5.8 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-commons-annotations;3.2.0.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->javax.transaction#jta;1.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-core;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->cglib#cglib;2.2 [runtime->compile]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->runtime(*)]
-[debug] == resolving dependencies cglib#cglib;2.2->asm#asm;3.1 [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->javassist#javassist;3.12.0.GA [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [runtime->compile]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.hibernate#hibernate-entitymanager;3.6.9.Final->org.slf4j#slf4j-api;1.6.1 [runtime->compile]
-[debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->org.hibernate#hibernate-entitymanager;3.6.9.Final [compile->master]
 [debug] == resolving dependencies default#playmigrandes-build;0.1-SNAPSHOT->com.typesafe.play#sbt-fork-run-plugin;2.3.8 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.play#sbt-fork-run-plugin;2.3.8->com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.play#sbt-fork-run-plugin;2.3.8->com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8 [compile->runtime]
@@ -16669,7 +16133,6 @@
 [debug] all callers are evicted for org.scala-sbt#control;0.13.8-M3: evicting too
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
-[debug] 	[NOT REQUIRED] org.hibernate#hibernate-entitymanager;3.6.9.Final!hibernate-entitymanager.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#sbt-fork-run-plugin;2.3.8!sbt-fork-run-plugin.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#sbt-plugin;2.3.8!sbt-plugin.jar
 [debug] 	[NOT REQUIRED] com.typesafe.sbt#sbt-coffeescript;1.0.0!sbt-coffeescript.jar
@@ -16679,15 +16142,6 @@
 [debug] 	[NOT REQUIRED] com.typesafe.sbt#sbt-digest;1.0.0!sbt-digest.jar
 [debug] 	[NOT REQUIRED] com.typesafe.sbt#sbt-mocha;1.0.0!sbt-mocha.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#sbt-core-next;0.1.1!sbt-core-next.jar
-[debug] 	[NOT REQUIRED] org.hibernate#hibernate-core;3.6.9.Final!hibernate-core.jar
-[debug] 	[NOT REQUIRED] cglib#cglib;2.2!cglib.jar
-[debug] 	[NOT REQUIRED] javassist#javassist;3.12.0.GA!javassist.jar
-[debug] 	[NOT REQUIRED] org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final!hibernate-jpa-2.0-api.jar
-[debug] 	[NOT REQUIRED] antlr#antlr;2.7.6!antlr.jar
-[debug] 	[NOT REQUIRED] dom4j#dom4j;1.6.1!dom4j.jar
-[debug] 	[NOT REQUIRED] org.hibernate#hibernate-commons-annotations;3.2.0.Final!hibernate-commons-annotations.jar
-[debug] 	[NOT REQUIRED] javax.transaction#jta;1.1!jta.jar
-[debug] 	[NOT REQUIRED] asm#asm;3.1!asm.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#sbt-fork-run-protocol_2.10;2.3.8!sbt-fork-run-protocol_2.10.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.4!scala-library.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#sbt-run-support_2.10;2.3.8!sbt-run-support_2.10.jar
@@ -16892,7 +16346,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8-M5!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 14732ms :: artifacts dl 554ms
+[debug] :: resolution report :: resolve 13617ms :: artifacts dl 643ms
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT compile produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-compile.xml
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT runtime produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-runtime.xml
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT test produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-test.xml
@@ -16906,5 +16360,5 @@
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT docs produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-docs.xml
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT pom produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-pom.xml
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT scala-tool produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-scala-tool.xml
-[debug] 	resolve done (14732ms resolve - 554ms download)
+[debug] 	resolve done (13617ms resolve - 643ms download)
 [info] Done updating.

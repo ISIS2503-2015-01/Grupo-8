@@ -7,7 +7,7 @@
 [debug] == resolving dependencies for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT [compile]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.1 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.11.1 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@24de0e75
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@b5f7
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.1
 [debug] 	found org.scala-lang#scala-library;2.11.1 in sbt-chain
 [debug] 	[2.11.1] org.scala-lang#scala-library;2.11.1
@@ -996,7 +996,7 @@
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-ws_2.11;2.3.8 [compile->master]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.3.8 [compile->default(compile)]
 [info] Resolving com.typesafe.play#play-java-jpa_2.11;2.3.8 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@16119378
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3bdfbf3
 [debug] sbt-chain: module revision found in cache: com.typesafe.play#play-java-jpa_2.11;2.3.8
 [debug] 	found com.typesafe.play#play-java-jpa_2.11;2.3.8 in sbt-chain
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.3.8 [compile->runtime]
@@ -1018,7 +1018,7 @@
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.3.8 [compile->master]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.3.8.Final [compile->default(compile)]
 [info] Resolving org.hibernate#hibernate-entitymanager;4.3.8.Final ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@355e33d4
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1bf8e628
 [debug] sbt-chain: module revision found in cache: org.hibernate#hibernate-entitymanager;4.3.8.Final
 [debug] 	found org.hibernate#hibernate-entitymanager;4.3.8.Final in sbt-chain
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.3.8.Final [compile->runtime]
@@ -1161,6 +1161,108 @@
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->default(compile)]
+[info] Resolving org.eclipse.persistence#eclipselink;2.5.0 ...
+[debug] sbt-chain: Checking cache for: dependency: org.eclipse.persistence#eclipselink;2.5.0 {compile=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.eclipse.persistence#eclipselink;2.5.0
+[debug] 	found org.eclipse.persistence#eclipselink;2.5.0 in sbt-chain
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(*)]
+[info] Resolving org.eclipse.persistence#javax.persistence;2.1.0 ...
+[debug] sbt-chain: Checking cache for: dependency: org.eclipse.persistence#javax.persistence;2.1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: org.eclipse.persistence#javax.persistence;2.1.0
+[debug] 	found org.eclipse.persistence#javax.persistence;2.1.0 in sbt-chain
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->master(*)]
+[info] Resolving org.eclipse.persistence#commonj.sdo;2.1.1 ...
+[debug] sbt-chain: Checking cache for: dependency: org.eclipse.persistence#commonj.sdo;2.1.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: org.eclipse.persistence#commonj.sdo;2.1.1
+[debug] 	found org.eclipse.persistence#commonj.sdo;2.1.1 in sbt-chain
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->default(compile)]
+[info] Resolving org.mongodb#mongo-java-driver;2.8.0 ...
+[debug] sbt-chain: Checking cache for: dependency: org.mongodb#mongo-java-driver;2.8.0 {compile=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.mongodb#mongo-java-driver;2.8.0
+[debug] 	found org.mongodb#mongo-java-driver;2.8.0 in sbt-chain
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->default(compile)]
+[info] Resolving org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 ...
+[debug] sbt-chain: Checking cache for: dependency: org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 {compile=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0
+[debug] 	found org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 in sbt-chain
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->compile(*)]
+[info] Resolving javax.resource#connector-api;1.5 ...
+[debug] sbt-chain: Checking cache for: dependency: javax.resource#connector-api;1.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: javax.resource#connector-api;1.5
+[debug] 	found javax.resource#connector-api;1.5 in sbt-chain
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[info] Resolving org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 ...
+[debug] sbt-chain: Checking cache for: dependency: org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0
+[debug] 	found org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 in sbt-chain
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->compile(*)]
+[info] Resolving org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 ...
+[debug] sbt-chain: Checking cache for: dependency: org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0
+[debug] 	found org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 in sbt-chain
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->compile(*)]
+[info] Resolving org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 ...
+[debug] sbt-chain: Checking cache for: dependency: org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0
+[debug] 	found org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 in sbt-chain
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->compile(*)]
+[info] Resolving org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 ...
+[debug] sbt-chain: Checking cache for: dependency: org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: org.eclipse.persistence#org.eclipse.persistence.core;2.5.0
+[debug] 	found org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 in sbt-chain
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->master]
 [debug] resolving dependencies for configuration 'runtime'
 [debug] == resolving dependencies for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT [runtime]
 [debug] == resolving dependencies for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT [compile]
@@ -1895,6 +1997,54 @@
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->master(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->master]
 [debug] resolving dependencies for configuration 'test'
 [debug] == resolving dependencies for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT [test]
 [debug] == resolving dependencies for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT [runtime]
@@ -2630,6 +2780,54 @@
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->master(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->master]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.8 [test->default(compile)]
 [info] Resolving com.typesafe.play#play-test_2.11;2.3.8 ...
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.play#play-test_2.11;2.3.8 {test=[default(compile)]}
@@ -4656,6 +4854,54 @@
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->master(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->master]
 [debug] == resolving dependencies for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT [optional]
 [debug] == resolving dependencies for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT [provided]
 [debug] resolving dependencies for configuration 'runtime-internal'
@@ -5393,6 +5639,54 @@
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->master(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->master]
 [debug] == resolving dependencies for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT [optional]
 [debug] resolving dependencies for configuration 'test-internal'
 [debug] == resolving dependencies for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT [test-internal]
@@ -6130,6 +6424,54 @@
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->master(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#eclipselink;2.5.0->org.eclipse.persistence#commonj.sdo;2.1.1 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#eclipselink;2.5.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.mongodb#mongo-java-driver;2.8.0 [compile->master]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->default(compile)]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->runtime]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->javax.resource#connector-api;1.5 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#javax.persistence;2.1.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0->org.eclipse.persistence#org.eclipse.persistence.core;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.eclipse.persistence#org.eclipse.persistence.core;2.5.0->org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0 [runtime->compile]
+[debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0 [compile->master]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.8 [test->default(compile)]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.8 [test->runtime]
 [debug] == resolving dependencies playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.3.8 [test->compile]
@@ -7659,29 +8001,8 @@
 [debug] == resolving dependencies com.typesafe.play#fork-run-protocol_2.11;2.3.8->com.typesafe.sbtrc#client-2-11;0.3.1 [compile->master(*)]
 [info] Resolving com.typesafe.sbtrc#client-2-11;0.3.1 ...
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.sbtrc#client-2-11;0.3.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[info] Resolving com.typesafe.sbtrc#client-2-11;0.3.1 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: com.typesafe.sbtrc#client-2-11;0.3.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] 		tried C:\Users\template\.ivy2\local\com.typesafe.sbtrc\client-2-11\0.3.1\ivys\ivy.xml
-[debug] 	local: no ivy file found for com.typesafe.sbtrc#client-2-11;0.3.1
-[debug] 		tried C:\doesnotexist\repository\com.typesafe.sbtrc\client-2-11\0.3.1\ivys\ivy.xml
-[debug] 	activator-launcher-local: no ivy file found for com.typesafe.sbtrc#client-2-11;0.3.1
-[debug] 		tried C:\act\repository\com.typesafe.sbtrc\client-2-11\0.3.1\ivys\ivy.xml
-[debug] 	activator-local: no ivy file found for com.typesafe.sbtrc#client-2-11;0.3.1
-[debug] 		tried https://repo1.maven.org/maven2/com/typesafe/sbtrc/client-2-11/0.3.1/client-2-11-0.3.1.pom
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/com/typesafe/sbtrc/client-2-11/0.3.1/client-2-11-0.3.1.pom
-[debug] 	public: no ivy file found for com.typesafe.sbtrc#client-2-11;0.3.1
-[debug] 		tried http://repo.typesafe.com/typesafe/releases/com/typesafe/sbtrc/client-2-11/0.3.1/client-2-11-0.3.1.pom
-[debug] CLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/typesafe/sbtrc/client-2-11/0.3.1/client-2-11-0.3.1.pom
-[debug] 	typesafe-releases: no ivy file found for com.typesafe.sbtrc#client-2-11;0.3.1
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/ivys/ivy.xml
-[debug] 	typesafe-ivy-releasez: found md file for com.typesafe.sbtrc#client-2-11;0.3.1
-[debug] 		=> http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/ivys/ivy.xml (0.3.1)
-[debug] downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/ivys/ivy.xml ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/ivys/ivy.xml
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/ivys/ivy.xml.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/ivys/ivy.xml
-[debug] 	[SUCCESSFUL ] com.typesafe.sbtrc#client-2-11;0.3.1!ivy.xml(ivy.original) (409ms)
-[debug] 	found com.typesafe.sbtrc#client-2-11;0.3.1 in typesafe-ivy-releasez
+[debug] sbt-chain: module revision found in cache: com.typesafe.sbtrc#client-2-11;0.3.1
+[debug] 	found com.typesafe.sbtrc#client-2-11;0.3.1 in sbt-chain
 [debug] == resolving dependencies com.typesafe.sbtrc#client-2-11;0.3.1->org.scala-lang#scala-library;2.11.5 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.sbtrc#client-2-11;0.3.1->org.scala-lang#scala-library;2.11.1 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.sbtrc#client-2-11;0.3.1->org.scala-lang#scala-library;2.11.1 [compile->runtime]
@@ -7900,29 +8221,8 @@
 [debug] == resolving dependencies com.typesafe.sbtrc#client-2-11;0.3.1->org.scala-sbt#io_2.11;0.13.8-M3 [compile->default(compile)]
 [info] Resolving org.scala-sbt#io_2.11;0.13.8-M3 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#io_2.11;0.13.8-M3 {compile=[default(compile)]}
-[info] Resolving org.scala-sbt#io_2.11;0.13.8-M3 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.scala-sbt#io_2.11;0.13.8-M3 {compile=[default(compile)]}
-[debug] 		tried C:\Users\template\.ivy2\local\org.scala-sbt\io_2.11\0.13.8-M3\ivys\ivy.xml
-[debug] 	local: no ivy file found for org.scala-sbt#io_2.11;0.13.8-M3
-[debug] 		tried C:\doesnotexist\repository\org.scala-sbt\io_2.11\0.13.8-M3\ivys\ivy.xml
-[debug] 	activator-launcher-local: no ivy file found for org.scala-sbt#io_2.11;0.13.8-M3
-[debug] 		tried C:\act\repository\org.scala-sbt\io_2.11\0.13.8-M3\ivys\ivy.xml
-[debug] 	activator-local: no ivy file found for org.scala-sbt#io_2.11;0.13.8-M3
-[debug] 		tried https://repo1.maven.org/maven2/org/scala-sbt/io_2.11/0.13.8-M3/io_2.11-0.13.8-M3.pom
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/scala-sbt/io_2.11/0.13.8-M3/io_2.11-0.13.8-M3.pom
-[debug] 	public: no ivy file found for org.scala-sbt#io_2.11;0.13.8-M3
-[debug] 		tried http://repo.typesafe.com/typesafe/releases/org/scala-sbt/io_2.11/0.13.8-M3/io_2.11-0.13.8-M3.pom
-[debug] CLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/scala-sbt/io_2.11/0.13.8-M3/io_2.11-0.13.8-M3.pom
-[debug] 	typesafe-releases: no ivy file found for org.scala-sbt#io_2.11;0.13.8-M3
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/ivys/ivy.xml
-[debug] 	typesafe-ivy-releasez: found md file for org.scala-sbt#io_2.11;0.13.8-M3
-[debug] 		=> http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/ivys/ivy.xml (0.13.8-M3)
-[debug] downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/ivys/ivy.xml ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/ivys/ivy.xml
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/ivys/ivy.xml.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/ivys/ivy.xml
-[debug] 	[SUCCESSFUL ] org.scala-sbt#io_2.11;0.13.8-M3!ivy.xml(ivy.original) (384ms)
-[debug] 	found org.scala-sbt#io_2.11;0.13.8-M3 in typesafe-ivy-releasez
+[debug] sbt-chain: module revision found in cache: org.scala-sbt#io_2.11;0.13.8-M3
+[debug] 	found org.scala-sbt#io_2.11;0.13.8-M3 in sbt-chain
 [debug] == resolving dependencies org.scala-sbt#io_2.11;0.13.8-M3->org.scala-lang#scala-library;2.11.1 [compile->default(compile)]
 [debug] == resolving dependencies org.scala-sbt#io_2.11;0.13.8-M3->org.scala-lang#scala-library;2.11.1 [compile->runtime]
 [debug] == resolving dependencies org.scala-sbt#io_2.11;0.13.8-M3->org.scala-lang#scala-library;2.11.1 [compile->compile]
@@ -7930,29 +8230,8 @@
 [debug] == resolving dependencies org.scala-sbt#io_2.11;0.13.8-M3->org.scala-sbt#control_2.11;0.13.8-M3 [compile->default(compile)]
 [info] Resolving org.scala-sbt#control_2.11;0.13.8-M3 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#control_2.11;0.13.8-M3 {compile=[default(compile)]}
-[info] Resolving org.scala-sbt#control_2.11;0.13.8-M3 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.scala-sbt#control_2.11;0.13.8-M3 {compile=[default(compile)]}
-[debug] 		tried C:\Users\template\.ivy2\local\org.scala-sbt\control_2.11\0.13.8-M3\ivys\ivy.xml
-[debug] 	local: no ivy file found for org.scala-sbt#control_2.11;0.13.8-M3
-[debug] 		tried C:\doesnotexist\repository\org.scala-sbt\control_2.11\0.13.8-M3\ivys\ivy.xml
-[debug] 	activator-launcher-local: no ivy file found for org.scala-sbt#control_2.11;0.13.8-M3
-[debug] 		tried C:\act\repository\org.scala-sbt\control_2.11\0.13.8-M3\ivys\ivy.xml
-[debug] 	activator-local: no ivy file found for org.scala-sbt#control_2.11;0.13.8-M3
-[debug] 		tried https://repo1.maven.org/maven2/org/scala-sbt/control_2.11/0.13.8-M3/control_2.11-0.13.8-M3.pom
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/scala-sbt/control_2.11/0.13.8-M3/control_2.11-0.13.8-M3.pom
-[debug] 	public: no ivy file found for org.scala-sbt#control_2.11;0.13.8-M3
-[debug] 		tried http://repo.typesafe.com/typesafe/releases/org/scala-sbt/control_2.11/0.13.8-M3/control_2.11-0.13.8-M3.pom
-[debug] CLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/scala-sbt/control_2.11/0.13.8-M3/control_2.11-0.13.8-M3.pom
-[debug] 	typesafe-releases: no ivy file found for org.scala-sbt#control_2.11;0.13.8-M3
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/ivys/ivy.xml
-[debug] 	typesafe-ivy-releasez: found md file for org.scala-sbt#control_2.11;0.13.8-M3
-[debug] 		=> http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/ivys/ivy.xml (0.13.8-M3)
-[debug] downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/ivys/ivy.xml ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/ivys/ivy.xml
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/ivys/ivy.xml.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/ivys/ivy.xml
-[debug] 	[SUCCESSFUL ] org.scala-sbt#control_2.11;0.13.8-M3!ivy.xml(ivy.original) (402ms)
-[debug] 	found org.scala-sbt#control_2.11;0.13.8-M3 in typesafe-ivy-releasez
+[debug] sbt-chain: module revision found in cache: org.scala-sbt#control_2.11;0.13.8-M3
+[debug] 	found org.scala-sbt#control_2.11;0.13.8-M3 in sbt-chain
 [debug] == resolving dependencies org.scala-sbt#control_2.11;0.13.8-M3->org.scala-lang#scala-library;2.11.1 [compile->default(compile)]
 [debug] == resolving dependencies org.scala-sbt#control_2.11;0.13.8-M3->org.scala-lang#scala-library;2.11.1 [compile->runtime]
 [debug] == resolving dependencies org.scala-sbt#control_2.11;0.13.8-M3->org.scala-lang#scala-library;2.11.1 [compile->compile]
@@ -7960,29 +8239,8 @@
 [debug] == resolving dependencies com.typesafe.sbtrc#client-2-11;0.3.1->org.scala-sbt#collections_2.11;0.13.8-M3 [compile->default(compile)]
 [info] Resolving org.scala-sbt#collections_2.11;0.13.8-M3 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#collections_2.11;0.13.8-M3 {compile=[default(compile)]}
-[info] Resolving org.scala-sbt#collections_2.11;0.13.8-M3 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.scala-sbt#collections_2.11;0.13.8-M3 {compile=[default(compile)]}
-[debug] 		tried C:\Users\template\.ivy2\local\org.scala-sbt\collections_2.11\0.13.8-M3\ivys\ivy.xml
-[debug] 	local: no ivy file found for org.scala-sbt#collections_2.11;0.13.8-M3
-[debug] 		tried C:\doesnotexist\repository\org.scala-sbt\collections_2.11\0.13.8-M3\ivys\ivy.xml
-[debug] 	activator-launcher-local: no ivy file found for org.scala-sbt#collections_2.11;0.13.8-M3
-[debug] 		tried C:\act\repository\org.scala-sbt\collections_2.11\0.13.8-M3\ivys\ivy.xml
-[debug] 	activator-local: no ivy file found for org.scala-sbt#collections_2.11;0.13.8-M3
-[debug] 		tried https://repo1.maven.org/maven2/org/scala-sbt/collections_2.11/0.13.8-M3/collections_2.11-0.13.8-M3.pom
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/scala-sbt/collections_2.11/0.13.8-M3/collections_2.11-0.13.8-M3.pom
-[debug] 	public: no ivy file found for org.scala-sbt#collections_2.11;0.13.8-M3
-[debug] 		tried http://repo.typesafe.com/typesafe/releases/org/scala-sbt/collections_2.11/0.13.8-M3/collections_2.11-0.13.8-M3.pom
-[debug] CLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/scala-sbt/collections_2.11/0.13.8-M3/collections_2.11-0.13.8-M3.pom
-[debug] 	typesafe-releases: no ivy file found for org.scala-sbt#collections_2.11;0.13.8-M3
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/ivys/ivy.xml
-[debug] 	typesafe-ivy-releasez: found md file for org.scala-sbt#collections_2.11;0.13.8-M3
-[debug] 		=> http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/ivys/ivy.xml (0.13.8-M3)
-[debug] downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/ivys/ivy.xml ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/ivys/ivy.xml
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/ivys/ivy.xml.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/ivys/ivy.xml
-[debug] 	[SUCCESSFUL ] org.scala-sbt#collections_2.11;0.13.8-M3!ivy.xml(ivy.original) (465ms)
-[debug] 	found org.scala-sbt#collections_2.11;0.13.8-M3 in typesafe-ivy-releasez
+[debug] sbt-chain: module revision found in cache: org.scala-sbt#collections_2.11;0.13.8-M3
+[debug] 	found org.scala-sbt#collections_2.11;0.13.8-M3 in sbt-chain
 [debug] == resolving dependencies org.scala-sbt#collections_2.11;0.13.8-M3->org.scala-lang#scala-library;2.11.1 [compile->default(compile)]
 [debug] == resolving dependencies org.scala-sbt#collections_2.11;0.13.8-M3->org.scala-lang#scala-library;2.11.1 [compile->runtime]
 [debug] == resolving dependencies org.scala-sbt#collections_2.11;0.13.8-M3->org.scala-lang#scala-library;2.11.1 [compile->compile]
@@ -8013,17 +8271,8 @@
 [debug] == resolving dependencies com.typesafe.sbtrc#client-2-11;0.3.1->org.scalacheck#scalacheck_2.11;1.11.5 [test->default(compile)]
 [info] Resolving org.scalacheck#scalacheck_2.11;1.11.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scalacheck#scalacheck_2.11;1.11.5 {test=[default(compile)]}
-[info] Resolving org.scalacheck#scalacheck_2.11;1.11.5 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.scalacheck#scalacheck_2.11;1.11.5 {test=[default(compile)]}
-[debug] 		tried C:\Users\template\.ivy2\local\org.scalacheck\scalacheck_2.11\1.11.5\ivys\ivy.xml
-[debug] 	local: no ivy file found for org.scalacheck#scalacheck_2.11;1.11.5
-[debug] 		tried C:\doesnotexist\repository\org.scalacheck\scalacheck_2.11\1.11.5\ivys\ivy.xml
-[debug] 	activator-launcher-local: no ivy file found for org.scalacheck#scalacheck_2.11;1.11.5
-[debug] 		tried C:\act\repository\org.scalacheck\scalacheck_2.11\1.11.5\ivys\ivy.xml
-[debug] 	activator-local: found md file for org.scalacheck#scalacheck_2.11;1.11.5
-[debug] 		=> C:\act\repository\org.scalacheck\scalacheck_2.11\1.11.5\ivys\ivy.xml (1.11.5)
-[debug] 	[NOT REQUIRED] org.scalacheck#scalacheck_2.11;1.11.5!ivy.xml(ivy.original)
-[debug] 	found org.scalacheck#scalacheck_2.11;1.11.5 in activator-local
+[debug] sbt-chain: module revision found in cache: org.scalacheck#scalacheck_2.11;1.11.5
+[debug] 	found org.scalacheck#scalacheck_2.11;1.11.5 in sbt-chain
 [debug] == resolving dependencies com.typesafe.sbtrc#client-2-11;0.3.1->org.scalacheck#scalacheck_2.11;1.11.5 [test->runtime]
 [debug] == resolving dependencies com.typesafe.sbtrc#client-2-11;0.3.1->org.scalacheck#scalacheck_2.11;1.11.5 [test->compile]
 [debug] == resolving dependencies org.scalacheck#scalacheck_2.11;1.11.5->org.scala-lang#scala-library;2.11.1 [compile->master(*)]
@@ -8062,29 +8311,8 @@
 [debug] == resolving dependencies com.typesafe.play#fork-run_2.11;2.3.8->com.typesafe.sbtrc#actor-client-2-11;0.3.1 [compile->master(*)]
 [info] Resolving com.typesafe.sbtrc#actor-client-2-11;0.3.1 ...
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.sbtrc#actor-client-2-11;0.3.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[info] Resolving com.typesafe.sbtrc#actor-client-2-11;0.3.1 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: com.typesafe.sbtrc#actor-client-2-11;0.3.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] 		tried C:\Users\template\.ivy2\local\com.typesafe.sbtrc\actor-client-2-11\0.3.1\ivys\ivy.xml
-[debug] 	local: no ivy file found for com.typesafe.sbtrc#actor-client-2-11;0.3.1
-[debug] 		tried C:\doesnotexist\repository\com.typesafe.sbtrc\actor-client-2-11\0.3.1\ivys\ivy.xml
-[debug] 	activator-launcher-local: no ivy file found for com.typesafe.sbtrc#actor-client-2-11;0.3.1
-[debug] 		tried C:\act\repository\com.typesafe.sbtrc\actor-client-2-11\0.3.1\ivys\ivy.xml
-[debug] 	activator-local: no ivy file found for com.typesafe.sbtrc#actor-client-2-11;0.3.1
-[debug] 		tried https://repo1.maven.org/maven2/com/typesafe/sbtrc/actor-client-2-11/0.3.1/actor-client-2-11-0.3.1.pom
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/com/typesafe/sbtrc/actor-client-2-11/0.3.1/actor-client-2-11-0.3.1.pom
-[debug] 	public: no ivy file found for com.typesafe.sbtrc#actor-client-2-11;0.3.1
-[debug] 		tried http://repo.typesafe.com/typesafe/releases/com/typesafe/sbtrc/actor-client-2-11/0.3.1/actor-client-2-11-0.3.1.pom
-[debug] CLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/typesafe/sbtrc/actor-client-2-11/0.3.1/actor-client-2-11-0.3.1.pom
-[debug] 	typesafe-releases: no ivy file found for com.typesafe.sbtrc#actor-client-2-11;0.3.1
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/ivys/ivy.xml
-[debug] 	typesafe-ivy-releasez: found md file for com.typesafe.sbtrc#actor-client-2-11;0.3.1
-[debug] 		=> http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/ivys/ivy.xml (0.3.1)
-[debug] downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/ivys/ivy.xml ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/ivys/ivy.xml
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/ivys/ivy.xml.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/ivys/ivy.xml
-[debug] 	[SUCCESSFUL ] com.typesafe.sbtrc#actor-client-2-11;0.3.1!ivy.xml(ivy.original) (397ms)
-[debug] 	found com.typesafe.sbtrc#actor-client-2-11;0.3.1 in typesafe-ivy-releasez
+[debug] sbt-chain: module revision found in cache: com.typesafe.sbtrc#actor-client-2-11;0.3.1
+[debug] 	found com.typesafe.sbtrc#actor-client-2-11;0.3.1 in sbt-chain
 [debug] == resolving dependencies com.typesafe.sbtrc#actor-client-2-11;0.3.1->org.scala-lang#scala-library;2.11.5 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.sbtrc#actor-client-2-11;0.3.1->org.scala-lang#scala-library;2.11.1 [compile->default(compile)]
 [debug] == resolving dependencies com.typesafe.sbtrc#actor-client-2-11;0.3.1->org.scala-lang#scala-library;2.11.1 [compile->runtime]
@@ -8094,27 +8322,8 @@
 [debug] == resolving dependencies com.typesafe.sbtrc#actor-client-2-11;0.3.1->com.typesafe.akka#akka-actor_2.11;2.3.8 [compile->default(compile)]
 [info] Resolving com.typesafe.akka#akka-actor_2.11;2.3.8 ...
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.akka#akka-actor_2.11;2.3.8 {compile=[default(compile)]}
-[info] Resolving com.typesafe.akka#akka-actor_2.11;2.3.8 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: com.typesafe.akka#akka-actor_2.11;2.3.8 {compile=[default(compile)]}
-[debug] 		tried C:\Users\template\.ivy2\local\com.typesafe.akka\akka-actor_2.11\2.3.8\ivys\ivy.xml
-[debug] 	local: no ivy file found for com.typesafe.akka#akka-actor_2.11;2.3.8
-[debug] 		tried C:\doesnotexist\repository\com.typesafe.akka\akka-actor_2.11\2.3.8\ivys\ivy.xml
-[debug] 	activator-launcher-local: no ivy file found for com.typesafe.akka#akka-actor_2.11;2.3.8
-[debug] 		tried C:\act\repository\com.typesafe.akka\akka-actor_2.11\2.3.8\ivys\ivy.xml
-[debug] 	activator-local: no ivy file found for com.typesafe.akka#akka-actor_2.11;2.3.8
-[debug] 		tried https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.pom
-[debug] 	public: found md file for com.typesafe.akka#akka-actor_2.11;2.3.8
-[debug] 		=> https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.pom (2.3.8)
-[debug] downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.pom ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.pom
-[debug] 	public: downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.pom.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.pom
-[debug] 	[SUCCESSFUL ] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.pom(pom.original) (380ms)
-[debug] 		tried C:\Users\template\.ivy2\local\com.typesafe.akka\akka-actor_2.11\2.3.8\jars\akka-actor_2.11.jar
-[debug] 		tried C:\doesnotexist\repository\com.typesafe.akka\akka-actor_2.11\2.3.8\jars\akka-actor_2.11.jar
-[debug] 		tried C:\act\repository\com.typesafe.akka\akka-actor_2.11\2.3.8\jars\akka-actor_2.11.jar
-[debug] 		tried https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.jar
-[debug] 	found com.typesafe.akka#akka-actor_2.11;2.3.8 in public
+[debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-actor_2.11;2.3.8
+[debug] 	found com.typesafe.akka#akka-actor_2.11;2.3.8 in sbt-chain
 [debug] == resolving dependencies com.typesafe.sbtrc#actor-client-2-11;0.3.1->com.typesafe.akka#akka-actor_2.11;2.3.8 [compile->runtime]
 [debug] == resolving dependencies com.typesafe.sbtrc#actor-client-2-11;0.3.1->com.typesafe.akka#akka-actor_2.11;2.3.8 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.8->org.scala-lang#scala-library;2.11.4 [compile->compile(*)]
@@ -8131,27 +8340,8 @@
 [debug] == resolving dependencies com.typesafe.sbtrc#actor-client-2-11;0.3.1->com.typesafe.akka#akka-testkit_2.11;2.3.8 [compile->default(compile)]
 [info] Resolving com.typesafe.akka#akka-testkit_2.11;2.3.8 ...
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.akka#akka-testkit_2.11;2.3.8 {compile=[default(compile)]}
-[info] Resolving com.typesafe.akka#akka-testkit_2.11;2.3.8 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: com.typesafe.akka#akka-testkit_2.11;2.3.8 {compile=[default(compile)]}
-[debug] 		tried C:\Users\template\.ivy2\local\com.typesafe.akka\akka-testkit_2.11\2.3.8\ivys\ivy.xml
-[debug] 	local: no ivy file found for com.typesafe.akka#akka-testkit_2.11;2.3.8
-[debug] 		tried C:\doesnotexist\repository\com.typesafe.akka\akka-testkit_2.11\2.3.8\ivys\ivy.xml
-[debug] 	activator-launcher-local: no ivy file found for com.typesafe.akka#akka-testkit_2.11;2.3.8
-[debug] 		tried C:\act\repository\com.typesafe.akka\akka-testkit_2.11\2.3.8\ivys\ivy.xml
-[debug] 	activator-local: no ivy file found for com.typesafe.akka#akka-testkit_2.11;2.3.8
-[debug] 		tried https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.pom
-[debug] 	public: found md file for com.typesafe.akka#akka-testkit_2.11;2.3.8
-[debug] 		=> https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.pom (2.3.8)
-[debug] downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.pom ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.pom
-[debug] 	public: downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.pom.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.pom
-[debug] 	[SUCCESSFUL ] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.pom(pom.original) (398ms)
-[debug] 		tried C:\Users\template\.ivy2\local\com.typesafe.akka\akka-testkit_2.11\2.3.8\jars\akka-testkit_2.11.jar
-[debug] 		tried C:\doesnotexist\repository\com.typesafe.akka\akka-testkit_2.11\2.3.8\jars\akka-testkit_2.11.jar
-[debug] 		tried C:\act\repository\com.typesafe.akka\akka-testkit_2.11\2.3.8\jars\akka-testkit_2.11.jar
-[debug] 		tried https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.jar
-[debug] 	found com.typesafe.akka#akka-testkit_2.11;2.3.8 in public
+[debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-testkit_2.11;2.3.8
+[debug] 	found com.typesafe.akka#akka-testkit_2.11;2.3.8 in sbt-chain
 [debug] == resolving dependencies com.typesafe.sbtrc#actor-client-2-11;0.3.1->com.typesafe.akka#akka-testkit_2.11;2.3.8 [compile->runtime]
 [debug] == resolving dependencies com.typesafe.sbtrc#actor-client-2-11;0.3.1->com.typesafe.akka#akka-testkit_2.11;2.3.8 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-testkit_2.11;2.3.8->org.scala-lang#scala-library;2.11.4 [compile->compile(*)]
@@ -8216,6 +8406,9 @@
 [debug] 	[NOT REQUIRED] com.typesafe.play#play-java-jpa_2.11;2.3.8!play-java-jpa_2.11.jar
 [debug] 	[NOT REQUIRED] org.hibernate#hibernate-entitymanager;4.3.8.Final!hibernate-entitymanager.jar
 [debug] 	[NOT REQUIRED] org.mindrot#jbcrypt;0.3m!jbcrypt.jar
+[debug] 	[NOT REQUIRED] org.eclipse.persistence#eclipselink;2.5.0!eclipselink.jar
+[debug] 	[NOT REQUIRED] org.mongodb#mongo-java-driver;2.8.0!mongo-java-driver.jar
+[debug] 	[NOT REQUIRED] org.eclipse.persistence#org.eclipse.persistence.nosql;2.5.0!org.eclipse.persistence.nosql.jar
 [debug] 	[NOT REQUIRED] org.apache.commons#commons-lang3;3.1!commons-lang3.jar
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.1!scala-xml_2.11.jar(bundle)
 [debug] 	[NOT REQUIRED] com.typesafe.play#build-link;2.3.8!build-link.jar
@@ -8283,6 +8476,13 @@
 [debug] 	[NOT REQUIRED] org.jboss.spec.javax.transaction#jboss-transaction-api_1.2_spec;1.0.0.Final!jboss-transaction-api_1.2_spec.jar
 [debug] 	[NOT REQUIRED] antlr#antlr;2.7.7!antlr.jar
 [debug] 	[NOT REQUIRED] org.jboss#jandex;1.1.0.Final!jandex.jar
+[debug] 	[NOT REQUIRED] org.eclipse.persistence#javax.persistence;2.1.0!javax.persistence.jar
+[debug] 	[NOT REQUIRED] org.eclipse.persistence#commonj.sdo;2.1.1!commonj.sdo.jar
+[debug] 	[NOT REQUIRED] javax.resource#connector-api;1.5!connector-api.jar
+[debug] 	[NOT REQUIRED] org.eclipse.persistence#org.eclipse.persistence.asm;2.5.0!org.eclipse.persistence.asm.jar
+[debug] 	[NOT REQUIRED] org.eclipse.persistence#org.eclipse.persistence.antlr;2.5.0!org.eclipse.persistence.antlr.jar
+[debug] 	[NOT REQUIRED] org.eclipse.persistence#org.eclipse.persistence.jpa.jpql;2.5.0!org.eclipse.persistence.jpa.jpql.jar
+[debug] 	[NOT REQUIRED] org.eclipse.persistence#org.eclipse.persistence.core;2.5.0!org.eclipse.persistence.core.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#play-test_2.11;2.3.8!play-test_2.11.jar
 [debug] 	[NOT REQUIRED] junit#junit;4.11!junit.jar
 [debug] 	[NOT REQUIRED] org.specs2#specs2-core_2.11;2.3.12!specs2-core_2.11.jar
@@ -8355,60 +8555,20 @@
 [debug] 	[NOT REQUIRED] jline#jline;2.11!jline.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#fork-run_2.11;2.3.8!fork-run_2.11.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#fork-run-protocol_2.11;2.3.8!fork-run-protocol_2.11.jar
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/jars/actor-client-2-11.jar
-[info] downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/jars/actor-client-2-11.jar ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/jars/actor-client-2-11.jar
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/jars/actor-client-2-11.jar.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/jars/actor-client-2-11.jar
-[info] 	[SUCCESSFUL ] com.typesafe.sbtrc#actor-client-2-11;0.3.1!actor-client-2-11.jar (2819ms)
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/srcs/actor-client-2-11-sources.jar
-[info] downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/srcs/actor-client-2-11-sources.jar ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/srcs/actor-client-2-11-sources.jar
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/srcs/actor-client-2-11-sources.jar.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/srcs/actor-client-2-11-sources.jar
-[info] 	[SUCCESSFUL ] com.typesafe.sbtrc#actor-client-2-11;0.3.1!actor-client-2-11.jar(src) (491ms)
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/jars/actor-client-2-11-tests.jar
-[info] downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/jars/actor-client-2-11-tests.jar ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/jars/actor-client-2-11-tests.jar
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/jars/actor-client-2-11-tests.jar.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/actor-client-2-11/0.3.1/jars/actor-client-2-11-tests.jar
-[info] 	[SUCCESSFUL ] com.typesafe.sbtrc#actor-client-2-11;0.3.1!actor-client-2-11.jar (1450ms)
+[debug] 	[NOT REQUIRED] com.typesafe.sbtrc#actor-client-2-11;0.3.1!actor-client-2-11.jar
+[debug] 	[NOT REQUIRED] com.typesafe.sbtrc#actor-client-2-11;0.3.1!actor-client-2-11.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.sbtrc#actor-client-2-11;0.3.1!actor-client-2-11.jar
 [debug] 	[NOT REQUIRED] net.contentobjects.jnotify#jnotify;0.94!jnotify.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#run-support_2.11;2.3.8!run-support_2.11.jar
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/jars/client-2-11.jar
-[info] downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/jars/client-2-11.jar ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/jars/client-2-11.jar
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/jars/client-2-11.jar.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/jars/client-2-11.jar
-[info] 	[SUCCESSFUL ] com.typesafe.sbtrc#client-2-11;0.3.1!client-2-11.jar (8730ms)
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/jars/client-2-11-tests.jar
-[info] downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/jars/client-2-11-tests.jar ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/jars/client-2-11-tests.jar
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/jars/client-2-11-tests.jar.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/jars/client-2-11-tests.jar
-[info] 	[SUCCESSFUL ] com.typesafe.sbtrc#client-2-11;0.3.1!client-2-11.jar (567ms)
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/srcs/client-2-11-sources.jar
-[info] downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/srcs/client-2-11-sources.jar ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/srcs/client-2-11-sources.jar
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/srcs/client-2-11-sources.jar.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbtrc/client-2-11/0.3.1/srcs/client-2-11-sources.jar
-[info] 	[SUCCESSFUL ] com.typesafe.sbtrc#client-2-11;0.3.1!client-2-11.jar(src) (655ms)
+[debug] 	[NOT REQUIRED] com.typesafe.sbtrc#client-2-11;0.3.1!client-2-11.jar
+[debug] 	[NOT REQUIRED] com.typesafe.sbtrc#client-2-11;0.3.1!client-2-11.jar
+[debug] 	[NOT REQUIRED] com.typesafe.sbtrc#client-2-11;0.3.1!client-2-11.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.5!scala-reflect.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#serialization_2.11;0.1.0!serialization_2.11.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#launcher-interface;0.13.8-M3!launcher-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#interface;0.13.8-M3!interface.jar
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/jars/io_2.11.jar
-[info] downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/jars/io_2.11.jar ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/jars/io_2.11.jar
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/jars/io_2.11.jar.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/io_2.11/0.13.8-M3/jars/io_2.11.jar
-[info] 	[SUCCESSFUL ] org.scala-sbt#io_2.11;0.13.8-M3!io_2.11.jar (1131ms)
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/jars/collections_2.11.jar
-[info] downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/jars/collections_2.11.jar ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/jars/collections_2.11.jar
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/jars/collections_2.11.jar.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/collections_2.11/0.13.8-M3/jars/collections_2.11.jar
-[info] 	[SUCCESSFUL ] org.scala-sbt#collections_2.11;0.13.8-M3!collections_2.11.jar (1531ms)
+[debug] 	[NOT REQUIRED] org.scala-sbt#io_2.11;0.13.8-M3!io_2.11.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#collections_2.11;0.13.8-M3!collections_2.11.jar
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-pickling_2.11;0.10.0!scala-pickling_2.11.jar
 [debug] 	[NOT REQUIRED] org.json4s#json4s-core_2.11;3.2.10!json4s-core_2.11.jar
 [debug] 	[NOT REQUIRED] org.spire-math#jawn-parser_2.11;0.6.0!jawn-parser_2.11.jar
@@ -8417,28 +8577,12 @@
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.2!scala-parser-combinators_2.11.jar(bundle)
 [debug] 	[NOT REQUIRED] org.json4s#json4s-ast_2.11;3.2.10!json4s-ast_2.11.jar
 [debug] 	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.6!paranamer.jar
-[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/jars/control_2.11.jar
-[info] downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/jars/control_2.11.jar ...
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/jars/control_2.11.jar
-[debug] 	typesafe-ivy-releasez: downloading http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/jars/control_2.11.jar.sha1
-[debug] sha1 OK for http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/control_2.11/0.13.8-M3/jars/control_2.11.jar
-[info] 	[SUCCESSFUL ] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar (555ms)
+[debug] 	[NOT REQUIRED] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar
 [debug] 	[NOT REQUIRED] com.novocode#junit-interface;0.11!junit-interface.jar
-[debug] 		tried C:\act\repository\org.scalacheck\scalacheck_2.11\1.11.5\jars\scalacheck_2.11.jar
 [debug] 	[NOT REQUIRED] org.scalacheck#scalacheck_2.11;1.11.5!scalacheck_2.11.jar
-[debug] 		tried https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.jar
-[info] downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.jar ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.jar
-[debug] 	public: downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.jar.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.8/akka-actor_2.11-2.3.8.jar
-[info] 	[SUCCESSFUL ] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar (5449ms)
-[debug] 		tried https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.jar
-[info] downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.jar ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.jar
-[debug] 	public: downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.jar.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.8/akka-testkit_2.11-2.3.8.jar
-[info] 	[SUCCESSFUL ] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar (963ms)
-[debug] :: resolution report :: resolve 12468ms :: artifacts dl 25252ms
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar
+[debug] :: resolution report :: resolve 6421ms :: artifacts dl 646ms
 [debug] 	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT compile produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-compile.xml
 [debug] 	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT runtime produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-runtime.xml
 [debug] 	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT test produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-test.xml
@@ -8453,5 +8597,5 @@
 [debug] 	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT pom produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-pom.xml
 [debug] 	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT scala-tool produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-scala-tool.xml
 [debug] 	report for playmigrandes#playmigrandes_2.11;1.0-SNAPSHOT fork-run produced in C:\Users\template\workspace\playMigrandes\target\resolution-cache\reports\playmigrandes-playmigrandes_2.11-fork-run.xml
-[debug] 	resolve done (12468ms resolve - 25252ms download)
+[debug] 	resolve done (6421ms resolve - 646ms download)
 [info] Done updating.

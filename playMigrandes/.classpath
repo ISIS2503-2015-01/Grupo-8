@@ -1,8 +1,6 @@
 <classpath>
-  <classpathentry kind="src" path="app-2.11"/>
   <classpathentry kind="src" path="app"/>
   <classpathentry kind="src" path="conf"/>
-  <classpathentry kind="src" path="test-2.11"/>
   <classpathentry excluding="resources\" kind="src" path="test"/>
   <classpathentry kind="src" path="test\resources"/>
   <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
@@ -78,6 +76,16 @@
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\antlr\antlr\jars\antlr-2.7.7.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.jboss\jandex\jars\jandex-1.1.0.Final.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.mindrot\jbcrypt\jars\jbcrypt-0.3m.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\eclipselink\jars\eclipselink-2.5.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\javax.persistence\jars\javax.persistence-2.1.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\commonj.sdo\jars\commonj.sdo-2.1.1.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.mongodb\mongo-java-driver\jars\mongo-java-driver-2.8.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.nosql\jars\org.eclipse.persistence.nosql-2.5.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\javax.resource\connector-api\jars\connector-api-1.5.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.asm\jars\org.eclipse.persistence.asm-2.5.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.antlr\jars\org.eclipse.persistence.antlr-2.5.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.jpa.jpql\jars\org.eclipse.persistence.jpa.jpql-2.5.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.core\jars\org.eclipse.persistence.core-2.5.0.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\com.typesafe.play\play-test_2.11\jars\play-test_2.11-2.3.8.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\junit\junit\jars\junit-4.11.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hamcrest\hamcrest-core\jars\hamcrest-core-1.3.jar"/>
@@ -137,6 +145,6 @@
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.easytesting\fest-util\jars\fest-util-1.1.6.jar"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="output" path="bin"/>
-  <classpathentry path="C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes_managed" kind="lib"></classpathentry>
+  <classpathentry path="C:\act\PlayMigrandes\target\scala-2.11\classes_managed" kind="lib"></classpathentry>
   <classpathentry path="C:\Users\template\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.1.jar" kind="lib"></classpathentry>
 </classpath>

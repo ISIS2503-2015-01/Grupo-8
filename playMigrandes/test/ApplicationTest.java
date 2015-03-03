@@ -28,17 +28,18 @@ import static org.fest.assertions.Assertions.*;
 */
 public class ApplicationTest {
 
-   @Test
-    public void callIndex() {
-   
-	   Long idp=(long) 646546;
-        Result result = controllers.PacienteController.verEpisodiosPaciente(idp);
-        //assertThat(status(result)).isEqualTo(OK);
-        assertThat(contentType(result)).isEqualTo("Json");
-        //assertThat(charset(result)).isEqualTo("utf-8");
-        assertThat(contentAsString(result)).contains("Paciente no encontrado");
+    @Test
+    public void simpleCheck() {
+        int a = 1 + 1;
+        assertThat(a).isEqualTo(2);
     }
+
+    @Test
+    public void renderTemplate() {
+        Content html = views.html.index.render("Your new application is ready.");
+        assertThat(contentType(html)).isEqualTo("text/html");
+        assertThat(contentAsString(html)).contains("Your new application is ready.");
+    }
+
+
 }
-
-
-

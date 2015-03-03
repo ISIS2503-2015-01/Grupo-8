@@ -1,5 +1,5 @@
-[debug] Copy resource mappings: 
-[debug] 	(C:\Users\template\workspace\playMigrandes\conf\application.conf,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\application.conf)
-[debug] 	(C:\Users\template\workspace\playMigrandes\conf\META-INF,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\META-INF)
-[debug] 	(C:\Users\template\workspace\playMigrandes\conf\routes,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\routes)
-[debug] 	(C:\Users\template\workspace\playMigrandes\conf\META-INF\persistence.xml,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\META-INF\persistence.xml)
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\act\PlayMigrandes\conf\application.conf,C:\act\PlayMigrandes\target\scala-2.11\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\act\PlayMigrandes\conf\META-INF,C:\act\PlayMigrandes\target\scala-2.11\classes\META-INF)[0m
+[0m[[0mdebug[0m] [0m	(C:\act\PlayMigrandes\conf\routes,C:\act\PlayMigrandes\target\scala-2.11\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(C:\act\PlayMigrandes\conf\META-INF\persistence.xml,C:\act\PlayMigrandes\target\scala-2.11\classes\META-INF\persistence.xml)[0m
