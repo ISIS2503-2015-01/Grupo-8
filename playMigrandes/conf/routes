@@ -37,11 +37,30 @@ POST		/paciente/new							              controllers.PacienteController.create()
 GET         /paciente/episodioCompleto/:id                        controllers.PacienteControler.verEpisodioCompleto(id: Long)	
 
 #Ver todos los episodios de un paciente
+<<<<<<< .mine
 GET			/paciente/getAllEpisodios				              controllers.PacienteController.verEpisodiosPaciente(id: Long)
 
+=======
+GET			/paciente/getAllEpisodios				              controllers.PacienteController.verEpisodiosPaciente(id: Long)
+>>>>>>> .r34
 
 #Ver episodios en fecha
 GET 	    /paciente/getEpisodios/:idp/fecha?<filters>           Controllers.PacienteController.verEpisodiosPacienteFecha(idp: Long, fechaIn: String,fechaFin: String)
 
+<<<<<<< .mine
+#Ver episodio
+GET 	    /paciente/getDoloresPaciente			controllers.PacienteController.verEpisodiosPaciente( idp: Long)
+
+#-------------------------------Solicitar grafica episodios---------------------------------------------
+
+GET			/paciente/verChart						controllers.EpisodiosController.generarGrafica(idp: Long)
+
+
+
 #Grabar nota de Voz
-#POST       /NotaVoz/new                                          Controllers.NotaVozController.create()
+#POST       /NotaVoz/new                                          Controllers.NotaVozController.create()=======
+#Ver episodios en fecha
+GET 	    /paciente/getEpisodios/:idp/fecha?<filters>           Controllers.PacienteController.verEpisodiosPacienteFecha(idp: Long, fechaIn: String,fechaFin: String)
+
+#Grabar nota de Voz
+#POST       /NotaVoz/new                                          Controllers.NotaVozController.create()>>>>>>> .r34
