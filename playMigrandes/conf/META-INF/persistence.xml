@@ -1,7 +1,5 @@
-<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
-             version="2.1">
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
     <!--
     persistence-unit name="migrandesJPA" transaction-type="RESOURCE_LOCAL">
@@ -13,14 +11,10 @@
     </persistence-unit>
     -->
     
-    <persistence-unit name="mongo-migrandes" transaction-type="RESOURCE_LOCAL">
-        <class>model.Actividad</class>
-        <class>model.Doctor</class>
-        <class>model.Dolor</class>
-        <class>model.Episodio</class>
-        <class>model.Medicamento</class>
-        <class>model.NotaVoz</class>
-        <class>model.Paciente</class>
+       
+        <persistence-unit name="mongo-migrandes" transaction-type="RESOURCE_LOCAL">
+ 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
         
         <properties>
             <property name="eclipselink.target-database" value="org.eclipse.persistence.nosql.adapters.mongo.MongoPlatform"/>
