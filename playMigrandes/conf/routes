@@ -22,20 +22,26 @@ POST    /doctor               controllers.DoctorController.create()
 #-------------------------------PACIENTE-----------------------------------------------------------
 
 #Crear Paciente
-POST		/paciente/new							controllers.PacienteController.create()
+POST		/paciente/new							              controllers.PacienteController.create()
 
 #Ver Paciente
-#GET			/paciente/:id						controllers
+#GET			/paciente/:id						              controllers.PacienteController.getPaciente(id: Long)
 
 #Eliminar Paciente
-#DELETE		/paciente/:id
+#DELETE		/paciente/:id                                        controllers.PacienteController.deletePaceinte(id :Long)
 
 #Ver un episodio de un paciente
-#GET 		/paciente/episodio/:id			
+#GET 		/paciente/episodio/:idp/ide		                        controlllers.PacienteController.verEpisodioPaciente(idp: Long, ide:Long)
+
+#Ver revisar un episodio completo
+GET         /paciente/episodioCompleto/:id                        controllers.PacienteControler.verEpisodioCompleto(id: Long)	
 
 #Ver todos los episodios de un paciente
-GET			/paciente/getEpisodio					controllers.PacienteController.verEpisodiosPaciente(id: Long)
+GET			/paciente/getAllEpisodios				              controllers.PacienteController.verEpisodiosPaciente(id: Long)
 
 
-#Ver episodio
-GET 	    /paciente/getDoloresPaciente			controllers.PacienteController.verEpisodiosPaciente( idp: Long)
+#Ver episodios en fecha
+GET 	    /paciente/getEpisodios/:idp/fecha?<filters>           Controllers.PacienteController.verEpisodiosPacienteFecha(idp: Long, fechaIn: String,fechaFin: String)
+
+#Grabar nota de Voz
+#POST       /NotaVoz/new                                          Controllers.NotaVozController.create()
