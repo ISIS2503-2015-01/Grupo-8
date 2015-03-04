@@ -4,25 +4,24 @@ package controllers;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Random;
 
 import javax.persistence.Query;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
-import play.db.jpa.JPA;
-import play.db.jpa.Transactional;
-import play.libs.Json;
-import play.mvc.*;
-import modelos.Doctor;
 import modelos.Dolor;
 import modelos.Episodio;
 import modelos.Paciente;
-import modelos.Principal;
+import play.db.jpa.JPA;
+import play.db.jpa.Transactional;
+import play.libs.Json;
+import play.mvc.BodyParser;
+import play.mvc.Controller;
+import play.mvc.Result;
+import play.mvc.Results;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 public class EpisodiosController extends Controller
 {
@@ -56,40 +55,6 @@ public class EpisodiosController extends Controller
 		
 	}
 	
-	
-	public static Result verEpisodiosPacienteFecha(Long idp, String fechaIn, String fechaFin)
-	{
-		List<Episodio> resp=null;
-		
-		SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
-		Date Fi = null;
-		Date Ff = null;
-		try {
-
-		Fi = formatoDelTexto.parse(fechaIn);
-		Ff = formatoDelTexto.parse(fechaFin);
-		} 
-		catch (ParseException ex) {
-
-		return Results.ok("error formateando fecha");
-
-		}
-
-		
-		Paciente p=JPA.em().find(Paciente.class, idp);
-		if(p==null)
-		{
-			return Results.notFound("Su tal paciente no existe");
-		}
-		else if(p.getEpisodios()!=null)
-		{
-			Query query = JPA.em().createQuery("SELECT e FROM Episodio e WHERE e.fecha <="+Ff+" AND e.fecha >= "+Fi+" AND e.pacienteID = "+idp);
-			resp=query.getResultList();
-		}
-		
-		return Results.ok(Json.toJson(resp));
-	}
-	
 	public static Result delete(Long idp) throws ParseException
 	{
 		String datString = idp.toString();
@@ -103,27 +68,59 @@ public class EpisodiosController extends Controller
      	return Results.ok();
 	}
 	
-	public JsonNode graficar(List<Episodio> lista)
+	public String generarGrafica(Long idp)
+	{
+		List<Episodio> resp=null;
+		Paciente p=JPA.em().find(Paciente.class, idp);
+		
+		List<Episodio> a = p.getEpisodios();
+		
+		String res = graficar(a);
+		
+		return res;
+	}
+	
+	public String graficar(List<Episodio> lista)
 	{
 		//Date Fecha
 		//Int Intensidad
 		//List<Medicamento> Medicamentos
 		
-		JsonNode json = Json.toJson(lista);
 		
-//		for(int i = 0; i < lista.size(); i ++)
-//		{
-//			Episodio uno = new Episodio();
-//			Dolor dol = new Dolor();
-//			List<Medicamento> med = uno.getMedicamentos();
-//			
-//			uno = lista.get(i);
-//			Date fecha = uno.getFecha();
-//			int intensidad = uno.getDolor().getIntensidad();
-//			
-//		}
+		String x = new String();
+		for(int i = 0; i < lista.size(); i ++)
+			{
+				Episodio uno = new Episodio();
+				
+				uno = lista.get(i);
+				Date fecha = uno.getFecha();
+				
+				int intensidad = uno.getDolor().getIntensidad();
+				
+				String y = new String();
+				if(i != lista.size()-1)
+				{
+					y = ";";
+				}
+				x = x + "{\"unit\" : \""+fecha.toString()+"\","
+						+ "\"value\" : \""+intensidad+"\""
+						+ "}"+y;
+			}		
 		
-		return json;
+		String str = ""
+				+ "{"
+				+ "\"JSChart\" :{"
+				+ "\"datasets\" : ["
+				+ "{\"type\" : \"line\","
+				+ "\"data\" : ["
+				+ x
+				+ "]"
+				+ "}"
+				+ "]"
+				+ "}"
+				+ "}";
+		
+		return str;
 	}
 
 }
