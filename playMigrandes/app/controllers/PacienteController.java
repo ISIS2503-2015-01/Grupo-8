@@ -9,8 +9,13 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Random;
 
+import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.NoSql;
 
 import modelos.Doctor;
 import modelos.Episodio;
@@ -30,13 +35,17 @@ import play.mvc.Results;
 import play.db.jpa.JPA;
 
 
-
+@NoSql(dataFormat=DataFormatType.MAPPED)
+@Entity
+@XmlRootElement
 public class PacienteController extends Controller
 {
 	//static ArrayList<Paciente> pacientes=new ArrayList<Paciente>();	
 	
-	@Transactional
-	@BodyParser.Of(BodyParser.Json.class)
+	
+//	@Transactional
+//	@BodyParser.Of(BodyParser.Json.class)
+
 	public static Result create()
 	{
 		JsonNode nodo = Controller.request().body().asJson();

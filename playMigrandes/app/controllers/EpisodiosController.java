@@ -8,7 +8,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.persistence.Entity;
 import javax.persistence.Query;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.NoSql;
 
 import modelos.Dolor;
 import modelos.Episodio;
@@ -23,10 +28,13 @@ import play.mvc.Results;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
+@NoSql(dataFormat=DataFormatType.MAPPED)
+@Entity
+@XmlRootElement
 public class EpisodiosController extends Controller
 {
 		
-	@Transactional
+//	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
 	public static Result create() throws ParseException
 	{
