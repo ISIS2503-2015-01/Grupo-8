@@ -24,19 +24,22 @@ import org.eclipse.persistence.nosql.annotations.DataFormatType;
 import org.eclipse.persistence.nosql.annotations.Field;
 import org.eclipse.persistence.nosql.annotations.NoSql;
 
-import play.db.ebean.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 
 @Entity
 //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @NoSql(dataFormat=DataFormatType.MAPPED)
-public class Doctor extends Model
+public class Doctor implements Serializable
 {
 
-    //-----------------------------------------------------------
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	//-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
 
@@ -44,7 +47,7 @@ public class Doctor extends Model
 	 /**
      * Usuario del doctor.
      */
-    @NotNull //A pesar de q el Play ya crea el id, es necesario el _id para Mongo
+    //@NotNull //A pesar de q el Play ya crea el id, es necesario el _id para Mongo
     @Id
     @GeneratedValue
     @Field(name="_id")

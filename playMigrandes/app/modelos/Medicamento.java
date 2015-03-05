@@ -12,6 +12,8 @@
 
 package modelos;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 import org.eclipse.persistence.nosql.annotations.DataFormatType;
@@ -23,7 +25,7 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
  */
 @Embeddable
 @NoSql(dataFormat=DataFormatType.MAPPED)
-public class Medicamento
+public class Medicamento implements Serializable
 {
 
     //-----------------------------------------------------------
@@ -32,6 +34,11 @@ public class Medicamento
 
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * Nombre comercial del medicamento.
      */
 	@Basic

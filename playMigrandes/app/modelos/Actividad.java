@@ -12,37 +12,47 @@
 
 package modelos;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.eclipse.persistence.nosql.annotations.*;
 
-import play.db.ebean.Model;
-
 @Entity
 //@MongoEntity
 @NoSql(dataFormat=DataFormatType.MAPPED)
-public class Actividad extends Model
+
+public class Actividad implements Serializable
 {
 
-    //-----------------------------------------------------------
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+	//-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
 
     
- 
-
-    /**
+	 /**
      * Nombre de la empresa que ceritifica la actividad laboral.
      */
 	@Id 
 	@GeneratedValue
 	@Field(name="_id")
+    private String id;
+ 
+
+    /**
+     * Nombre de la empresa que ceritifica la actividad laboral.
+     */
+	@Basic
     private String nombre;
 
    
@@ -76,7 +86,7 @@ public class Actividad extends Model
      * @param descripcion Descripción de las funcionaes del cargo
      * @param fecha fecha en que reporto el evento
      */
-    public Actividad( String nombre, String cargo, String descripcion, Date fecha)
+    public Actividad( String nombre, String descripcion, Date fecha)
     {
         this.setNombre(nombre);
         this.descripcion = descripcion;

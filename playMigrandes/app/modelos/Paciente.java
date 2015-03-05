@@ -23,22 +23,26 @@ import org.eclipse.persistence.nosql.annotations.DataFormatType;
 import org.eclipse.persistence.nosql.annotations.Field;
 import org.eclipse.persistence.nosql.annotations.NoSql;
 
-import play.db.ebean.Model;
 
 import javax.validation.constraints.NotNull;
 
 
 /**
  * Clase que modela un paciente dentro del sistema.
- * @author Juan Sebastián Urrego
+ * @author Juan Sebastián Castro
  */
 
 @Entity
 @NoSql(dataFormat=DataFormatType.MAPPED)
-public class Paciente extends Model
+public class Paciente implements Serializable
 {
 
     
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	//-----------------------------------------------------------
     // Atributos
@@ -48,15 +52,16 @@ public class Paciente extends Model
      * Usuario del paciente.
      */
 	@NotNull //A pesar de q el Play ya crea el id, es necesario el _id para Mongo
-    @Id
-    @GeneratedValue
-    @Field(name="_id")
+  
     private String usuario;
 	
     /**
      * Número de identificación del paciente
      */
-	@Basic
+	
+	  @Id
+	    @GeneratedValue
+	    @Field(name="_id")
 	private long id;
 
     /**
@@ -101,11 +106,17 @@ public class Paciente extends Model
     @Basic
     private String foto;
 
+    @ManyToOne(fetch = FetchType.LAZY )
+    private Doctor medico;
+    
+
     //-----------------------------------------------------------
     // Constructor
     //-----------------------------------------------------------
 
-    /**
+    
+
+	/**
      * Constructor sin argumentos
      */
     public Paciente()
@@ -115,18 +126,14 @@ public class Paciente extends Model
 
     /**
      * Constructor con argumentos de la clase. 
-     * @param id Identificador único del paciente
      * @param nombres Nombre(s) del paciente
      * @param usuario Username del paciente
-     * @param salario Salario del paciente
-     * @param comisionVentas Valor en comisión por ventas
      * @param perfil Perfil del paciente
      * @param foto Nombre de la foto del paciente
      * @param telefono telefono del paciente
      */
-    public Paciente(long id, String nombres, String usuario, String perfil, String foto, String telefono)
+    public Paciente(String nombres, String usuario, String perfil, String foto, String telefono)
     {
-        this.id = id;
         this.nombres = nombres;
         this.usuario = usuario;
         this.actividades = new ArrayList<Actividad>();
@@ -220,6 +227,13 @@ public class Paciente extends Model
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+    public Doctor getMedico() {
+		return medico;
+	}
+
+	public void setMedico(Doctor medico) {
+		this.medico = medico;
+	}
  
     
     

@@ -12,6 +12,8 @@
 
 package modelos;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 import org.eclipse.persistence.nosql.annotations.DataFormatType;
@@ -19,14 +21,19 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
 
 /**
  * Clase que representa la información sobre el dolor de una migraña
- * @author Juan Sebastián Urrego
+ * @author Cristian Copete
  */
 @Embeddable
 @NoSql(dataFormat=DataFormatType.MAPPED)
-public class Dolor
+public class Dolor implements Serializable
 {
 
-    //-----------------------------------------------------------
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	//-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
 

@@ -33,20 +33,32 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @NoSql(dataFormat=DataFormatType.MAPPED)
-public class Episodio extends Model
+public class Episodio implements Serializable
 {
 
-    //-----------------------------------------------------------
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	//-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
   
 	/**
-     * Fecha en la que sucedio la migrana
-     */
+	 * 
+	 */
 	@NotNull
 	@Id
 	@GeneratedValue
 	@Field(name="_id")
+	private String id;
+
+
+	/**
+     * Fecha en la que sucedio la migrana
+     */
+	@Basic
     private Date fecha; //Si dejara que el _id sea Date?
 
     /**
