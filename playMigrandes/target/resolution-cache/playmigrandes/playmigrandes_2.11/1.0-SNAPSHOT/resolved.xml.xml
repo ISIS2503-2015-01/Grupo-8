@@ -4,7 +4,7 @@
 		module="playmigrandes_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20150303000045"
+		publication="20150306135833"
 	>
 		<description>
 		playMigrandes
@@ -42,13 +42,10 @@
 		<dependency org="com.typesafe.play" name="play-java_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="fork-run_2.11" rev="2.3.8" conf="fork-run->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.11" rev="2.3.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-java-ebean_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.3.8" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-java-jpa_2.11" rev="2.3.8" conf="compile->default(compile)">
-			<exclude org="org.hibernate.javax.persistence" module="hibernate-jpa-2.0-api" name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
-		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.3.8.Final" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-java-jpa_2.11" rev="2.3.8" conf="compile->default(compile)"/>
+		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="3.6.10.Final" conf="compile->default(compile)"/>
 		<dependency org="org.mindrot" name="jbcrypt" rev="0.3m" conf="compile->default(compile)"/>
 		<dependency org="org.eclipse.persistence" name="eclipselink" rev="2.5.0" conf="compile->default(compile)"/>
 		<dependency org="org.mongodb" name="mongo-java-driver" rev="2.8.0" conf="compile->default(compile)"/>

@@ -1,6 +1,6 @@
-// @SOURCE:C:/act/PlayMigrandes/conf/routes
-// @HASH:98f64e8217d144f487329be0341348621e5197e7
-// @DATE:Mon Mar 02 16:05:09 COT 2015
+// @SOURCE:C:/Users/template/workspace/playMigrandes/conf/routes
+// @HASH:bdbe5868a21e7be5b2bbbfa0f095a7371d34d1e9
+// @DATE:Sat Mar 07 13:13:45 COT 2015
 
 package controllers;
 

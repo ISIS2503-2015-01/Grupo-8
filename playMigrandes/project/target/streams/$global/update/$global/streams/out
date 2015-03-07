@@ -16346,7 +16346,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8-M5!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 13617ms :: artifacts dl 643ms
+[debug] :: resolution report :: resolve 29666ms :: artifacts dl 750ms
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT compile produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-compile.xml
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT runtime produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-runtime.xml
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT test produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-test.xml
@@ -16360,5 +16360,5 @@
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT docs produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-docs.xml
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT pom produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-pom.xml
 [debug] 	report for default#playmigrandes-build;0.1-SNAPSHOT scala-tool produced in C:\Users\template\workspace\playMigrandes\project\target\resolution-cache\reports\default-playmigrandes-build-scala-tool.xml
-[debug] 	resolve done (13617ms resolve - 643ms download)
+[debug] 	resolve done (29666ms resolve - 750ms download)
 [info] Done updating.

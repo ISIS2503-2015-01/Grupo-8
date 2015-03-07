@@ -1,6 +1,6 @@
-// @SOURCE:C:/act/PlayMigrandes/conf/routes
-// @HASH:98f64e8217d144f487329be0341348621e5197e7
-// @DATE:Mon Mar 02 16:05:09 COT 2015
+// @SOURCE:C:/Users/template/workspace/playMigrandes/conf/routes
+// @HASH:bdbe5868a21e7be5b2bbbfa0f095a7371d34d1e9
+// @DATE:Sat Mar 07 13:13:45 COT 2015
 
 
 import play.core._
@@ -54,27 +54,34 @@ HandlerDef(this.getClass.getClassLoader, "", "controllers.DoctorController", "cr
 Crear Doctor""", Routes.prefix + """doctor"""))
         
 
-// @LINE:25
+// @LINE:28
 private[this] lazy val controllers_PacienteController_create3_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("paciente/new"))))
 private[this] lazy val controllers_PacienteController_create3_invoker = createInvoker(
 controllers.PacienteController.create(),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "create", Nil,"POST", """Crear Paciente""", Routes.prefix + """paciente/new"""))
         
 
-// @LINE:37
-private[this] lazy val controllers_PacienteController_verEpisodiosPaciente4_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("paciente/getEpisodio"))))
-private[this] lazy val controllers_PacienteController_verEpisodiosPaciente4_invoker = createInvoker(
-controllers.PacienteController.verEpisodiosPaciente(fakeValue[Long]),
-HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "verEpisodiosPaciente", Seq(classOf[Long]),"GET", """Ver todos los episodios de un paciente""", Routes.prefix + """paciente/getEpisodio"""))
+// @LINE:34
+private[this] lazy val controllers_PacienteController_delete4_route = Route("DELETE", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("paciente/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_PacienteController_delete4_invoker = createInvoker(
+controllers.PacienteController.delete(fakeValue[Integer]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "delete", Seq(classOf[Integer]),"DELETE", """Eliminar Paciente""", Routes.prefix + """paciente/$id<[^/]+>"""))
         
 
-// @LINE:41
-private[this] lazy val controllers_PacienteController_verEpisodiosPaciente5_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("paciente/getDoloresPaciente"))))
+// @LINE:43
+private[this] lazy val controllers_PacienteController_verEpisodiosPaciente5_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("paciente/getAllEpisodios/"),DynamicPart("id", """[^/]+""",true))))
 private[this] lazy val controllers_PacienteController_verEpisodiosPaciente5_invoker = createInvoker(
-controllers.PacienteController.verEpisodiosPaciente(fakeValue[Long]),
-HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "verEpisodiosPaciente", Seq(classOf[Long]),"GET", """Ver episodio""", Routes.prefix + """paciente/getDoloresPaciente"""))
+controllers.PacienteController.verEpisodiosPaciente(fakeValue[Integer]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "verEpisodiosPaciente", Seq(classOf[Integer]),"GET", """Ver todos los episodios de un paciente""", Routes.prefix + """paciente/getAllEpisodios/$id<[^/]+>"""))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """doctor""","""controllers.DoctorController.create()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente/new""","""controllers.PacienteController.create()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente/getEpisodio""","""controllers.PacienteController.verEpisodiosPaciente(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente/getDoloresPaciente""","""controllers.PacienteController.verEpisodiosPaciente(idp:Long)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:47
+private[this] lazy val controllers_PacienteController_verEpisodiosPacienteFecha6_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("paciente/getEpisodios/"))))
+private[this] lazy val controllers_PacienteController_verEpisodiosPacienteFecha6_invoker = createInvoker(
+controllers.PacienteController.verEpisodiosPacienteFecha(fakeValue[Integer], fakeValue[String], fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.PacienteController", "verEpisodiosPacienteFecha", Seq(classOf[Integer], classOf[String], classOf[String]),"GET", """Ver episodios en fecha""", Routes.prefix + """paciente/getEpisodios/"""))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """doctor""","""controllers.DoctorController.create()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente/new""","""controllers.PacienteController.create()"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente/$id<[^/]+>""","""controllers.PacienteController.delete(id:Integer)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente/getAllEpisodios/$id<[^/]+>""","""controllers.PacienteController.verEpisodiosPaciente(id:Integer)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """paciente/getEpisodios/""","""controllers.PacienteController.verEpisodiosPacienteFecha(idp:Integer, fechaIn:String, fechaFin:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -106,7 +113,7 @@ case controllers_DoctorController_create2_route(params) => {
 }
         
 
-// @LINE:25
+// @LINE:28
 case controllers_PacienteController_create3_route(params) => {
    call { 
         controllers_PacienteController_create3_invoker.call(controllers.PacienteController.create())
@@ -114,18 +121,26 @@ case controllers_PacienteController_create3_route(params) => {
 }
         
 
-// @LINE:37
-case controllers_PacienteController_verEpisodiosPaciente4_route(params) => {
-   call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_PacienteController_verEpisodiosPaciente4_invoker.call(controllers.PacienteController.verEpisodiosPaciente(id))
+// @LINE:34
+case controllers_PacienteController_delete4_route(params) => {
+   call(params.fromPath[Integer]("id", None)) { (id) =>
+        controllers_PacienteController_delete4_invoker.call(controllers.PacienteController.delete(id))
    }
 }
         
 
-// @LINE:41
+// @LINE:43
 case controllers_PacienteController_verEpisodiosPaciente5_route(params) => {
-   call(params.fromQuery[Long]("idp", None)) { (idp) =>
-        controllers_PacienteController_verEpisodiosPaciente5_invoker.call(controllers.PacienteController.verEpisodiosPaciente(idp))
+   call(params.fromPath[Integer]("id", None)) { (id) =>
+        controllers_PacienteController_verEpisodiosPaciente5_invoker.call(controllers.PacienteController.verEpisodiosPaciente(id))
+   }
+}
+        
+
+// @LINE:47
+case controllers_PacienteController_verEpisodiosPacienteFecha6_route(params) => {
+   call(params.fromQuery[Integer]("idp", None), params.fromQuery[String]("fechaIn", None), params.fromQuery[String]("fechaFin", None)) { (idp, fechaIn, fechaFin) =>
+        controllers_PacienteController_verEpisodiosPacienteFecha6_invoker.call(controllers.PacienteController.verEpisodiosPacienteFecha(idp, fechaIn, fechaFin))
    }
 }
         

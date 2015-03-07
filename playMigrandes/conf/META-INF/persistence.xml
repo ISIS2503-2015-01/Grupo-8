@@ -1,32 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
 
-    <!--
-    persistence-unit name="migrandesJPA" transaction-type="RESOURCE_LOCAL">
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <persistence-unit name="defaultPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <non-jta-data-source>DefaultDS</non-jta-data-source>
+        <class>modelos.Paciente</class>
+        <class>modelos.Episodio</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
-    -->
-    
-       
-        <persistence-unit name="mongo-migrandes" transaction-type="RESOURCE_LOCAL">
- 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <exclude-unlisted-classes>false</exclude-unlisted-classes>
-        
-        <properties>
-            <property name="eclipselink.target-database" value="org.eclipse.persistence.nosql.adapters.mongo.MongoPlatform"/>
-            <property name="eclipselink.nosql.connection-spec" value="org.eclipse.persistence.nosql.adapters.mongo.MongoConnectionSpec"/>
-            
-            <property name="eclipselink.nosql.property.mongo.port" value="45011"/>
-            <property name="eclipselink.nosql.property.mongo.host" value="ds045011.mongolab.com"/>
-            <property name="eclipselink.nosql.property.mongo.db" value="migrandes8"/>
-            <property name="javax.persistence.jdbc.password" value="olake4ce"/>
-            <property name="javax.persistence.jdbc.user" value="damayor"/>
-            <property name="eclipselink.logging.level" value="FINEST"/>
-        </properties>
-	</persistence-unit>
 
 </persistence>
