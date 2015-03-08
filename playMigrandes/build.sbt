@@ -13,10 +13,8 @@ libraryDependencies ++= Seq(
   cache,
   javaWs,
   javaJpa,
-  "org.hibernate" % "hibernate-entitymanager" % "3.6.10.Final",
-  
+  "org.hibernate" % "hibernate-entitymanager" % "3.6.10.Final",  
   "org.mindrot" % "jbcrypt" % "0.3m",
-  
   "org.eclipse.persistence" % "eclipselink" % "2.5.0" % "compile",
   "org.mongodb" % "mongo-java-driver" % "2.8.0",
   "org.eclipse.persistence" % "org.eclipse.persistence.nosql" % "2.5.0"  

@@ -12,10 +12,11 @@
 
 package modelos;
 
-import java.io.Serializable;
 import java.util.Date;
 
+
 import javax.persistence.*;
+
 
 import org.eclipse.persistence.nosql.annotations.DataFormatType;
 import org.eclipse.persistence.nosql.annotations.NoSql;
@@ -25,17 +26,11 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
  * @author David Mayroga
  */
 @Embeddable
-@NoSql(dataFormat=DataFormatType.MAPPED)
-public class NotaVoz implements Serializable
+//@NoSql(dataFormat=DataFormatType.MAPPED)
+public class NotaVoz
 {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-
-	//-----------------------------------------------------------
+    //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
 
@@ -44,20 +39,20 @@ public class NotaVoz implements Serializable
     /**
      * Nombre del archivo
      */
-	@Basic
+	//@Basic
     private String nombre;
 
    
     /**
      * Descripción de laa actividad.
      */
-	@Basic
+	//@Basic
     private String descripcion;
 
     /**
      * Ruta de la nota de voz
      */
-	@Basic
+	//@Basic
     private String archivo;
 
     //-----------------------------------------------------------

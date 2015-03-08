@@ -1,4 +1,5 @@
 package controllers;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -9,19 +10,13 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Random;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import javax.xml.bind.annotation.XmlRootElement;
-
-import org.eclipse.persistence.nosql.annotations.DataFormatType;
-import org.eclipse.persistence.nosql.annotations.NoSql;
 
 import modelos.Doctor;
 import modelos.Episodio;
 import modelos.Paciente;
 
-import com.avaje.ebean.annotation.Transactional;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import play.*;
@@ -33,24 +28,21 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Results;
 import play.db.jpa.JPA;
+import play.db.jpa.Transactional;
 
 
-@NoSql(dataFormat=DataFormatType.MAPPED)
-@Entity
-@XmlRootElement
+
 public class PacienteController extends Controller
 {
 	//static ArrayList<Paciente> pacientes=new ArrayList<Paciente>();	
 	
-	
-//	@Transactional
-//	@BodyParser.Of(BodyParser.Json.class)
-
+	@Transactional
+	@BodyParser.Of(BodyParser.Json.class)
 	public static Result create()
 	{
 		JsonNode nodo = Controller.request().body().asJson();
 
-		Long id = Long.parseLong(nodo.findPath("id").asText());
+		int id =Integer.parseInt(nodo.findPath("id").asText());
 		String nombres=nodo.findPath("nombres").asText();
 		String usuario=nodo.findPath("login").asText();
 		String perfil=nodo.findPath("perfil").asText();
@@ -73,30 +65,11 @@ public class PacienteController extends Controller
 
 		return Results.created();
 		
-		/*
-		//se llena la lista de episodios
-		ArrayList<Episodio>  episodios= new ArrayList();
-
-		while(episodios.size()<11)
-		{
-			SimpleDateFormat format= new SimpleDateFormat("yyyy-MM-dd");
-			Date nFecha;
-			try {
-				nFecha = format.parse("2014-02-19");
-				Episodio nvo=new Episodio(nFecha, null, null);
-				episodios.add(nvo);
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-
-		}
-		/*
-		 */
 	}
 	
-	public static Result delete(Long idp)
+	public static Result delete(int idp)
 	{
-		Paciente p=JPA.em().find(Paciente.class, idp);//8513148
+		Paciente p=JPA.em().find(Paciente.class, idp);
 		if(p==null)
 			return Results.notFound("Su tal paciente no existe");
 		
@@ -106,90 +79,122 @@ public class PacienteController extends Controller
 		
 	}
 	
-	public static Result verEpisodiosPacienteFecha(Long idp, String fechaIn, String fechaFin)
+	@play.db.jpa.Transactional
+	//fecha en formato 
+	public static Result verEpisodiosPacienteFecha(int idp, String fechaIn, String fechaFin)
 	{
 		List<Episodio> resp=null;
-		
+		/*
 		SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
 		Date Fi = null;
 		Date Ff = null;
+		
 		try {
 
 		Fi = formatoDelTexto.parse(fechaIn);
 		Ff = formatoDelTexto.parse(fechaFin);
 		} 
+		
 		catch (ParseException ex) {
 
 		return Results.ok("error formateando fecha");
 
 		}
+		/*/
 
 		
 		Paciente p=JPA.em().find(Paciente.class, idp);
 		if(p==null)
-		{
-			return Results.notFound("Su tal paciente no existe");
-		}
+			return Results.notFound("el Paciente no existe");
+		
 		else if(p.getEpisodios()!=null)
 		{
-			Query query = JPA.em().createQuery("SELECT e FROM Episodio e WHERE e.fecha <="+Ff+" AND e.fecha >= "+Fi+" AND e.pacienteID = "+idp);
-			resp=query.getResultList();
+			//TODO conocer las tablas
+			//Query query = JPA.em().createQuery("SELECT ID FROM (SELECT ID FROM EPISODIO WHERE FECHA BETWEEN '"+fechaIn+"' AND '"+fechaFin+"' ) JOIN ( SELECT EPISODIOS_ID FROM PACIENTE_EPISODIO WHERE PACIENTE_ID="+idp+" ) ON ID=EPISODIOS_ID");
+			Query q=JPA.em().createQuery("select ep from Paciente p join p.episodios ep where p.id=:id and ep.fecha between :fi and :ff");
+			q.setParameter("fi", fechaIn);
+	        q.setParameter("ff", fechaFin);
+	        q.setParameter("id", idp);
+			resp=q.getResultList();
 		}
 		
 		return Results.ok(Json.toJson(resp));
 	}
 
-	public static Result verEpisodiosPaciente(Long idp)
+	
+	@play.db.jpa.Transactional
+	public static Result verEpisodiosPaciente(int idp) throws Exception
 	{
+		@SuppressWarnings("unused")
 		List<Episodio> resp=null;
-		Paciente p=JPA.em().find(Paciente.class, idp);
 		
-		if(p==null)
-		{
-			return Results.notFound("Su tal paciente no existe");
-		}
-		else if(p.getEpisodios()!=null)
-		{
-			Query query = JPA.em().createQuery("SELECT e FROM Episodio e WHERE e.idPaciente = "+idp);
-			resp=query.getResultList();
-		}
+		//-------------------------Prueba-------------------------------------------------------
+		
+		//TODO estas son las pruebas de que efectivamente hay persistencia, debemos poblar !
+		/**
+		 * Probar que esta añadiendo a la BD
+		 * 1. crear el paciente y un episodio (Quitar los comentarios) hasta METODO DEL REQ
+		 * 2. quitar los comentarios al ultimo return
+		 * 3. comentar el return del json
+		 * 4. correr la app
+		 * 5. comentar todo hasta METODO DEL REQ
+		 * 6. comentar el return anterior y desomentar el del json
+		 * 7. correr la app 
+		 * 8. http://localhost:9000/paciente/getAllEpisodios/1
+		 * 9 deberia retornar algo en json : [{"id":10,"fecha":"2015-02-07"}]
+		 */
+		
+		
+		//PACIENTE CHECK
+		
+		
+		 Paciente pp=new Paciente(1,"Laura", "laudany3", "faa","fa", "faass");
+		 //JPA.em().persist(pp);
+		
+		
+		 //EPISODIO CHECK
+	
+		 String f1="2015-02-12";
+		
+		 SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
+		
+		
+		 //EPISODIO CHECK
+		 String f2="2015-02-07";
+		 Date Ff = null;
+		 Ff = formatoDelTexto.parse(f2);
+				
+		 Episodio ep=new Episodio(f2);
+		 //JPA.em().persist(ep);
+		 //Episodio e=JPA.em().find(Episodio.class, 1);
+		
+		
+		
+		//Se busca el paciente y add ep
+		 //Paciente n=JPA.em().getReference(Paciente.class, 1);
+		 //n.addEpisodio(ep);
+		 //resp=n.getEpisodios();
+		
+		
+		
+		//-------------------------------------METODO DEL REQ-------------------------------------------------------------
+		
+		Paciente p=JPA.em().find(Paciente.class, idp);
+		if(p!=null)
+			resp=p.getEpisodios();
+		
+		else
+			throw new Exception("Paciente no encontrado");
 		
 		return Results.ok(Json.toJson(resp));
 		
-		
-		//ArrayList<Episodio>  episodios= new ArrayList<Episodio>();
-		
-		//se crea el paciente de prueba
-		/*
-		while(episodios.size()<11)
-		{
-			SimpleDateFormat format= new SimpleDateFormat("yyyy-MM-dd");
-			Date nFecha;
-			try {
-				nFecha = format.parse("2014-02-19");
-				Episodio nvo=new Episodio(nFecha, null, null);
-				episodios.add(nvo);
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-
-		}
-		Paciente n=new Paciente(idp, null, null, null, null, null);
-		n.setEpisodios(episodios);
-		pacientes.add(n);
-		
-		
-		//se simula
-		ArrayList<Episodio> respuesta=new ArrayList();
-		boolean encontrado=false;
-		for(int j=0;j<pacientes.size() && encontrado==false;j++)
-		{
-			Paciente actp=pacientes.get(j);
-			if(actp.getIdentificacion() == idp)
-			{
-				episodios=(ArrayList<Episodio>) actp.getEpisodios();
-			}
-		}
-		*/
+		//util para verificar inserciones
+		//return Results.ok("Debe ser X. Resultado: "+Integer.toString(resp.size()));
+	}
+	
+	public static Result verEpisodioFull(int idp)
+	{
+		//TODO Terminar
+		return null;
 	}
 }

@@ -17,32 +17,36 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import org.eclipse.persistence.nosql.annotations.DataFormatType;
-import org.eclipse.persistence.nosql.annotations.Field;
-import org.eclipse.persistence.nosql.annotations.NoSql;
+//import play.db.ebean.Model;
 
 
+
+
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 
 /**
  * Clase que modela un paciente dentro del sistema.
- * @author Juan Sebastián Castro
+ * @author Juan Sebastián Urrego
  */
 
+
 @Entity
-@NoSql(dataFormat=DataFormatType.MAPPED)
-public class Paciente implements Serializable
+@Table(name="PACIENTE")
+public class Paciente //extends Model
 {
-
-    
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	//-----------------------------------------------------------
     // Atributos
@@ -51,24 +55,21 @@ public class Paciente implements Serializable
 	/**
      * Usuario del paciente.
      */
-	@NotNull //A pesar de q el Play ya crea el id, es necesario el _id para Mongo
-  
+	@Column(name="usuario")
     private String usuario;
 	
     /**
      * Número de identificación del paciente
      */
-	
-	  @Id
-	    @GeneratedValue
-	    @Field(name="_id")
-	private long id;
+	//@Id
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	private int id;
 
     /**
      * Nombres del paciente.
      */
-	@NotNull
-	@Basic
+    @Column(name="nombres")
     private String nombres;
 
  
@@ -76,9 +77,9 @@ public class Paciente implements Serializable
     /**
      * Lista de ítems de actividades del paciente.
      */
-	@ElementCollection
-	@OneToMany(fetch=FetchType.LAZY)
-    private List<Actividad> actividades;
+	//@ElementCollection
+	//@OneToMany(fetch=FetchType.LAZY)
+    //private List<Actividad> actividades;
     
     
     /**
@@ -91,56 +92,54 @@ public class Paciente implements Serializable
     /**
      * Telefono del paciente
      */
-    @Basic
+    @Column(name="telefono")
     private String telefono;
 
     /**
      * Perfil de paciente.
      */
-    @Basic
+    @Column(name="perfil")
     private String perfil;
 
     /**
      * Foto del paciente.
      */
-    @Basic
+    @Column(name="foto")
     private String foto;
-
-    @ManyToOne(fetch = FetchType.LAZY )
-    private Doctor medico;
-    
 
     //-----------------------------------------------------------
     // Constructor
     //-----------------------------------------------------------
 
-    
-
-	/**
+    /**
      * Constructor sin argumentos
      */
     public Paciente()
     {
-        actividades = new ArrayList<Actividad>();
+        //actividades = new ArrayList<Actividad>();
     }
 
     /**
      * Constructor con argumentos de la clase. 
+     * @param id Identificador único del paciente
      * @param nombres Nombre(s) del paciente
      * @param usuario Username del paciente
+     * @param salario Salario del paciente
+     * @param comisionVentas Valor en comisión por ventas
      * @param perfil Perfil del paciente
      * @param foto Nombre de la foto del paciente
      * @param telefono telefono del paciente
      */
-    public Paciente(String nombres, String usuario, String perfil, String foto, String telefono)
+    public Paciente( int i,String nnombres, String usr, String nperfil, String nfoto, String ntelefono)
     {
-        this.nombres = nombres;
-        this.usuario = usuario;
-        this.actividades = new ArrayList<Actividad>();
+        this.id = i;
+        this.nombres = nnombres;
+        this.usuario = usr;
+        //this.actividades = new ArrayList<Actividad>();
         this.episodios = new ArrayList<Episodio>();
-        this.telefono = telefono;
-        this.perfil = perfil;
-        this.foto = foto;
+        this.telefono = ntelefono;
+        this.perfil = nperfil;
+        this.foto = nfoto;
     }
 
     //-----------------------------------------------------------
@@ -153,27 +152,28 @@ public class Paciente implements Serializable
 	}
 
 	public void setEpisodios(ArrayList<Episodio> episodios2) {
-		this.episodios = episodios2;
+		//this.episodios = episodios2;
 	}
 	
     /**
      * Devuelve el número único de identificación del paciente
      * @return id Número de identificación
      */
-    public long getIdentificacion()
-    {
-        return id;
-    }
+    //public long getIdentificacion()
+    //{
+      //  retur;
+    //}
 
     /**
      * Modifica el número de identificación del cliente
      * @param id Nuevo número de identificación
      */
-    public void setIdentificacion(long id)
+    public void setIdentificacion(int nid)
     {
-        this.id = id;
+        this.id = nid;
     }
 
+    
     public String getFoto() {
         return foto;
     }
@@ -201,15 +201,15 @@ public class Paciente implements Serializable
    
     public void setItemActividad(Actividad actividad)
     {
-        this.actividades.add(actividad);
+        //this.actividades.add(actividad);
     }
 
     public List<Actividad> getActividades() {
-        return actividades;
+        return null;
     }
 
     public void setActividades(List<Actividad> actividades) {
-        this.actividades = actividades;
+        //this.actividades = actividades;
     }
 
     public String getUsuario() {
@@ -227,14 +227,13 @@ public class Paciente implements Serializable
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    public Doctor getMedico() {
-		return medico;
-	}
 
-	public void setMedico(Doctor medico) {
-		this.medico = medico;
+	public void addEpisodio(Episodio e) {
+		// TODO Auto-generated method stub
+		episodios.add(e);
+		
 	}
  
-    
+
     
 }

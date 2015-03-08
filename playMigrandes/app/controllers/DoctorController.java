@@ -6,11 +6,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-import javax.persistence.Entity;
-import javax.xml.bind.annotation.XmlRootElement;
-
-import org.eclipse.persistence.nosql.annotations.NoSql;
-
 import com.fasterxml.jackson.databind.JsonNode;
 
 import play.db.jpa.JPA;
@@ -21,14 +16,6 @@ import modelos.Episodio;
 import modelos.Paciente;
 import modelos.Principal;
 
-import org.eclipse.persistence.nosql.annotations.DataFormatType;
-import org.eclipse.persistence.nosql.annotations.Field;
-import org.eclipse.persistence.nosql.annotations.NoSql;
- 
-
-@NoSql(dataFormat=DataFormatType.MAPPED)
-@Entity
-@XmlRootElement
 public class DoctorController extends Controller
 {
 	//private static ArrayList<Doctor> doctores= new ArrayList<Doctor>();

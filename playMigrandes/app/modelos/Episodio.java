@@ -23,7 +23,8 @@ import org.eclipse.persistence.nosql.annotations.DataFormatType;
 import org.eclipse.persistence.nosql.annotations.Field;
 import org.eclipse.persistence.nosql.annotations.NoSql;
 
-import play.db.ebean.Model;
+//import play.db.ebean.Model;
+
 
 import javax.validation.constraints.NotNull;
 
@@ -31,54 +32,50 @@ import javax.validation.constraints.NotNull;
  * Clase que modela un evento de migrania del paciente
  * @author David Mayorga
  */
+//@Entity
+//@NoSql(dataFormat=DataFormatType.MAPPED)
 @Entity
-@NoSql(dataFormat=DataFormatType.MAPPED)
-public class Episodio implements Serializable
+public class Episodio //extends Model
 {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	//-----------------------------------------------------------
+    //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
   
 	/**
-	 * 
-	 */
-	@NotNull
-	@Id
-	@GeneratedValue
-	@Field(name="_id")
-	private String id;
-
-
-	/**
      * Fecha en la que sucedio la migrana
      */
-	@Basic
-    private Date fecha; //Si dejara que el _id sea Date?
+	//@NotNull
+	//@Id
+	//@GeneratedValue
+	//@Field(name="_id")
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int id;
+	
+	
+	@Column(name="fecha")
+    private String fecha; //Si dejara que el _id sea Date?
 
     /**
      * Ciudad en la que se vendió el producto
      */
-    @ElementCollection
-    private List<Medicamento> medicamentos;
+    //@ElementCollection
+    //private List<Medicamento> medicamentos;
 
     /**
      * Dolor descrito por el paciente
      */
-    @NotNull
-    @Embedded
-    private Dolor dolor;
+    
+    //@Column(name="Dolor")
+    //private Dolor dolor;
     
     /**
     * Nota de voz grabada por el paciente
     */
-    @Embedded
-    private NotaVoz grabacion;
+    //@Embedded
+    //private NotaVoz grabacion;
     
     
     
@@ -86,8 +83,8 @@ public class Episodio implements Serializable
      * Posible catalizador que pudo haber ocasionado la migraña
      * Puede disminuir el episodio haciendo lo contrario a la actividad en referencia.
      */
-    @OneToMany(fetch = FetchType.LAZY)
-    private Actividad catalizador;
+    //@OneToMany(fetch = FetchType.LAZY)
+    //private Actividad catalizador;
 
     //-----------------------------------------------------------
     // Constructor
@@ -97,7 +94,7 @@ public class Episodio implements Serializable
      */
     public Episodio()
     {
-        this.medicamentos = new ArrayList<Medicamento>() {};
+        //this.medicamentos = new ArrayList<Medicamento>() {};
     }
 
     /**
@@ -106,14 +103,15 @@ public class Episodio implements Serializable
      * @param fecha en que ocurrio el episodio
      * @param dolor descripción del dolor
      */
-    public Episodio(Date fecha, List<Medicamento> medicamentos, Dolor dolor) {
+    public Episodio(String fecha)//, List<Medicamento> medicamentos, Dolor dolor) {
+    {
         
-        this.medicamentos = new ArrayList<Medicamento>();
+        //this.medicamentos = new ArrayList<Medicamento>();
         
         this.fecha = fecha;
-        this.dolor = dolor;
-        this.catalizador = null;
-        grabacion = null;
+        //this.dolor = dolor;
+        //this.catalizador = null;
+        //grabacion = null;
     }
 
     
@@ -123,10 +121,16 @@ public class Episodio implements Serializable
     // Getters y setters
     //-----------------------------------------------------------
 
-    public Date getFecha() {
+    public int getId()
+    {
+    	return id;
+    }
+    
+    public String getFecha() {
         return fecha;
     }
-
+    
+    /*
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
@@ -168,6 +172,6 @@ public class Episodio implements Serializable
         this.grabacion = grabacion;
     }
 
-  
+  */
 
 }
