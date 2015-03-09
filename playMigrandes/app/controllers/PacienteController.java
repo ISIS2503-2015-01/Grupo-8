@@ -8,17 +8,20 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import modelos.Actividad;
 import modelos.Doctor;
 import modelos.Episodio;
 import modelos.Medicamento;
 import modelos.Paciente;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import play.*;
 import play.mvc.*;
@@ -85,33 +88,12 @@ public class PacienteController extends Controller
 	public static Result verEpisodiosPacienteFecha(int idp, String fechaIn, String fechaFin)
 	{
 		List<Episodio> resp=null;
-		/*
-		SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
-		Date Fi = null;
-		Date Ff = null;
-		
-		try {
-
-		Fi = formatoDelTexto.parse(fechaIn);
-		Ff = formatoDelTexto.parse(fechaFin);
-		} 
-		
-		catch (ParseException ex) {
-
-		return Results.ok("error formateando fecha");
-
-		}
-		/*/
-
-		
 		Paciente p=JPA.em().find(Paciente.class, idp);
 		if(p==null)
 			return Results.notFound("el Paciente no existe");
 		
 		else if(p.getEpisodios()!=null)
 		{
-			//TODO conocer las tablas
-			//Query query = JPA.em().createQuery("SELECT ID FROM (SELECT ID FROM EPISODIO WHERE FECHA BETWEEN '"+fechaIn+"' AND '"+fechaFin+"' ) JOIN ( SELECT EPISODIOS_ID FROM PACIENTE_EPISODIO WHERE PACIENTE_ID="+idp+" ) ON ID=EPISODIOS_ID");
 			Query q=JPA.em().createQuery("select ep from Paciente p join p.episodios ep where p.id=:id and ep.fecha between :fi and :ff");
 			q.setParameter("fi", fechaIn);
 	        q.setParameter("ff", fechaFin);
@@ -147,33 +129,36 @@ public class PacienteController extends Controller
 		
 		
 		//PACIENTE CHECK
-		
-		
-		 Paciente pp=new Paciente(1,"Laura", "laudany3", "faa","fa", "faass");
+		 //Paciente pp=new Paciente(1,"Laura", "laudany3", "faa","fa", "faass");
 		 //JPA.em().persist(pp);
 		
 		
 		 //EPISODIO CHECK
-	
-		 String f1="2015-02-12";
-		
-		 SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
+		 //String f1="2015-02-12";
+		 //SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
 		
 		
 		 //EPISODIO CHECK
 		 String f2="2015-02-07";
-		 Date Ff = null;
-		 Ff = formatoDelTexto.parse(f2);
+		 //Date Ff = null;
+		 //Ff = formatoDelTexto.parse(f2);
 				
-		 Episodio ep=new Episodio(f2);
+		 //Episodio ep=new Episodio(f2);
 		 //JPA.em().persist(ep);
-		 //Episodio e=JPA.em().find(Episodio.class, 1);
+		 //Episodio ep=JPA.em().find(Episodio.class, f2);
+		
+		//Medicamentos y actividades
+		 //Medicamento m = new Medicamento("apronax", "leveteritacetam", "migranas", "oral", "550 mg");
+		 //JPA.em().persist(m);
+		 //Episodio e=JPA.em().getReference(Episodio.class, f2);
+		 //e.agregarMedicamento(m);
 		 
-		 Medicamento m = new Medicamento("apronax", "leveteritacetam", "migranas", "oral", "550 mg");
-		 JPA.em().persist(m);
-		
-		
-		
+		 //Actividad a=new Actividad("correr", "fasasda", "fafsda", "2015-02-03");
+		 //JPA.em().persist(a);
+		 //e.agregarActividad(a);
+		 
+		 
+			
 		 //Se busca el paciente y add ep
 		 //Paciente n=JPA.em().getReference(Paciente.class, 1);
 		 //n.addEpisodio(ep);
@@ -190,15 +175,42 @@ public class PacienteController extends Controller
 		else
 			throw new Exception("Paciente no encontrado");
 		
-		//return Results.ok(Json.toJson(resp));
+		return Results.ok(Json.toJson(resp));
 		
 		//util para verificar inserciones
-		return Results.ok("Debe ser X. Resultado: "+Integer.toString(resp.size()));
+		//return Results.ok("Debe ser X. Resultado: "+Integer.toString(resp.size()));
 	}
 	
-	public static Result verEpisodioFull(int idp)
+	@play.db.jpa.Transactional
+	public static Result verEpisodioFull( String fe )
 	{
-		//TODO Terminar
-		return null;
+		ObjectNode r=Json.newObject();
+		Episodio resp=null;
+		List<Medicamento> med=null;
+		Actividad act=null;
+		resp=JPA.em().find(Episodio.class, fe);
+		if(resp==null)
+			return Results.notFound("el Episodio no existe");
+		
+		/*/
+		else
+		{
+			
+			med=resp.getMedicamentos();
+			act=resp.getCatalizador();
+			
+			r.put("medicamentos", Json.toJson(act).toString());
+			r.put("medicamentos", Json.toJson(med).toString());
+			r.put("medicamentos", Json.toJson(resp).toString());
+			
+			 
+			r.putAll((Map<String, JsonNode>) Json.toJson(resp));
+			
+			
+		}
+		/*/
+		
+		
+		return Results.ok(Json.toJson(r));
 	}
 }

@@ -49,6 +49,7 @@ public class Episodio //extends Model
 	//@GeneratedValue
 	//@Field(name="_id")
 	
+	/*
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
@@ -56,7 +57,8 @@ public class Episodio //extends Model
 	/**
      * Fecha en la que sucedio la migrana
      */
-	@Column(name="fecha")
+	//@Column(name="fecha")
+	@Id
     private String fecha; //si va comparar, le toca convertirlo a fecha. En la BD es string
 
     /**
@@ -71,7 +73,6 @@ public class Episodio //extends Model
      */
     
     @Column(name="dolor")
-    //private Dolor dolor;
     private String dolor;
     
     /**
@@ -87,9 +88,8 @@ public class Episodio //extends Model
      * Posible catalizador que pudo haber ocasionado la migraña
      * Puede disminuir el episodio haciendo lo contrario a la actividad en referencia.
      */
-    @OneToMany(fetch = FetchType.LAZY)
-    @ElementCollection
-    private List<Actividad> catalizador;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Actividad catalizador;
 
     //-----------------------------------------------------------
     // Constructor
@@ -111,11 +111,10 @@ public class Episodio //extends Model
     public Episodio(String fecha)//, List<Medicamento> medicamentos, Dolor dolor) {
     {
         
-        //this.medicamentos = new ArrayList<Medicamento>();
-        
+        this.medicamentos = new ArrayList<Medicamento>();
         this.fecha = fecha;
         //this.dolor = dolor;
-        //this.catalizador = null;
+        //this.catalizador = new ArrayList<Actividad>();
         //grabacion = null;
     }
 
@@ -126,13 +125,23 @@ public class Episodio //extends Model
     // Getters y setters
     //-----------------------------------------------------------
 
+    /*
     public int getId()
     {
     	return id;
     }
+    */
     
     public String getFecha() {
         return fecha;
+    }
+    
+    public List<Medicamento> getMedicamentos() {
+        return medicamentos;
+    }
+    
+    public Actividad getCatalizador() {
+        return catalizador;
     }
     
     /*
@@ -140,9 +149,7 @@ public class Episodio //extends Model
         this.fecha = fecha;
     }
 
-    public List<Medicamento> getMedicamentos() {
-        return medicamentos;
-    }
+    
 
     public void setMedicamentos(List<Medicamento> medicamentos) {
         this.medicamentos = medicamentos;
@@ -161,9 +168,7 @@ public class Episodio //extends Model
         this.dolor = dolor;
     }
 
-    public Actividad getCatalizador() {
-        return catalizador;
-    }
+    
 
     public void setCatalizador(Actividad catalizador) {
         this.catalizador = catalizador;
@@ -178,5 +183,14 @@ public class Episodio //extends Model
     }
 
   */
+    public void agregarMedicamento(Medicamento m)
+    {
+    	medicamentos.add(m);
+    }
+    
+    public void agregarActividad(Actividad a)
+    {
+    	catalizador=a;
+    }
 
 }
