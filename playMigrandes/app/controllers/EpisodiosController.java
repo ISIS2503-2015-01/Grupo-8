@@ -34,11 +34,9 @@ public class EpisodiosController extends Controller
 		JsonNode nodo = Controller.request().body().asJson();
 		Dolor dol = new Dolor();
 
-		Long id = Long.parseLong(nodo.findPath("id").asText());
-		String datString = id.toString();
-		DateFormat format = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
-		Date date = format.parse(datString);
-		dol.setDescripcion(nodo.findPath("nombres").asText());
+		String id = nodo.findPath("fecha").asText();
+
+
 		
 		Episodio n = JPA.em().find(Episodio.class, id);
 		
@@ -48,8 +46,8 @@ public class EpisodiosController extends Controller
 		}
 		else
 		{
-			//n = new Episodio(date, null, dol);
-			//JPA.em().persist(n);
+			n = new Episodio(id);
+			JPA.em().persist(n);
 		}
 
 		return Results.created();

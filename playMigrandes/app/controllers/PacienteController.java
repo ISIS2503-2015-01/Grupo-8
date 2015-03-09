@@ -211,6 +211,6 @@ public class PacienteController extends Controller
 		/*/
 		
 		
-		return Results.ok(Json.toJson(r));
+		return Results.ok(Json.toJson(resp));
 	}
 }
