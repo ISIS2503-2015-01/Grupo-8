@@ -88,7 +88,7 @@ public class Episodio //extends Model
      * Posible catalizador que pudo haber ocasionado la migraña
      * Puede disminuir el episodio haciendo lo contrario a la actividad en referencia.
      */
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     private Actividad catalizador;
 
     //-----------------------------------------------------------
