@@ -14,9 +14,7 @@ package modelos;
 
 import java.util.Date;
 
-
 import javax.persistence.*;
-
 
 import org.eclipse.persistence.nosql.annotations.DataFormatType;
 import org.eclipse.persistence.nosql.annotations.NoSql;
@@ -25,7 +23,7 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
  * Clase que modela una grabacion por parte del paciente 
  * @author David Mayroga
  */
-@Embeddable
+@Entity
 //@NoSql(dataFormat=DataFormatType.MAPPED)
 public class NotaVoz
 {
@@ -39,20 +37,20 @@ public class NotaVoz
     /**
      * Nombre del archivo
      */
-	//@Basic
+    @Column(name="nombre")
     private String nombre;
 
    
     /**
      * Descripción de laa actividad.
      */
-	//@Basic
+    @Column(name="descripcion")
     private String descripcion;
 
     /**
      * Ruta de la nota de voz
      */
-	//@Basic
+    @Id
     private String archivo;
 
     //-----------------------------------------------------------

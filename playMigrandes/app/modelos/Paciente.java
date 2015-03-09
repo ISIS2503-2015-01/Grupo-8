@@ -77,9 +77,9 @@ public class Paciente //extends Model
     /**
      * Lista de ítems de actividades del paciente.
      */
-	//@ElementCollection
-	//@OneToMany(fetch=FetchType.LAZY)
-    //private List<Actividad> actividades;
+	@ElementCollection
+	@OneToMany(fetch=FetchType.LAZY)
+    private List<Actividad> actividades;
     
     
     /**

@@ -26,6 +26,7 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
 //import play.db.ebean.Model;
 
 
+
 import javax.validation.constraints.NotNull;
 
 /**
@@ -42,9 +43,7 @@ public class Episodio //extends Model
     // Atributos
     //-----------------------------------------------------------
   
-	/**
-     * Fecha en la que sucedio la migrana
-     */
+	
 	//@NotNull
 	//@Id
 	//@GeneratedValue
@@ -54,28 +53,33 @@ public class Episodio //extends Model
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
 	
-	
+	/**
+     * Fecha en la que sucedio la migrana
+     */
 	@Column(name="fecha")
-    private String fecha; //Si dejara que el _id sea Date?
+    private String fecha; //si va comparar, le toca convertirlo a fecha. En la BD es string
 
     /**
-     * Ciudad en la que se vendió el producto
+     * Medicamentos que estaba tomando
      */
-    //@ElementCollection
-    //private List<Medicamento> medicamentos;
+    @OneToMany(fetch=FetchType.LAZY)
+    @ElementCollection
+    private List<Medicamento> medicamentos;
 
     /**
      * Dolor descrito por el paciente
      */
     
-    //@Column(name="Dolor")
+    @Column(name="dolor")
     //private Dolor dolor;
+    private String dolor;
     
     /**
     * Nota de voz grabada por el paciente
     */
-    //@Embedded
     //private NotaVoz grabacion;
+    @Column(name="grabacion")
+    private String grabacion;
     
     
     
@@ -83,8 +87,9 @@ public class Episodio //extends Model
      * Posible catalizador que pudo haber ocasionado la migraña
      * Puede disminuir el episodio haciendo lo contrario a la actividad en referencia.
      */
-    //@OneToMany(fetch = FetchType.LAZY)
-    //private Actividad catalizador;
+    @OneToMany(fetch = FetchType.LAZY)
+    @ElementCollection
+    private List<Actividad> catalizador;
 
     //-----------------------------------------------------------
     // Constructor

@@ -39,7 +39,7 @@ public class DoctorController extends Controller
 		if(n!=null)
 			return Results.ok("Su tal Doctor ya existe");
 		
-		n=new Doctor(id, nombres, usuario, perfil, foto);
+		n=new Doctor(id, nombres, usuario, foto);
 		JPA.em().persist(n);
 		return Results.created();
 		

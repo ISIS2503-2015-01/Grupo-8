@@ -26,6 +26,8 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
 
 //import play.db.ebean.Model;
 
+
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
@@ -45,24 +47,21 @@ public class Doctor //extends Model
 	 /**
      * Usuario del doctor.
      */
-    //@NotNull //A pesar de q el Play ya crea el id, es necesario el _id para Mongo
-    //@Id
-    //@GeneratedValue
-    //@Field(name="_id")
+
 	@Id
     private String usuario;
    
 	/**
      * Número de identificación del doctor
      */
-    //@Basic
+	@Column(name="fecha")
     private long id;
 
     /**
      * Nombres del doctor.
      */
 	@NotNull
-    //@Basic
+	@Column(name="nombres")
     private String nombres;
 
     /**
@@ -76,19 +75,14 @@ public class Doctor //extends Model
     /**
      * Telefono del doctor
      */
-	//@Basic
+	@Column(name="telefono")
     private String telefono;
 
-    /**
-     * Perfil de doctor.
-     */
-	//@Basic
-    private String perfil;
-
+    
     /**
      * Foto del doctor.
      */
-	//@Basic
+	@Column(name="foto")
     private String foto;
 
     //-----------------------------------------------------------
@@ -114,14 +108,13 @@ public class Doctor //extends Model
      * @param perfil Perfil del doctor
      * @param foto Nombre de la foto del doctor
      */
-    public Doctor(long id, String nombres, String usuario, String perfil, String foto)
+    public Doctor(long id, String nombres, String usuario, String foto)
     {
         this.id = id;
         this.nombres = nombres;
         this.usuario = usuario;
         this.pacientes = new ArrayList();
         this.telefono = telefono;
-        this.perfil = perfil;
         this.foto = foto;
     }
 
@@ -163,13 +156,7 @@ public class Doctor //extends Model
         this.nombres = nombres;
     }
 
-    public String getPerfil() {
-        return perfil;
-    }
-
-    public void setPerfil(String perfil) {
-        this.perfil = perfil;
-    }
+  
 
    
     public void setItemPaciente(Paciente paciente)

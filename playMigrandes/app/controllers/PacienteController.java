@@ -15,6 +15,7 @@ import javax.persistence.Query;
 
 import modelos.Doctor;
 import modelos.Episodio;
+import modelos.Medicamento;
 import modelos.Paciente;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -167,10 +168,13 @@ public class PacienteController extends Controller
 		 Episodio ep=new Episodio(f2);
 		 //JPA.em().persist(ep);
 		 //Episodio e=JPA.em().find(Episodio.class, 1);
+		 
+		 Medicamento m = new Medicamento("apronax", "leveteritacetam", "migranas", "oral", "550 mg");
+		 JPA.em().persist(m);
 		
 		
 		
-		//Se busca el paciente y add ep
+		 //Se busca el paciente y add ep
 		 //Paciente n=JPA.em().getReference(Paciente.class, 1);
 		 //n.addEpisodio(ep);
 		 //resp=n.getEpisodios();
@@ -186,10 +190,10 @@ public class PacienteController extends Controller
 		else
 			throw new Exception("Paciente no encontrado");
 		
-		return Results.ok(Json.toJson(resp));
+		//return Results.ok(Json.toJson(resp));
 		
 		//util para verificar inserciones
-		//return Results.ok("Debe ser X. Resultado: "+Integer.toString(resp.size()));
+		return Results.ok("Debe ser X. Resultado: "+Integer.toString(resp.size()));
 	}
 	
 	public static Result verEpisodioFull(int idp)

@@ -6,7 +6,7 @@
  * Licenciado bajo el esquema Academic Free License version 3.0
  *
  * Ejercicio: Muebles los Alpes
- * Autor: Juan Sebastián Urrego
+ * Autor: Juan SebastiÃ¡n Urrego
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
@@ -15,6 +15,7 @@ package modelos;
 import java.util.Date;
 
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -41,15 +42,12 @@ public class Actividad //extends Model
 
    
     /**
-     * Descripción de laa actividad.
+     * Descripcion de laa actividad.
      */
+	@Column(name="descripcion")
     private String descripcion;
 
-    /**
-     * Fecha del evento
-     */
-	
-    private Date fecha;
+    
 
     //-----------------------------------------------------------
     // Constructores
@@ -64,16 +62,15 @@ public class Actividad //extends Model
 
     /**
      * Constructor de la clase con argumentos
-     * @param id Identificador único de la actividad
+     * @param id Identificador Ãºnico de la actividad
      * @param nombre Nombre de la empresa
-     * @param descripcion Descripción de las funcionaes del cargo
+     * @param descripcion DescripciÃ³n de las funcionaes del cargo
      * @param fecha fecha en que reporto el evento
      */
-    public Actividad( String nombre, String cargo, String descripcion, Date fecha)
+    public Actividad( String nombre, String cargo, String descripcion, String fecha)
     {
         this.setNombre(nombre);
         this.descripcion = descripcion;
-        this.fecha = fecha;
     }
 
     //-----------------------------------------------------------
@@ -81,29 +78,10 @@ public class Actividad //extends Model
     //-----------------------------------------------------------
 
   
-
-    /**
-     * Devuelve el año de terminación del vínculo laboral
-     * @return ano Año de terminación del vínculo laboral
-     */
-    public Date getFehca()
-    {
-        return fecha;
-    }
-
-    /**
-     * Modifica el año de terminación del vínculo laboral
-     * @param ano Nuevo año de terminación de vínculo
-     */
-    public void setFecha(Date fecha)
-    {
-        this.fecha = fecha;
-    }
-
    
    
     /**
-     * Devuelve la descripción del evento del paciente
+     * Devuelve la descripciÃ³n del evento del paciente
      * @return descripcion de la actividad realizada paciente
      */
     public String getDescripcion()
@@ -112,8 +90,8 @@ public class Actividad //extends Model
     }
 
     /**
-     * Modifica la descripción del del evento del paciente
-     * @param descripcion Nueva descripción de la actividad realizada paciente
+     * Modifica la descripciÃ³n del del evento del paciente
+     * @param descripcion Nueva descripciÃ³n de la actividad realizada paciente
      */
     public void setDescripcion(String descripcion)
     {

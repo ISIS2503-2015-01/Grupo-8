@@ -31,24 +31,28 @@ public class Dolor
     //-----------------------------------------------------------
 
 	
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int id;
+	
+	
     /**
      * Descripción del dolor.
      */
-	//@Basic
+	@Column(name="descripcion")
     private String descripcion;
 
     /**
      * Intensidad del dolor.
      */
-	//@Basic
+	@Column(name="intensidad")
     private int intensidad;
 
 
     /**
      * Ubicacion de la migraña
      */
-	//@Basic
+	@Column(name="ubicacion")
     private String ubicacion;
 
     
