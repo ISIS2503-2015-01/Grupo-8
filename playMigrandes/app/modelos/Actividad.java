@@ -30,10 +30,6 @@ public class Actividad //extends Model
     //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
-
-    
- 
-
     /**
      * Nombre de la empresa que ceritifica la actividad laboral.
      */
