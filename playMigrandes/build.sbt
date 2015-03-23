@@ -17,7 +17,11 @@ libraryDependencies ++= Seq(
   "org.mindrot" % "jbcrypt" % "0.3m",
   "org.eclipse.persistence" % "eclipselink" % "2.5.0" % "compile",
   "org.mongodb" % "mongo-java-driver" % "2.8.0",
-  "org.eclipse.persistence" % "org.eclipse.persistence.nosql" % "2.5.0"  
+  "org.eclipse.persistence" % "org.eclipse.persistence.nosql" % "2.5.0",
+  "org.apache.derby" % "derbyclient" % "10.8.3.0",
+  "postgresql" % "postgresql" % "9.1-901-1.jdbc4"  
   )
 
 fork in run := true
+
+herokuAppName in Compile := "morning-tor-3089"
