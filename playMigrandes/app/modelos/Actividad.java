@@ -20,11 +20,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import org.eclipse.persistence.nosql.annotations.*;
 
 @Entity
-public class Actividad //extends Model
+public class Actividad 
 {
 
     //-----------------------------------------------------------
@@ -36,14 +37,19 @@ public class Actividad //extends Model
 	@Id 
     private String nombre;
 
-   
+	/**
+     * Paciente quien crea la actividad
+     */
+	@ManyToOne
+	Paciente paciente;
+	
     /**
      * Descripcion de laa actividad.
      */
 	@Column(name="descripcion")
     private String descripcion;
-
-    
+	
+	private String fecha;
 
     //-----------------------------------------------------------
     // Constructores
@@ -63,7 +69,7 @@ public class Actividad //extends Model
      * @param descripcion DescripciÃ³n de las funcionaes del cargo
      * @param fecha fecha en que reporto el evento
      */
-    public Actividad( String nombre, String cargo, String descripcion, String fecha)
+    public Actividad( String nombre, String descripcion, String fecha)
     {
         this.setNombre(nombre);
         this.descripcion = descripcion;

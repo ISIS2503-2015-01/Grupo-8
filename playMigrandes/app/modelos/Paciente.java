@@ -24,8 +24,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 
+
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -45,7 +47,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="PACIENTE")
-public class Paciente //extends Model
+public class Paciente
 {
 
 	//-----------------------------------------------------------
@@ -55,51 +57,43 @@ public class Paciente //extends Model
 	/**
      * Usuario del paciente.
      */
-	@Column(name="usuario")
-    private String usuario;
-	
-    /**
-     * Número de identificación del paciente
-     */
-	//@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private int id;
+    private String usuario;
 
     /**
      * Nombres del paciente.
      */
     @Column(name="nombres")
+    @NotNull
     private String nombres;
-
- 
-
+    
+    /**
+     * Password del paciente
+     */
+    @Column(name="password")
+    @NotNull
+    private String password;
+    
     /**
      * Lista de ítems de actividades del paciente.
      */
+    //TODO falta el mapped By
 	@ElementCollection
-	@OneToMany(fetch=FetchType.LAZY)
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="paciente")
     private List<Actividad> actividades;
     
     
     /**
      * Lista de ítems de episodios del paciente.
      */
-    @OneToMany(fetch=FetchType.LAZY)
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="paciente")
     @ElementCollection
     private List<Episodio> episodios;
-      
-    /**
-     * Telefono del paciente
-     */
-    @Column(name="telefono")
-    private String telefono;
+    
+    @OneToMany
+    @ElementCollection
+    private List<Medicamento> medicamentos;
 
-    /**
-     * Perfil de paciente.
-     */
-    @Column(name="perfil")
-    private String perfil;
 
     /**
      * Foto del paciente.
@@ -130,16 +124,13 @@ public class Paciente //extends Model
      * @param foto Nombre de la foto del paciente
      * @param telefono telefono del paciente
      */
-    public Paciente( int i,String nnombres, String usr, String nperfil, String nfoto, String ntelefono)
+    public Paciente(String nnombres, String usr,String pass)
     {
-        this.id = i;
         this.nombres = nnombres;
         this.usuario = usr;
-        //this.actividades = new ArrayList<Actividad>();
+        this.password=pass;
+        this.actividades = new ArrayList<Actividad>();
         this.episodios = new ArrayList<Episodio>();
-        this.telefono = ntelefono;
-        this.perfil = nperfil;
-        this.foto = nfoto;
     }
 
     //-----------------------------------------------------------
@@ -154,26 +145,7 @@ public class Paciente //extends Model
 	public void setEpisodios(ArrayList<Episodio> episodios2) {
 		//this.episodios = episodios2;
 	}
-	
-    /**
-     * Devuelve el número único de identificación del paciente
-     * @return id Número de identificación
-     */
-    //public long getIdentificacion()
-    //{
-      //  retur;
-    //}
-
-    /**
-     * Modifica el número de identificación del cliente
-     * @param id Nuevo número de identificación
-     */
-    public void setIdentificacion(int nid)
-    {
-        this.id = nid;
-    }
-
-    
+	 
     public String getFoto() {
         return foto;
     }
@@ -188,14 +160,6 @@ public class Paciente //extends Model
 
     public void setNombres(String nombres) {
         this.nombres = nombres;
-    }
-
-    public String getPerfil() {
-        return perfil;
-    }
-
-    public void setPerfil(String perfil) {
-        this.perfil = perfil;
     }
 
    
@@ -220,20 +184,23 @@ public class Paciente //extends Model
         this.usuario = usuario;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
 	public void addEpisodio(Episodio e) {
 		// TODO Auto-generated method stub
 		episodios.add(e);
 		
 	}
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public void addMedicamento(Medicamento m)
+	{
+		medicamentos.add(m);
+	}
  
 
-    
+	
 }

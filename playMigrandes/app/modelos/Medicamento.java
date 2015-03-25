@@ -22,8 +22,6 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
  * @author Juan Sebastián Urrego
  */
 @Entity
-//@Embeddable
-//@NoSql(dataFormat=DataFormatType.MAPPED)
 public class Medicamento
 {
 
@@ -31,39 +29,24 @@ public class Medicamento
     // Atributos
     //-----------------------------------------------------------
 
-
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
     /**
      * Nombre comercial del medicamento.
      */
-	
-	@Id
+	@Column(name="nombre")
     private String nombre;
-    
-    /**
-     * Componente quimico del medicamento.
-     */
-	@Column(name="componente")
-    private String componente;
     
     /**
      * Descripcion del medicamento por si algún no doctor lo lee.
      */
 	@Column(name="descripcion")
     private String descripcion;
+	
+	
+	
 
-    /**
-     * Tipo del medicamento sobre como se ingiere.
-     */
-	@Column(name="presentacion")
-    private String presentacion;
-
-
-    /**
-     * Cantidad de medicamento tomado (en mg)
-     */
-	@Column(name="posologia")
-    private String posologia;
 
     
 
@@ -88,15 +71,11 @@ public class Medicamento
      * @param presentacion tipo de medicamento usado
      * @param posologia cantidad en mgs del medicamento ingerido
      */
-    public Medicamento(String nombre, String componente, String descripcion, String presentacion, String posologia) {
+    public Medicamento(String nombre, String descripcion) 
+    {
         this.nombre = nombre;
-        this.componente = componente;
-        this.descripcion = descripcion;
-        this.presentacion = presentacion;
-        this.posologia = posologia;
+        this.descripcion = descripcion;   
     }
-
-    
 
     //-----------------------------------------------------------
     // Getters y setters
@@ -110,14 +89,6 @@ public class Medicamento
         this.nombre = nombre;
     }
 
-    public String getComponente() {
-        return componente;
-    }
-
-    public void setComponente(String componente) {
-        this.componente = componente;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -125,28 +96,5 @@ public class Medicamento
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-    public String getPresentacion() {
-        return presentacion;
-    }
-
-    public void setPresentacion(String presentacion) {
-        this.presentacion = presentacion;
-    }
-
-    public String getPosologia() {
-        return posologia;
-    }
-
-    public void setPosologia(String posologia) {
-        this.posologia = posologia;
-    }
-
-    
-    //-----------------------------------------------------------
-    // Métodos
-    //-----------------------------------------------------------
-
-
 
 }

@@ -28,8 +28,8 @@ public class Application extends Controller {
     {
     	Paciente n=null;
     	JsonNode nodo = Controller.request().body().asJson();
-    	String user=nodo.findPath("user").asText(); 
-    	String password=nodo.findPath("password").asText();//TODO falta ese atributo en Paciente
+    	String user=nodo.findPath("usuario").asText(); 
+    	String password=nodo.findPath("password").asText();
     	
     	
     	Query q=JPA.em().createQuery("from Paciente p where p.usuario=:usr");
@@ -38,12 +38,16 @@ public class Application extends Controller {
     	List<Paciente> l=q.getResultList();
     	
 		if(l.size()==0)
-			return badRequest("Datos no validos");
+			return badRequest("El usuario no se encuentra registrado");
 		
 		else
 		{
 			n=l.get(0);
-			session("js.castro125");//TODO verificar el password
+			if(n.getPassword().equals(password))
+				session(n.getUsuario());
+	
+			else
+				return badRequest("Password incorrecto");
 		}
 		
 		 return Results.created(Json.toJson(n));

@@ -24,16 +24,16 @@ public class MedicamentoController {
 	{
 		JsonNode nodo = Controller.request().body().asJson();
 		
-		//TODO terminar
 		String nombre=nodo.findPath("nombre").asText();
 		String componente=nodo.findPath("componenente").asText();
 		
 		Medicamento n= JPA.em().find(Medicamento.class, nombre);
+		
 		if(n!=null)
 			return Results.ok("El paciente ya existe");
 		else
 		{
-			n=new Medicamento(nombre, componente, "asda", "asfas", "fafasa");
+			n=new Medicamento(nombre, componente);
 			JPA.em().persist(n);
 		}
 		return Results.created();		
