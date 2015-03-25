@@ -6,7 +6,10 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.11.1"
 
+resolvers += "Typesafe Public Repo" at "http://repo.typesafe.com/typesafe/releases"
+
 resolvers += "EclipseLink Repo" at "http://repo.maven.apache.org/maven2"
+
 
 libraryDependencies ++= Seq(
   javaJdbc,
@@ -23,5 +26,3 @@ libraryDependencies ++= Seq(
   )
 
 fork in run := true
-
-herokuAppName in Compile := "morning-tor-3089"
