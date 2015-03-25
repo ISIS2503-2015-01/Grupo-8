@@ -4,7 +4,7 @@
 		module="playmigrandes_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20150306135833"
+		publication="20150324192533"
 	>
 		<description>
 		playMigrandes
@@ -50,5 +50,7 @@
 		<dependency org="org.eclipse.persistence" name="eclipselink" rev="2.5.0" conf="compile->default(compile)"/>
 		<dependency org="org.mongodb" name="mongo-java-driver" rev="2.8.0" conf="compile->default(compile)"/>
 		<dependency org="org.eclipse.persistence" name="org.eclipse.persistence.nosql" rev="2.5.0" conf="compile->default(compile)"/>
+		<dependency org="org.apache.derby" name="derbyclient" rev="10.8.3.0" conf="compile->default(compile)"/>
+		<dependency org="postgresql" name="postgresql" rev="9.1-901-1.jdbc4" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

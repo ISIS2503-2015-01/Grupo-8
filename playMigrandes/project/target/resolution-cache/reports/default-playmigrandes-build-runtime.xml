@@ -9,8 +9,31 @@
 		extra-scalaVersion="2.10"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20150304183551"/>
+		date="20150324192458"/>
 	<dependencies>
+		<module organisation="com.heroku" name="sbt-heroku">
+			<revision name="0.3.0" status="release" pubdate="20141218165200" resolver="sbt-chain" artresolver="sbt-chain" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="165">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="1855" time="0" location="C:\Users\template\.ivy2\cache\scala_2.10\sbt_0.13\com.heroku\sbt-heroku\ivy-0.3.0.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.heroku/sbt-heroku/scala_2.10/sbt_0.13/0.3.0/ivys/ivy.xml"/>
+				<caller organisation="default" name="playmigrandes-build" conf="compile, runtime" rev="0.3.0" rev-constraint-default="0.3.0" rev-constraint-dynamic="0.3.0" callerrev="0.1-SNAPSHOT" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
+				<artifacts>
+					<artifact name="sbt-heroku" type="jar" ext="jar" status="no" details="" size="39645" time="0" location="C:\Users\template\.ivy2\cache\scala_2.10\sbt_0.13\com.heroku\sbt-heroku\jars\sbt-heroku-0.3.0.jar">
+						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.heroku/sbt-heroku/scala_2.10/sbt_0.13/0.3.0/jars/sbt-heroku.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.heroku.sdk" name="heroku-deploy">
+			<revision name="0.3.0" status="release" pubdate="20141218112831" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="166">
+				<metadata-artifact status="no" details="" size="3350" time="0" location="C:\Users\template\.ivy2\cache\com.heroku.sdk\heroku-deploy\ivy-0.3.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/heroku/sdk/heroku-deploy/0.3.0/heroku-deploy-0.3.0.pom"/>
+				<caller organisation="com.heroku" name="sbt-heroku" conf="compile" rev="0.3.0" rev-constraint-default="0.3.0" rev-constraint-dynamic="0.3.0" callerrev="0.3.0"/>
+				<artifacts>
+					<artifact name="heroku-deploy" type="jar" ext="jar" status="no" details="" size="27998" time="0" location="C:\Users\template\.ivy2\cache\com.heroku.sdk\heroku-deploy\jars\heroku-deploy-0.3.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/heroku/sdk/heroku-deploy/0.3.0/heroku-deploy-0.3.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="com.typesafe.sbt" name="sbt-mocha">
 			<revision name="1.0.0" status="release" pubdate="20140529102332" resolver="sbt-chain" artresolver="sbt-chain" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="161">
 				<metadata-artifact status="no" details="" size="1666" time="0" location="C:\Users\template\.ivy2\cache\scala_2.10\sbt_0.13\com.typesafe.sbt\sbt-mocha\ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-mocha/scala_2.10/sbt_0.13/1.0.0/ivys/ivy.xml"/>
@@ -717,8 +740,9 @@
 			</revision>
 		</module>
 		<module organisation="com.fasterxml.jackson.core" name="jackson-databind">
-			<revision name="2.3.3" status="release" pubdate="20140410115535" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="112">
+			<revision name="2.3.3" status="release" pubdate="20140410115535" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, master(compile)" position="112">
 				<metadata-artifact status="no" details="" size="7280" time="0" location="C:\Users\template\.ivy2\cache\com.fasterxml.jackson.core\jackson-databind\ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.3.3/jackson-databind-2.3.3.pom"/>
+				<caller organisation="com.heroku.sdk" name="heroku-deploy" conf="default, compile, runtime, master" rev="2.3.0" rev-constraint-default="2.3.0" rev-constraint-dynamic="2.3.0" callerrev="0.3.0"/>
 				<caller organisation="org.webjars" name="webjars-locator" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="0.14"/>
 				<artifacts>
 					<artifact name="jackson-databind" type="bundle" ext="jar" status="no" details="" size="915481" time="0" location="C:\Users\template\.ivy2\cache\com.fasterxml.jackson.core\jackson-databind\bundles\jackson-databind-2.3.3.jar">
@@ -726,15 +750,28 @@
 					</artifact>
 				</artifacts>
 			</revision>
+			<revision name="2.3.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="-1">
+				<evicted-by rev="2.3.3"/>
+				<caller organisation="com.heroku.sdk" name="heroku-deploy" conf="default, compile, runtime, master" rev="2.3.0" rev-constraint-default="2.3.0" rev-constraint-dynamic="2.3.0" callerrev="0.3.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
 		</module>
 		<module organisation="com.fasterxml.jackson.core" name="jackson-core">
-			<revision name="2.3.3" status="release" pubdate="20140410114708" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="114">
+			<revision name="2.3.3" status="release" pubdate="20140410114708" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, master(compile)" position="114">
 				<metadata-artifact status="no" details="" size="5525" time="0" location="C:\Users\template\.ivy2\cache\com.fasterxml.jackson.core\jackson-core\ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.3.3/jackson-core-2.3.3.pom"/>
+				<caller organisation="com.heroku.sdk" name="heroku-deploy" conf="default, compile, runtime, master" rev="2.3.0" rev-constraint-default="2.3.0" rev-constraint-dynamic="2.3.0" callerrev="0.3.0"/>
 				<caller organisation="com.fasterxml.jackson.core" name="jackson-databind" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="2.3.3"/>
 				<artifacts>
 					<artifact name="jackson-core" type="bundle" ext="jar" status="no" details="" size="199621" time="0" location="C:\Users\template\.ivy2\cache\com.fasterxml.jackson.core\jackson-core\bundles\jackson-core-2.3.3.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.3.3/jackson-core-2.3.3.jar"/>
 					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.3.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="-1">
+				<evicted-by rev="2.3.3"/>
+				<caller organisation="com.heroku.sdk" name="heroku-deploy" conf="default, compile, runtime, master" rev="2.3.0" rev-constraint-default="2.3.0" rev-constraint-dynamic="2.3.0" callerrev="0.3.0"/>
+				<artifacts>
 				</artifacts>
 			</revision>
 		</module>
@@ -1471,8 +1508,9 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.commons" name="commons-compress">
-			<revision name="1.7" status="release" pubdate="20140116143531" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-compress/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, default(compile), default" position="50">
+			<revision name="1.7" status="release" pubdate="20140116143531" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-compress/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, default(compile), default, master(compile)" position="50">
 				<metadata-artifact status="no" details="" size="9985" time="0" location="C:\Users\template\.ivy2\cache\org.apache.commons\commons-compress\ivy-1.7.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/commons/commons-compress/1.7/commons-compress-1.7.pom"/>
+				<caller organisation="com.heroku.sdk" name="heroku-deploy" conf="default, compile, runtime, master" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="0.3.0"/>
 				<caller organisation="com.typesafe.sbt" name="sbt-native-packager" conf="compile" rev="1.4.1" rev-constraint-default="1.4.1" rev-constraint-dynamic="1.4.1" callerrev="0.7.4"/>
 				<caller organisation="org.vafer" name="jdeb" conf="default, compile, runtime, master" rev="1.7" rev-constraint-default="1.7" rev-constraint-dynamic="1.7" callerrev="1.3"/>
 				<artifacts>
@@ -1485,6 +1523,12 @@
 				<metadata-artifact status="no" details="" size="7880" time="0" location="C:\Users\template\.ivy2\cache\org.apache.commons\commons-compress\ivy-1.4.1.xml" searched="false" origin-is-local="false" origin-location="file:////C:/act/repository/org.apache.commons/commons-compress/1.4.1/ivys/ivy.xml"/>
 				<evicted-by rev="1.7"/>
 				<caller organisation="com.typesafe.sbt" name="sbt-native-packager" conf="compile" rev="1.4.1" rev-constraint-default="1.4.1" rev-constraint-dynamic="1.4.1" callerrev="0.7.4"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.5" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="-1">
+				<evicted-by rev="1.7"/>
+				<caller organisation="com.heroku.sdk" name="heroku-deploy" conf="default, compile, runtime, master" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="0.3.0"/>
 				<artifacts>
 				</artifacts>
 			</revision>
@@ -1511,8 +1555,9 @@
 			</revision>
 		</module>
 		<module organisation="commons-io" name="commons-io">
-			<revision name="2.4" status="release" pubdate="20120612172206" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="49">
+			<revision name="2.4" status="release" pubdate="20120612172206" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/io/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master(compile), master" position="49">
 				<metadata-artifact status="no" details="" size="8534" time="0" location="C:\Users\template\.ivy2\cache\commons-io\commons-io\ivy-2.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom"/>
+				<caller organisation="com.heroku.sdk" name="heroku-deploy" conf="default, compile, runtime, master" rev="2.4" rev-constraint-default="2.4" rev-constraint-dynamic="2.4" callerrev="0.3.0"/>
 				<caller organisation="com.github.mpeltonen" name="sbt-idea" conf="default, compile, runtime, master" rev="2.0.1" rev-constraint-default="2.0.1" rev-constraint-dynamic="2.0.1" callerrev="1.5.1"/>
 				<caller organisation="com.typesafe.play" name="routes-compiler_2.10" conf="default, compile, runtime, master" rev="2.0.1" rev-constraint-default="2.0.1" rev-constraint-dynamic="2.0.1" callerrev="2.3.8"/>
 				<caller organisation="org.vafer" name="jdeb" conf="default, compile, runtime, master" rev="2.4" rev-constraint-default="2.4" rev-constraint-dynamic="2.4" callerrev="1.3"/>

@@ -7,8 +7,19 @@
 		revision="1.0-SNAPSHOT"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, fork-run"
-		date="20150306135833"/>
+		date="20150324192533"/>
 	<dependencies>
+		<module organisation="org.apache.derby" name="derbyclient">
+			<revision name="10.8.3.0" status="release" pubdate="20130115064815" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="84">
+				<metadata-artifact status="no" details="" size="3525" time="0" location="C:\Users\template\.ivy2\cache\org.apache.derby\derbyclient\ivy-10.8.3.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/derby/derbyclient/10.8.3.0/derbyclient-10.8.3.0.pom"/>
+				<caller organisation="playmigrandes" name="playmigrandes_2.11" conf="optional, compile, provided, compile-internal" rev="10.8.3.0" rev-constraint-default="10.8.3.0" rev-constraint-dynamic="10.8.3.0" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="derbyclient" type="jar" ext="jar" status="no" details="" size="538361" time="0" location="C:\Users\template\.ivy2\cache\org.apache.derby\derbyclient\jars\derbyclient-10.8.3.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/derby/derbyclient/10.8.3.0/derbyclient-10.8.3.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.eclipse.persistence" name="org.eclipse.persistence.nosql">
 			<revision name="2.5.0" status="release" pubdate="20130510115146" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.eclipse.org/eclipselink" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="78">
 				<license name="Eclipse Public License v1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
@@ -433,6 +444,18 @@
 				<artifacts>
 					<artifact name="bonecp" type="bundle" ext="jar" status="no" details="" size="110600" time="0" location="C:\Users\template\.ivy2\cache\com.jolbox\bonecp\bundles\bonecp-0.8.0.RELEASE.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/jolbox/bonecp/0.8.0.RELEASE/bonecp-0.8.0.RELEASE.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="postgresql" name="postgresql">
+			<revision name="9.1-901-1.jdbc4" status="release" pubdate="20111218185532" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jdbc.postgresql.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="85">
+				<license name="BSD License" url="http://jdbc.postgresql.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2380" time="0" location="C:\Users\template\.ivy2\cache\postgresql\postgresql\ivy-9.1-901-1.jdbc4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom"/>
+				<caller organisation="playmigrandes" name="playmigrandes_2.11" conf="optional, compile, provided, compile-internal" rev="9.1-901-1.jdbc4" rev-constraint-default="9.1-901-1.jdbc4" rev-constraint-dynamic="9.1-901-1.jdbc4" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="postgresql" type="jar" ext="jar" status="no" details="" size="551290" time="0" location="C:\Users\template\.ivy2\cache\postgresql\postgresql\jars\postgresql-9.1-901-1.jdbc4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
