@@ -46,7 +46,6 @@ import javax.validation.constraints.NotNull;
 
 
 @Entity
-@Table(name="PACIENTE")
 public class Paciente
 {
 
@@ -95,7 +94,19 @@ public class Paciente
     private List<Medicamento> medicamentos;
 
 
-    /**
+    public List<Medicamento> getMedicamentos() {
+		return medicamentos;
+	}
+
+	public void setMedicamentos(List<Medicamento> medicamentos) {
+		this.medicamentos = medicamentos;
+	}
+
+	public void setEpisodios(List<Episodio> episodios) {
+		this.episodios = episodios;
+	}
+
+	/**
      * Foto del paciente.
      */
     @Column(name="foto")
@@ -131,6 +142,7 @@ public class Paciente
         this.password=pass;
         this.actividades = new ArrayList<Actividad>();
         this.episodios = new ArrayList<Episodio>();
+        this.medicamentos=new ArrayList<Medicamento>();
     }
 
     //-----------------------------------------------------------
@@ -199,6 +211,27 @@ public class Paciente
 	public void addMedicamento(Medicamento m)
 	{
 		medicamentos.add(m);
+	}
+	public void addActividad(Actividad a)
+	{
+		actividades.add(a);
+	}
+	
+	public int darMedicamento(String nombre)
+	{
+		int r=-1;
+		boolean t=false;
+		for (int i = 0; i < medicamentos.size() && t==false; i++) 
+		{
+			Medicamento m=medicamentos.get(i);
+			if(m.getNombre().equals(nombre))
+			{
+				r=m.getId();
+				t=true;
+			}
+				
+		}
+		return r;
 	}
  
 

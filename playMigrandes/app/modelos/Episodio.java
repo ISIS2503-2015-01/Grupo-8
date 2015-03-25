@@ -34,10 +34,8 @@ import javax.validation.constraints.NotNull;
  * Clase que modela un evento de migrania del paciente
  * @author David Mayorga
  */
-//@Entity
-//@NoSql(dataFormat=DataFormatType.MAPPED)
 @Entity
-public class Episodio //extends Model
+public class Episodio
 {
 
     //-----------------------------------------------------------
@@ -46,7 +44,7 @@ public class Episodio //extends Model
   
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
     /**
@@ -68,12 +66,9 @@ public class Episodio //extends Model
     @Column(name="grabacion")
     private String grabacion;
         
-    /**
-     * Posible catalizador que pudo haber ocasionado la migraña
-     * Puede disminuir el episodio haciendo lo contrario a la actividad en referencia.
-     */
-    @OneToOne
-    private Actividad catalizador;
+    
+    //@OneToOne
+    //private Actividad catalizador;
     
     @ManyToOne
     private Paciente paciente;
@@ -154,9 +149,7 @@ public class Episodio //extends Model
         return medicamentos;
     }
     
-    public Actividad getCatalizador() {
-        return catalizador;
-    }
+   
     
    
     public void agregarMedicamento(Medicamento m)
@@ -164,8 +157,5 @@ public class Episodio //extends Model
     	medicamentos.add(m);
     }
     
-    public void agregarActividad(Actividad a)
-    {
-    	catalizador=a;
-    }
+   
 }

@@ -14,7 +14,6 @@ import play.mvc.*;
 import modelos.Doctor;
 import modelos.Episodio;
 import modelos.Paciente;
-import modelos.Principal;
 
 public class DoctorController extends Controller
 {

@@ -52,23 +52,34 @@ GET 	    /paciente/getEpisodios/:idp/:fechaIn/:fechaFin        controllers.Pacie
 GET         /paciente/episodioCompleto/:id                        controllers.PacienteController.verEpisodioFull(id: String)
 
 #Agregar medicamento al paciente
-POST        /paciente/medicamento/:idp                             controllers.PacienteController.agregarMedicamento(idp: String)
+POST        /paciente/medicamento	                         controllers.PacienteController.agregarMedicamento()
+
+#Dar todos los medicamentos de un paciente
+GET        /paciente/medicamento/:idp                             controllers.PacienteController.darMedicamentos( idp:String)       
 	
 #--------------------------------MEDICAMENTO-----------------------------------------------------------------------------------------
 
 #Crear medicamento
 POST /medicamento/new                                              controllers.MedicamentoController.create()
 
-#Dar todos los medicamentos
-GET   /medicamento                                                controllers.MedicamentoController.getAll()   
+#Dar todos los medicamentos del sistema
+GET   /medicamento    												controllers.MedicamentoController.getAll()   
+
+                                      
 
 #--------------------------------Episodio--------------------------------------------------------------------------------------------------
 
 #Crear Episodio 
-POST /episodio/new                                                  controllers.EpisodioController.create()
+POST /episodio/new                                                 controllers.EpisodioController.create()
 
 #Crear Episodio con Nota de Voz
-POST /episodio/newVoz                                                  controllers.EpisodioController.create2()
+POST /episodio/newVoz											controllers.EpisodioController.create2()
 
+#Agregar un medicamento al episodio
+POST /paciente/episodio/medicamento/new                             controllers.EpisodioController.agregarMedicamento()                     
 
+#------------------------------Actividad--------------------------------------------------------------------------------------------------
+
+#Crear una Actividad
+POST /paciente/actividad/new  											controllers.ActividadController.create()                                                  
   

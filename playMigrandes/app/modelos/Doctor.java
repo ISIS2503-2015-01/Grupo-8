@@ -30,13 +30,8 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
-
-
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-//@NoSql(dataFormat=DataFormatType.MAPPED)
 @Entity
-public class Doctor //extends Model
+public class Doctor 
 {
 
     //-----------------------------------------------------------

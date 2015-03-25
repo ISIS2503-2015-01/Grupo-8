@@ -30,25 +30,30 @@ public class Medicamento
     //-----------------------------------------------------------
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
     /**
      * Nombre comercial del medicamento.
      */
 	@Column(name="nombre")
     private String nombre;
     
-    /**
+    public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
      * Descripcion del medicamento por si algún no doctor lo lee.
      */
 	@Column(name="descripcion")
     private String descripcion;
 	
-	
-	
-
-
-    
 
     //-----------------------------------------------------------
     // Constructores

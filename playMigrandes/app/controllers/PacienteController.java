@@ -146,10 +146,10 @@ public class PacienteController extends Controller
 
 	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
-	public static Result agregarMedicamento(String idp)
+	public static Result agregarMedicamento()
 	{
 		JsonNode nodo = Controller.request().body().asJson();
-
+		String idp=nodo.findPath("usuario").asText();
 		String nombres=nodo.findPath("nombre").asText();
 		String descripcion=nodo.findPath("descripcion").asText();
 		
@@ -166,5 +166,18 @@ public class PacienteController extends Controller
 			p.addMedicamento(m);
 		}
 		return Results.created();
+	}
+	
+	@play.db.jpa.Transactional
+	public static Result darMedicamentos(String idp)
+	{
+		if(JPA.em().find(Paciente.class, idp)==null)
+			return Results.badRequest("El paciente no existe");
+		
+		Paciente p=JPA.em().getReference(Paciente.class, idp);
+		List<Medicamento> resp=p.getMedicamentos();
+		return Results.ok(Json.toJson(resp));
+		
+			
 	}
 }

@@ -49,7 +49,16 @@ public class Actividad
 	@Column(name="descripcion")
     private String descripcion;
 	
+	@Column(name="fecha")
 	private String fecha;
+	
+	@Column(name="hora")
+	private String hora;
+	
+	@Column(name="tipo")
+	private String tipo;
+	
+	
 
     //-----------------------------------------------------------
     // Constructores
@@ -69,10 +78,14 @@ public class Actividad
      * @param descripcion DescripciÃ³n de las funcionaes del cargo
      * @param fecha fecha en que reporto el evento
      */
-    public Actividad( String nombre, String descripcion, String fecha)
+    public Actividad( String nnombre, String ndescripcion, String nfecha, String nhora,String ntipo,Paciente p)
     {
-        this.setNombre(nombre);
-        this.descripcion = descripcion;
+        this.nombre=nnombre;
+        this.descripcion = ndescripcion;
+        fecha=nfecha;
+        hora=nhora;
+        tipo=ntipo;
+        
     }
 
     //-----------------------------------------------------------
@@ -82,7 +95,39 @@ public class Actividad
   
    
    
-    /**
+    public Paciente getPaciente() {
+		return paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	/**
      * Devuelve la descripciÃ³n del evento del paciente
      * @return descripcion de la actividad realizada paciente
      */
