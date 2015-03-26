@@ -1,0 +1,103 @@
+@* uno Template File *@
+@(param: Any, prm: String,p2:String,a2:String)
+
+<!DOCTYPE HTML>
+<html>
+<title>Pacientes</title>
+<head>
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/uno.css")">
+
+<script>$(document).ready(function() {
+$("table tr").click(function(){
+		   $(this).addClass('selected').siblings().removeClass('selected');    
+		   var value=$(this).find('td:first').html();
+		   alert(value);    
+		});
+
+		$('.ok').on('click', function(e){
+		    alert($("table tr.selected td:first").html());
+		});
+});
+</script>
+
+</head>
+
+<Body>
+
+<div class="tabla">
+<table style ="width:650px">
+ <tbody>
+    <tr>
+      <td>
+      <strong>
+	<form action = "@routes.PacienteController.verEpisodiosPaciente()" method="get">
+	<input type="text" id="search" name="search" placeholder="Buscar paciente por id" style="width:500px;font-size:14px"/>
+	<input type="submit" value="Buscar">
+	</form>
+</strong>
+      </td>
+    </tr>
+  </tbody>
+	
+</table>
+
+</div>
+
+
+
+<table id="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Id</th>
+      <th>Detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>@param</strong></td>
+      <td>@prm</td>
+      <td><form action="@routes.PacienteController.direct()" method="get"><input type="submit" value="Ver" " /></form>   </td>
+    </tr>
+    <tr>
+      <td><strong>@p2</strong></td>
+      <td>@a2</td>
+      <td><form action="@routes.PacienteController.direct()" method="get"><input type="submit" value="Ver" " /></form>   </td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "http://www.w3schools.com/website/Customers_MYSQL.php";
+
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        myFunction(xmlhttp.responseText);
+    }
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(response) {
+    var arr = JSON.parse(response);
+    var i;
+    var out = "<table>";
+
+    for(i = 0; i < arr.length; i++) {
+        out += "<tr><td>" +
+        arr[i].Name +
+        "</td><td>" +
+        arr[i].City +
+        "</td><td>" +
+        arr[i].Country +
+        "</td></tr>";
+    }
+    out += "</table>"
+    document.getElementById("id01").innerHTML = out;
+}
+</script>
+
+</Body>
+</html>
+
