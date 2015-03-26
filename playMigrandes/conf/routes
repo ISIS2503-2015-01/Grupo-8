@@ -16,6 +16,10 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 #Crear Doctor
 POST    /doctor               controllers.DoctorController.create()
 
+GET     /nuevo					controllers.DoctorController.irNuevo()
+
+GET    /buscar					controllers.PacienteController.direct()
+
 #Ver doctor
 #GET     /doctor/:id
 
@@ -42,7 +46,7 @@ DELETE		/paciente/:id                                        controllers.Pacient
 
 
 #Ver todos los episodios de un paciente
-GET			/paciente/getAllEpisodios/:id			              controllers.PacienteController.verEpisodiosPaciente(id: String)
+GET			/paciente/getAllEpisodios/		              controllers.PacienteController.verEpisodiosPaciente()
 
 
 #Ver episodios en fecha
@@ -56,16 +60,14 @@ POST        /paciente/medicamento	                         controllers.PacienteC
 
 #Dar todos los medicamentos de un paciente
 GET        /paciente/medicamento/:idp                             controllers.PacienteController.darMedicamentos( idp:String)       
-	
+
 #--------------------------------MEDICAMENTO-----------------------------------------------------------------------------------------
 
 #Crear medicamento
 POST /medicamento/new                                              controllers.MedicamentoController.create()
 
 #Dar todos los medicamentos del sistema
-GET   /medicamento    												controllers.MedicamentoController.getAll()   
-
-                                      
+GET   /medicamento                                                controllers.MedicamentoController.getAll()   
 
 #--------------------------------Episodio--------------------------------------------------------------------------------------------------
 
@@ -81,5 +83,4 @@ POST /paciente/episodio/medicamento/new                             controllers.
 #------------------------------Actividad--------------------------------------------------------------------------------------------------
 
 #Crear una Actividad
-POST /paciente/actividad/new  											controllers.ActividadController.create()                                                  
-  
+POST /paciente/actividad/new  			
