@@ -5,27 +5,35 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+GET     /login                      controllers.Application.login()
+POST    /login                      controllers.Application.postLogin()
+GET     /profile                    controllers.Application.profile()
+GET     /logout                      controllers.Application.logout()
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 #--------------------------------DOCTOR----------------------------------------------------------------------------
+
 #Crear Doctor
 POST    /doctor               controllers.DoctorController.create()
 
-#Ver doctor
-#GET     /doctor/:id
+#Ver todos los doctores
+GET     /doctor              controllers.DoctorController.darDoctores()
 
 #eliminar Doctor
 #DELETE /doctor/:id
 
 
-#-------------------------------PACIENTE-----------------------------------------------------------
 
-#Grabar nota de Voz
-#POST       /NotaVoz/new                                         
+
+#-------------------------------PACIENTE-----------------------------------------------------------                                       
 
 #Crear Paciente
 POST		/paciente/new							              controllers.PacienteController.create()
+
+#Dar todos los pacientes
+GET         /paciente                                            controllers.PacienteController.getAll()
 
 #Ver Paciente
 #GET			/paciente/:id						              controllers.PacienteController.getPaciente(id: Long)
@@ -36,13 +44,28 @@ DELETE		/paciente/:id                                        controllers.Pacient
 #Ver un episodio de un paciente
 #GET 		/paciente/episodio/:idp/ide		                        controlllers.PacienteController.verEpisodioPaciente(idp: Long, ide:Long)
 
-#Ver revisar un episodio completo
-#GET         /paciente/episodioCompleto/                        controllers.PacienteControler.verEpisodioCompleto(id: Integer)	
 
 #Ver todos los episodios de un paciente
 GET			/paciente/getAllEpisodios/:id			              controllers.PacienteController.verEpisodiosPaciente(id: Integer)
 
 
 #Ver episodios en fecha
-GET 	    /paciente/getEpisodios/                              controllers.PacienteController.verEpisodiosPacienteFecha(idp: Integer, fechaIn: String,fechaFin: String)
+GET 	    /paciente/getEpisodios/:idp/:fechaIn/:fechaFin        controllers.PacienteController.verEpisodiosPacienteFecha(idp: Integer, fechaIn: String,fechaFin: String)
 
+#Ver revisar un episodio completo
+GET         /paciente/episodioCompleto/:id                        controllers.PacienteController.verEpisodioFull(id: String)
+	
+#--------------------------------MEDICAMENTO-----------------------------------------------------------------------------------------
+
+#Crear medicamento
+POST /medicamento/new                                              controllers.MedicamentoController.create()
+
+#Dar todos los medicamentos
+GET   /medicamento                                                controllers.MedicamentoController.getAll()   
+
+#--------------------------------Episodio--------------------------------------------------------------------------------------------------
+
+#Crear Episodio
+POST /episodio/new                                                  controllers.EpisodioController.create()
+
+  

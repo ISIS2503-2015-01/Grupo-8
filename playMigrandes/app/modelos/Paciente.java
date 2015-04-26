@@ -25,15 +25,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 
+
+
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -46,6 +48,7 @@ import javax.validation.constraints.NotNull;
 
 
 @Entity
+@Table(name="PACIENTE")
 public class Paciente
 {
 
@@ -53,65 +56,47 @@ public class Paciente
     // Atributos
     //-----------------------------------------------------------
 
-	/**
-     * Usuario del paciente.
+	
+	@Column(name="mail")
+	@NotNull
+    private String email;
+	
+    /**
+     * Número de identificación del paciente
      */
 	@Id
-    private String usuario;
+	private int id;
 
     /**
      * Nombres del paciente.
      */
     @Column(name="nombres")
-    @NotNull
     private String nombres;
     
-    /**
-     * Password del paciente
-     */
     @Column(name="password")
     @NotNull
-    private String password;
-    
+	private String password;
+
+
     /**
      * Lista de ítems de actividades del paciente.
      */
-    //TODO falta el mapped By
 	@ElementCollection
-	@OneToMany(fetch=FetchType.LAZY,mappedBy="paciente")
+	@OneToMany(fetch=FetchType.LAZY)
     private List<Actividad> actividades;
     
     
     /**
      * Lista de ítems de episodios del paciente.
      */
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="paciente")
+    @OneToMany(fetch=FetchType.LAZY)
     @ElementCollection
     private List<Episodio> episodios;
     
-    @OneToMany
-    @ElementCollection
-    private List<Medicamento> medicamentos;
-
-
-    public List<Medicamento> getMedicamentos() {
-		return medicamentos;
-	}
-
-	public void setMedicamentos(List<Medicamento> medicamentos) {
-		this.medicamentos = medicamentos;
-	}
-
-	public void setEpisodios(List<Episodio> episodios) {
-		this.episodios = episodios;
-	}
-
-	/**
-     * Foto del paciente.
-     */
-    @Column(name="foto")
-    private String foto;
-
+    @ManyToMany
+    public List<SecurityRole> roles;
+    
+    
     //-----------------------------------------------------------
     // Constructor
     //-----------------------------------------------------------
@@ -135,14 +120,13 @@ public class Paciente
      * @param foto Nombre de la foto del paciente
      * @param telefono telefono del paciente
      */
-    public Paciente(String nnombres, String usr,String pass)
+    public Paciente( int i,String nnombres, String usr,String pass)
     {
-        this.nombres = nnombres;
-        this.usuario = usr;
+        this.id = i;
+        this.nombres=nnombres;
+        this.email=usr;
         this.password=pass;
-        this.actividades = new ArrayList<Actividad>();
         this.episodios = new ArrayList<Episodio>();
-        this.medicamentos=new ArrayList<Medicamento>();
     }
 
     //-----------------------------------------------------------
@@ -157,13 +141,23 @@ public class Paciente
 	public void setEpisodios(ArrayList<Episodio> episodios2) {
 		//this.episodios = episodios2;
 	}
-	 
-    public String getFoto() {
-        return foto;
+	
+    /**
+     * Devuelve el número único de identificación del paciente
+     * @return id Número de identificación
+     */
+    public long getIdentificacion()
+    {
+        return id;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    /**
+     * Modifica el número de identificación del cliente
+     * @param id Nuevo número de identificación
+     */
+    public void setIdentificacion(int nid)
+    {
+        this.id = nid;
     }
 
     public String getNombres() {
@@ -188,52 +182,12 @@ public class Paciente
         //this.actividades = actividades;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
 	public void addEpisodio(Episodio e) {
 		// TODO Auto-generated method stub
 		episodios.add(e);
 		
 	}
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public void addMedicamento(Medicamento m)
-	{
-		medicamentos.add(m);
-	}
-	public void addActividad(Actividad a)
-	{
-		actividades.add(a);
-	}
-	
-	public int darMedicamento(String nombre)
-	{
-		int r=-1;
-		boolean t=false;
-		for (int i = 0; i < medicamentos.size() && t==false; i++) 
-		{
-			Medicamento m=medicamentos.get(i);
-			if(m.getNombre().equals(nombre))
-			{
-				r=m.getId();
-				t=true;
-			}
-				
-		}
-		return r;
-	}
  
 
-	
+    
 }

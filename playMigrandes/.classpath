@@ -1,6 +1,8 @@
 <classpath>
+  <classpathentry kind="src" path="app-2.11"/>
   <classpathentry kind="src" path="app"/>
   <classpathentry kind="src" path="conf"/>
+  <classpathentry kind="src" path="test-2.11"/>
   <classpathentry excluding="resources\" kind="src" path="test"/>
   <classpathentry kind="src" path="test\resources"/>
   <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
@@ -55,10 +57,6 @@
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\com.jolbox\bonecp\bundles\bonecp-0.8.0.RELEASE.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\com.h2database\h2\jars\h2-1.3.175.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\tyrex\tyrex\jars\tyrex-1.0.1.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ebean_2.11\jars\play-java-ebean_2.11-2.3.8.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm\jars\avaje-ebeanorm-3.3.4.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm-agent\jars\avaje-ebeanorm-agent-3.2.2.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hibernate.javax.persistence\hibernate-jpa-2.0-api\jars\hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\com.typesafe.play\play-cache_2.11\jars\play-cache_2.11-2.3.8.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\net.sf.ehcache\ehcache-core\jars\ehcache-core-2.6.8.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\jars\play-java-ws_2.11-2.3.8.jar"/>
@@ -67,14 +65,14 @@
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\oauth.signpost\signpost-core\jars\signpost-core-1.2.1.2.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\oauth.signpost\signpost-commonshttp4\jars\signpost-commonshttp4-1.2.1.2.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\com.typesafe.play\play-java-jpa_2.11\jars\play-java-jpa_2.11-2.3.8.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hibernate\hibernate-entitymanager\jars\hibernate-entitymanager-4.3.8.Final.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.jboss.logging\jboss-logging-annotations\jars\jboss-logging-annotations-1.2.0.Beta1.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hibernate\hibernate-core\jars\hibernate-core-4.3.8.Final.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.jboss.spec.javax.transaction\jboss-transaction-api_1.2_spec\jars\jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hibernate.common\hibernate-commons-annotations\jars\hibernate-commons-annotations-4.0.5.Final.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hibernate.javax.persistence\hibernate-jpa-2.1-api\jars\hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\antlr\antlr\jars\antlr-2.7.7.jar"/>
-  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.jboss\jandex\jars\jandex-1.1.0.Final.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hibernate.javax.persistence\hibernate-jpa-2.0-api\jars\hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hibernate\hibernate-entitymanager\jars\hibernate-entitymanager-3.6.10.Final.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hibernate\hibernate-core\jars\hibernate-core-3.6.10.Final.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\antlr\antlr\jars\antlr-2.7.6.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hibernate\hibernate-commons-annotations\jars\hibernate-commons-annotations-3.2.0.Final.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\cglib\cglib\jars\cglib-2.2.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\asm\asm\jars\asm-3.1.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\javassist\javassist\jars\javassist-3.12.0.GA.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.mindrot\jbcrypt\jars\jbcrypt-0.3m.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\eclipselink\jars\eclipselink-2.5.0.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\javax.persistence\jars\javax.persistence-2.1.0.jar"/>
@@ -86,6 +84,9 @@
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.antlr\jars\org.eclipse.persistence.antlr-2.5.0.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.jpa.jpql\jars\org.eclipse.persistence.jpa.jpql-2.5.0.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.eclipse.persistence\org.eclipse.persistence.core\jars\org.eclipse.persistence.core-2.5.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.apache.derby\derbyclient\jars\derbyclient-10.8.3.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\be.objectify\deadbolt-java_2.11\jars\deadbolt-java_2.11-2.3.3.jar"/>
+  <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\be.objectify\deadbolt-core_2.11\jars\deadbolt-core_2.11-2.3.3.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\com.typesafe.play\play-test_2.11\jars\play-test_2.11-2.3.8.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\junit\junit\jars\junit-4.11.jar"/>
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.hamcrest\hamcrest-core\jars\hamcrest-core-1.3.jar"/>
@@ -145,6 +146,6 @@
   <classpathentry kind="lib" path="C:\Users\template\.ivy2\cache\org.easytesting\fest-util\jars\fest-util-1.1.6.jar"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="output" path="bin"/>
-  <classpathentry path="C:\act\PlayMigrandes\target\scala-2.11\classes_managed" kind="lib"></classpathentry>
+  <classpathentry path="C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes_managed" kind="lib"></classpathentry>
   <classpathentry path="C:\Users\template\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.1.jar" kind="lib"></classpathentry>
 </classpath>

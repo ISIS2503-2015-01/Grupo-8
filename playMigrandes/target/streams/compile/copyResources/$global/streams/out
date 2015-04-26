@@ -1,5 +1,8 @@
 [debug] Copy resource mappings: 
 [debug] 	(C:\Users\template\workspace\playMigrandes\conf\application.conf,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\application.conf)
 [debug] 	(C:\Users\template\workspace\playMigrandes\conf\META-INF,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\META-INF)
+[debug] 	(C:\Users\template\workspace\playMigrandes\conf\play-authenticate,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\play-authenticate)
+[debug] 	(C:\Users\template\workspace\playMigrandes\conf\play.plugins,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\play.plugins)
 [debug] 	(C:\Users\template\workspace\playMigrandes\conf\routes,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\routes)
 [debug] 	(C:\Users\template\workspace\playMigrandes\conf\META-INF\persistence.xml,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\META-INF\persistence.xml)
+[debug] 	(C:\Users\template\workspace\playMigrandes\conf\play-authenticate\mine.conf,C:\Users\template\workspace\playMigrandes\target\scala-2.11\classes\play-authenticate\mine.conf)

@@ -8,6 +8,12 @@
         <non-jta-data-source>DefaultDS</non-jta-data-source>
         <class>modelos.Paciente</class>
         <class>modelos.Episodio</class>
+        <class>modelos.Medicamento</class>
+        <class>modelos.Actividad</class>
+        <class>modelos.Doctor</class>
+        <class>modelos.SecurityRole</class>
+        
+        
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>

@@ -20,12 +20,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 import org.eclipse.persistence.nosql.annotations.*;
 
 @Entity
-public class Actividad 
+public class Actividad //extends Model
 {
 
     //-----------------------------------------------------------
@@ -37,28 +36,14 @@ public class Actividad
 	@Id 
     private String nombre;
 
-	/**
-     * Paciente quien crea la actividad
-     */
-	@ManyToOne
-	Paciente paciente;
-	
+   
     /**
      * Descripcion de laa actividad.
      */
 	@Column(name="descripcion")
     private String descripcion;
-	
-	@Column(name="fecha")
-	private String fecha;
-	
-	@Column(name="hora")
-	private String hora;
-	
-	@Column(name="tipo")
-	private String tipo;
-	
-	
+
+    
 
     //-----------------------------------------------------------
     // Constructores
@@ -78,14 +63,10 @@ public class Actividad
      * @param descripcion DescripciÃ³n de las funcionaes del cargo
      * @param fecha fecha en que reporto el evento
      */
-    public Actividad( String nnombre, String ndescripcion, String nfecha, String nhora,String ntipo,Paciente p)
+    public Actividad( String nombre, String cargo, String descripcion, String fecha)
     {
-        this.nombre=nnombre;
-        this.descripcion = ndescripcion;
-        fecha=nfecha;
-        hora=nhora;
-        tipo=ntipo;
-        
+        this.setNombre(nombre);
+        this.descripcion = descripcion;
     }
 
     //-----------------------------------------------------------
@@ -95,39 +76,7 @@ public class Actividad
   
    
    
-    public Paciente getPaciente() {
-		return paciente;
-	}
-
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
-	}
-
-	public String getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
-	}
-
-	public String getHora() {
-		return hora;
-	}
-
-	public void setHora(String hora) {
-		this.hora = hora;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	/**
+    /**
      * Devuelve la descripciÃ³n del evento del paciente
      * @return descripcion de la actividad realizada paciente
      */

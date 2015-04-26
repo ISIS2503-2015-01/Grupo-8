@@ -18,38 +18,44 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
-
+import modelos.Doctor
 /**/
-object index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
+object index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template3[String,Boolean,Doctor,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(message: String):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(page: String, isLoggedIn: Boolean, userInfo: Doctor):play.twirl.api.HtmlFormat.Appendable = {
       _display_ {
 
-Seq[Any](format.raw/*1.19*/("""
+Seq[Any](format.raw/*2.55*/("""
 
-"""),_display_(/*3.2*/main("Welcome to Play")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
+"""),_display_(/*4.2*/main(page, isLoggedIn, userInfo)/*4.34*/ {_display_(Seq[Any](format.raw/*4.36*/("""
 
-    """),_display_(/*5.6*/play20/*5.12*/.welcome(message, style = "Java")),format.raw/*5.45*/("""
+ """),format.raw/*6.2*/("""<div class="container">
+     <div class="row">
+       <div class="col-sm-10 col-sm-offset-1">
+       <h2>Bienvenido a Migrandes</h2>
+       <p> Buen sitio para poner una imagen</p>
+       </div>
+     </div>
+   </div>   
 
-""")))}),format.raw/*7.2*/("""
-"""))}
+""")))}))}
   }
 
-  def render(message:String): play.twirl.api.HtmlFormat.Appendable = apply(message)
+  def render(page:String,isLoggedIn:Boolean,userInfo:Doctor): play.twirl.api.HtmlFormat.Appendable = apply(page,isLoggedIn,userInfo)
 
-  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (message) => apply(message)
+  def f:((String,Boolean,Doctor) => play.twirl.api.HtmlFormat.Appendable) = (page,isLoggedIn,userInfo) => apply(page,isLoggedIn,userInfo)
 
   def ref: this.type = this
 
 }
               /*
                   -- GENERATED --
-                  DATE: Fri Mar 06 13:58:33 COT 2015
+                  DATE: Wed Apr 22 20:37:44 COT 2015
                   SOURCE: C:/Users/template/workspace/playMigrandes/app/views/index.scala.html
-                  HASH: 2525948bb0b9a19833e9b9027e706281dd6c624c
-                  MATRIX: 723->1|828->18|856->21|887->44|926->46|958->53|972->59|1025->92|1057->95
-                  LINES: 26->1|29->1|31->3|31->3|31->3|33->5|33->5|33->5|35->7
+                  HASH: c885a0b9b70b05a856f7b865e1703f6269873c87
+                  MATRIX: 759->24|900->77|928->80|968->112|1007->114|1036->117
+                  LINES: 26->2|29->2|31->4|31->4|31->4|33->6
                   -- GENERATED --
               */
           

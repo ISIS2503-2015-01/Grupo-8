@@ -6,33 +6,44 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import javax.persistence.Query;
+
+import be.objectify.deadbolt.java.actions.Group;
+import be.objectify.deadbolt.java.actions.Restrict;
+import be.objectify.deadbolt.java.actions.SubjectNotPresent;
+
 import com.fasterxml.jackson.databind.JsonNode;
 
 import play.db.jpa.JPA;
+import play.db.jpa.Transactional;
 import play.libs.Json;
 import play.mvc.*;
 import modelos.Doctor;
 import modelos.Episodio;
+import modelos.Medicamento;
 import modelos.Paciente;
+import modelos.Principal;
 
+
+@Security.Authenticated(Secured.class)
 public class DoctorController extends Controller
 {
+	@Transactional
     @BodyParser.Of(BodyParser.Json.class)
 	public static Result create()
 	{
 		JsonNode nodo = Controller.request().body().asJson();
 		
-		Long id = Long.parseLong(nodo.findPath("id").asText());
 		String nombres=nodo.findPath("nombres").asText();
-		String usuario=nodo.findPath("login").asText();
-		String perfil=nodo.findPath("perfil").asText();
-		String foto=nodo.findPath("foto").asText();
+		String correo=nodo.findPath("login").asText();
+		String clave=nodo.findPath("password").asText();
 		
-		Doctor n=JPA.em().find(Doctor.class, id);
+		Doctor n=JPA.em().find(Doctor.class, correo);
+		
 		if(n!=null)
-			return Results.ok("Su tal Doctor ya existe");
+			return Results.ok("Ya existe");
 		
-		n=new Doctor(id, nombres, usuario, foto);
+		n=new Doctor(clave, nombres, correo);
 		JPA.em().persist(n);
 		return Results.created();
 	}
@@ -53,24 +64,38 @@ public class DoctorController extends Controller
 		JsonNode nodo = Controller.request().body().asJson();
 
 
-		Long idn = Long.parseLong(nodo.findPath("id").asText());
-		String nombres = nodo.findPath("nombres").asText();
-		String telefono=nodo.findPath("telefono").asText();
-		String usuario= nodo.findPath("usuario").asText();
-		String perfil = nodo.findPath("perfil").asText();
-		String foto= nodo.findPath("foto").asText();
 		
-		Doctor n=JPA.em().find(Doctor.class, id);
+		String nombres = nodo.findPath("nombres").asText();
+		String usuario= nodo.findPath("usuario").asText();
+		
+		
+		Doctor n=JPA.em().find(Doctor.class, usuario);
+		
 		if(n==null)
 			return Results.notFound();
 		
 		Doctor d=JPA.em().getReference(Doctor.class,n);
 		d=JPA.em().getReference(Doctor.class,n);
-		d.setFoto(foto);
-		d.setIdentificacion(id);
+		d.setCedula(id);
 		d.setNombres(nombres);
-		d.setUsuario(usuario);
+		d.setEmail(usuario);
 		return Results.ok();
+	}
+	
+	@Transactional
+	public static Doctor darDoctor(String nmail)
+	{
+		  return JPA.em().find(Doctor.class, nmail);
+	}
+	
+	@Restrict({@Group("admin")})
+	@play.db.jpa.Transactional
+	public static Result darDoctores()
+	{
+		List<Doctor> resp=null;
+		Query q=JPA.em().createQuery("from Doctor");
+		resp=q.getResultList();
+		return Results.ok(Json.toJson(resp));
 	}
 				
 }

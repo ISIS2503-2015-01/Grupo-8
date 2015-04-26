@@ -6,9 +6,9 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.11.1"
 
-resolvers += "Typesafe Public Repo" at "http://repo.typesafe.com/typesafe/releases"
-
 resolvers += "EclipseLink Repo" at "http://repo.maven.apache.org/maven2"
+
+
 
 
 libraryDependencies ++= Seq(
@@ -22,7 +22,7 @@ libraryDependencies ++= Seq(
   "org.mongodb" % "mongo-java-driver" % "2.8.0",
   "org.eclipse.persistence" % "org.eclipse.persistence.nosql" % "2.5.0",
   "org.apache.derby" % "derbyclient" % "10.8.3.0",
-  "postgresql" % "postgresql" % "9.1-901-1.jdbc4"  
+  "be.objectify" %% "deadbolt-java" % "2.3.3"
   )
 
 fork in run := true

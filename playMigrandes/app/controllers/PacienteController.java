@@ -19,6 +19,9 @@ import modelos.Doctor;
 import modelos.Episodio;
 import modelos.Medicamento;
 import modelos.Paciente;
+import be.objectify.deadbolt.java.actions.Group;
+import be.objectify.deadbolt.java.actions.Restrict;
+import be.objectify.deadbolt.java.actions.SubjectNotPresent;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -31,37 +34,39 @@ import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Results;
+import play.mvc.Security;
 import play.db.jpa.JPA;
 import play.db.jpa.Transactional;
 
 
 
-
+@Security.Authenticated(Secured.class)
 public class PacienteController extends Controller
-{	
+{
+	
 	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
 	public static Result create()
 	{
 		JsonNode nodo = Controller.request().body().asJson();
 
+		int id =Integer.parseInt(nodo.findPath("id").asText());
 		String nombres=nodo.findPath("nombres").asText();
-		String usuario=nodo.findPath("usuario").asText();
-		String password=nodo.findPath("password").asText();
-		
-		Paciente n= JPA.em().find(Paciente.class, usuario);
-		
+		String usuario=nodo.findPath("login").asText();
+		String pass=nodo.findPath("login").asText();
+		Paciente n= JPA.em().find(Paciente.class, id);
 		if(n!=null)
-			return Results.badRequest("El paciente ya existe");
+			return Results.ok("El paciente ya existe");
 		else
 		{
-			n=new Paciente(nombres, usuario,password);
+			n=new Paciente(id, nombres, usuario,pass);
 			JPA.em().persist(n);
 		}
 		return Results.created();		
 	}
 	
-	public static Result delete(String idp)
+	@Restrict({@Group("admin")})
+	public static Result delete(int idp)
 	{
 		Paciente p=JPA.em().find(Paciente.class, idp);
 		if(p==null)
@@ -72,6 +77,7 @@ public class PacienteController extends Controller
      			
 	}
 	
+	@Restrict({@Group("admin")})
 	@play.db.jpa.Transactional
 	public static Result getAll()
 	{
@@ -81,10 +87,10 @@ public class PacienteController extends Controller
 		return Results.ok(Json.toJson(resp));
 	}
 	
+	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
-	public static Result verEpisodiosPacienteFecha(String idp, String fechaIn, String fechaFin)
+	public static Result verEpisodiosPacienteFecha(int idp, String fechaIn, String fechaFin)
 	{
-
 		List<Episodio> resp=null;
 		Paciente p=JPA.em().find(Paciente.class, idp);
 		if(p==null)
@@ -102,12 +108,70 @@ public class PacienteController extends Controller
 		return Results.ok(Json.toJson(resp));
 	}
 
-	
+	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
-	public static Result verEpisodiosPaciente(String idp) throws Exception
+	public static Result verEpisodiosPaciente(int idp) throws Exception
 	{
 		@SuppressWarnings("unused")
 		List<Episodio> resp=null;
+		
+		//-------------------------Prueba-------------------------------------------------------
+		
+		//TODO estas son las pruebas de que efectivamente hay persistencia, debemos poblar !
+		/**
+		 * Probar que esta añadiendo a la BD
+		 * 1. crear el paciente y un episodio (Quitar los comentarios) hasta METODO DEL REQ
+		 * 2. quitar los comentarios al ultimo return
+		 * 3. comentar el return del json
+		 * 4. correr la app
+		 * 5. comentar todo hasta METODO DEL REQ
+		 * 6. comentar el return anterior y desomentar el del json
+		 * 7. correr la app 
+		 * 8. http://localhost:9000/paciente/getAllEpisodios/1
+		 * 9 deberia retornar algo en json : [{"id":10,"fecha":"2015-02-07"}]
+		 */
+		
+		/*
+		//PACIENTE CHECK
+		 Paciente pp=new Paciente(1,"Laura", "laudany3", "faa","fa", "faass");
+		 JPA.em().persist(pp);
+		
+		
+		 //EPISODIO CHECK
+		 //String f1="2015-02-12";
+		 //SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
+		
+		
+		 //EPISODIO CHECK
+		 String f2="2015-02-07";
+		 //Date Ff = null;
+		 //Ff = formatoDelTexto.parse(f2);
+				
+		 Episodio ep=new Episodio(f2);
+		 JPA.em().persist(ep);
+		 //Episodio ep=JPA.em().find(Episodio.class, f2);
+		
+		//Medicamentos y actividades
+		 Medicamento m = new Medicamento("apronax", "leveteritacetam", "migranas", "oral", "550 mg");
+		 JPA.em().persist(m);
+		 Episodio e=JPA.em().getReference(Episodio.class, f2);
+		 e.agregarMedicamento(m);
+		 
+		 Actividad a=new Actividad("correr", "fasasda", "fafsda", "2015-02-03");
+		 JPA.em().persist(a);
+		 e.agregarActividad(a);
+		 
+		 
+			
+		 //Se busca el paciente y add ep
+		 Paciente n=JPA.em().getReference(Paciente.class, 1);
+		 n.addEpisodio(ep);
+		 resp=n.getEpisodios();
+		 /*/
+		
+		
+		
+		//-------------------------------------METODO DEL REQ-------------------------------------------------------------
 		
 		Paciente p=JPA.em().find(Paciente.class, idp);
 		if(p!=null)
@@ -133,51 +197,38 @@ public class PacienteController extends Controller
 		Episodio resp=null;
 		List<Medicamento> med=null;
 		Actividad act=null;
-		Query q=JPA.em().createQuery("from Episodio e where e.fecha=:f");
-		q.setParameter("f", fe);
-		List<Episodio> l=q.getResultList();
-		if(l==null || l.size()==0)
+		resp=JPA.em().find(Episodio.class, fe);
+		if(resp==null)
 			return Results.notFound("el Episodio no existe");
-		else
-			resp=l.get(0);
 		
-		return Results.ok(Json.toJson(resp));
-	}
-
-	@Transactional
-	@BodyParser.Of(BodyParser.Json.class)
-	public static Result agregarMedicamento()
-	{
-		JsonNode nodo = Controller.request().body().asJson();
-		String idp=nodo.findPath("usuario").asText();
-		String nombres=nodo.findPath("nombre").asText();
-		String descripcion=nodo.findPath("descripcion").asText();
-		
-		Paciente p=JPA.em().find(Paciente.class, idp);
-		
-		if(p==null)
-			return Results.badRequest("El paciente no existe");
-		
+		/*/
 		else
 		{
-			p=JPA.em().getReference(Paciente.class, idp);
-			Medicamento m=new Medicamento(nombres,descripcion);
-			JPA.em().persist(m);
-			p.addMedicamento(m);
+			
+			med=resp.getMedicamentos();
+			act=resp.getCatalizador();
+			
+			r.put("medicamentos", Json.toJson(act).toString());
+			r.put("medicamentos", Json.toJson(med).toString());
+			r.put("medicamentos", Json.toJson(resp).toString());
+			
+			 
+			r.putAll((Map<String, JsonNode>) Json.toJson(resp));
+			
+			
 		}
-		return Results.created();
+		/*/
+		
+		
+		return Results.ok(Json.toJson(resp));
 	}
 	
+	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
-	public static Result darMedicamentos(String idp)
+	public static Paciente darPaciente(String correo)
 	{
-		if(JPA.em().find(Paciente.class, idp)==null)
-			return Results.badRequest("El paciente no existe");
-		
-		Paciente p=JPA.em().getReference(Paciente.class, idp);
-		List<Medicamento> resp=p.getMedicamentos();
-		return Results.ok(Json.toJson(resp));
-		
-			
+		Query q=JPA.em().createQuery("FROM PACIENTE P WHERE P.USUARIO=:c ");
+		q.setParameter("c", correo);
+		return (Paciente)q.getResultList().get(0);
 	}
 }

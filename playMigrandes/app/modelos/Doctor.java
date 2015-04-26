@@ -20,6 +20,8 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import modelos.SecurityRole.Builder;
+
 import org.eclipse.persistence.nosql.annotations.DataFormatType;
 import org.eclipse.persistence.nosql.annotations.Field;
 import org.eclipse.persistence.nosql.annotations.NoSql;
@@ -28,10 +30,19 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
 
 
 
+
+
+
+
+import be.objectify.deadbolt.core.models.Permission;
+import be.objectify.deadbolt.core.models.Role;
+import be.objectify.deadbolt.core.models.Subject;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-public class Doctor 
+@Table(name="DOCTOR")
+public class Doctor implements Subject
 {
 
     //-----------------------------------------------------------
@@ -42,15 +53,14 @@ public class Doctor
 	 /**
      * Usuario del doctor.
      */
-
 	@Id
-    private String usuario;
+    private String email;
    
 	/**
      * Número de identificación del doctor
      */
-	@Column(name="fecha")
-    private long id;
+	@Column(name="cedula")
+    private long cedula;
 
     /**
      * Nombres del doctor.
@@ -62,34 +72,37 @@ public class Doctor
     /**
      * Lista de ítems de pacientes del doctor.
      */
-	@OneToMany(fetch = FetchType.LAZY) //carga cada atributo a medida que se lo pida. No todo de una (Eager)
+	@OneToMany(fetch = FetchType.LAZY) 
     @ElementCollection
     private List<Paciente> pacientes;
-   
-    
-    /**
-     * Telefono del doctor
-     */
-	@Column(name="telefono")
-    private String telefono;
 
-    
-    /**
-     * Foto del doctor.
-     */
-	@Column(name="foto")
-    private String foto;
+	
+	@ManyToMany
+    public List<SecurityRole> roles;
+
+	
+	@Column(name="password")
+	private String password;
 
     //-----------------------------------------------------------
     // Constructor
     //-----------------------------------------------------------
 
-    /**
+    public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	/**
      * Constructor sin argumentos
      */
     public Doctor()
     {
         pacientes = new ArrayList<Paciente>();
+        roles=new ArrayList<SecurityRole>();
     }
 
     /**
@@ -103,14 +116,13 @@ public class Doctor
      * @param perfil Perfil del doctor
      * @param foto Nombre de la foto del doctor
      */
-    public Doctor(long id, String nombres, String usuario, String foto)
+    public Doctor(String pass, String nombres, String correo)
     {
-        this.id = id;
+        this.password = pass;
         this.nombres = nombres;
-        this.usuario = usuario;
-        this.pacientes = new ArrayList();
-        this.telefono = telefono;
-        this.foto = foto;
+        this.email = correo;
+        this.pacientes = new ArrayList<Paciente>();
+        roles=new ArrayList<SecurityRole>();
     }
 
     //-----------------------------------------------------------
@@ -121,26 +133,18 @@ public class Doctor
      * Devuelve el número único de identificación del doctor
      * @return id Número de identificación
      */
-    public long getIdentificacion()
+    public long getCedula()
     {
-        return id;
+        return cedula;
     }
 
     /**
      * Modifica el número de identificación del cliente
      * @param id Nuevo número de identificación
      */
-    public void setIdentificacion(long id)
+    public void setCedula(long id)
     {
-        this.id = id;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
+        this.cedula = id;
     }
 
     public String getNombres() {
@@ -150,8 +154,6 @@ public class Doctor
     public void setNombres(String nombres) {
         this.nombres = nombres;
     }
-
-  
 
    
     public void setItemPaciente(Paciente paciente)
@@ -166,22 +168,39 @@ public class Doctor
     public void setPacientes(List<Paciente> pacientes) {
         this.pacientes = pacientes;
     }
-
-    public String getUsuario() {
-        return usuario;
+    
+    public String getEmail()
+    {
+    	return email;
+    }
+    
+    public void setEmail(String nemail)
+    {
+    	email=nemail;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
+	@Override
+	public String getIdentifier() {
+		return email;
+	}
 
-    public String getTelefono() {
-        return telefono;
-    }
+	@Override
+	public List<? extends Permission> getPermissions() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
+	@Override
+	public List<? extends Role> getRoles() {
+		return roles;
+	}
+	
+	public void agregarRol(SecurityRole s)
+	{
+		roles.add(s);
+	}
+	
+	
  
     
     

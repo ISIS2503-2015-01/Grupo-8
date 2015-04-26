@@ -5,8 +5,10 @@
 # Home page
 GET     /                           controllers.Application.index()
 
-#login
-POST    /login                            controllers.Application.login()
+GET     /login                      controllers.Application.login()
+POST    /login                      controllers.Application.postLogin()
+GET     /profile                    controllers.Application.profile()
+GET     /logout                      controllers.Application.logout()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
@@ -16,15 +18,13 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 #Crear Doctor
 POST    /doctor               controllers.DoctorController.create()
 
-GET     /nuevo					controllers.DoctorController.irNuevo()
-
-GET    /buscar					controllers.PacienteController.direct()
-
-#Ver doctor
-#GET     /doctor/:id
+#Ver todos los doctores
+GET     /doctor              controllers.DoctorController.darDoctores()
 
 #eliminar Doctor
 #DELETE /doctor/:id
+
+
 
 
 #-------------------------------PACIENTE-----------------------------------------------------------                                       
@@ -39,48 +39,33 @@ GET         /paciente                                            controllers.Pac
 #GET			/paciente/:id						              controllers.PacienteController.getPaciente(id: Long)
 
 #Eliminar Paciente
-DELETE		/paciente/:id                                        controllers.PacienteController.delete(id :String)
+DELETE		/paciente/:id                                        controllers.PacienteController.delete(id :Integer)
 
 #Ver un episodio de un paciente
 #GET 		/paciente/episodio/:idp/ide		                        controlllers.PacienteController.verEpisodioPaciente(idp: Long, ide:Long)
 
 
 #Ver todos los episodios de un paciente
-GET			/paciente/getAllEpisodios/		              controllers.PacienteController.verEpisodiosPaciente()
+GET			/paciente/getAllEpisodios/:id			              controllers.PacienteController.verEpisodiosPaciente(id: Integer)
 
 
 #Ver episodios en fecha
-GET 	    /paciente/getEpisodios/:idp/:fechaIn/:fechaFin        controllers.PacienteController.verEpisodiosPacienteFecha(idp: String, fechaIn: String,fechaFin: String)
+GET 	    /paciente/getEpisodios/:idp/:fechaIn/:fechaFin        controllers.PacienteController.verEpisodiosPacienteFecha(idp: Integer, fechaIn: String,fechaFin: String)
 
 #Ver revisar un episodio completo
 GET         /paciente/episodioCompleto/:id                        controllers.PacienteController.verEpisodioFull(id: String)
-
-#Agregar medicamento al paciente
-POST        /paciente/medicamento	                         controllers.PacienteController.agregarMedicamento()
-
-#Dar todos los medicamentos de un paciente
-GET        /paciente/medicamento/:idp                             controllers.PacienteController.darMedicamentos( idp:String)       
-
+	
 #--------------------------------MEDICAMENTO-----------------------------------------------------------------------------------------
 
 #Crear medicamento
 POST /medicamento/new                                              controllers.MedicamentoController.create()
 
-#Dar todos los medicamentos del sistema
+#Dar todos los medicamentos
 GET   /medicamento                                                controllers.MedicamentoController.getAll()   
 
 #--------------------------------Episodio--------------------------------------------------------------------------------------------------
 
-#Crear Episodio 
-POST /episodio/new                                                 controllers.EpisodioController.create()
+#Crear Episodio
+POST /episodio/new                                                  controllers.EpisodioController.create()
 
-#Crear Episodio con Nota de Voz
-POST /episodio/newVoz											controllers.EpisodioController.create2()
-
-#Agregar un medicamento al episodio
-POST /paciente/episodio/medicamento/new                             controllers.EpisodioController.agregarMedicamento()                     
-
-#------------------------------Actividad--------------------------------------------------------------------------------------------------
-
-#Crear una Actividad
-POST /paciente/actividad/new  			
+  
