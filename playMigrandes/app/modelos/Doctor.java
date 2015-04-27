@@ -20,6 +20,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+//Diego lo puso en comments
 import modelos.SecurityRole.Builder;
 
 import org.eclipse.persistence.nosql.annotations.DataFormatType;

@@ -17,8 +17,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 //import play.db.ebean.Model;
 
 
@@ -39,6 +41,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import be.objectify.deadbolt.core.models.Permission;
+import be.objectify.deadbolt.core.models.Role;
+import be.objectify.deadbolt.core.models.Subject;
 
 
 /**
@@ -49,7 +54,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="PACIENTE")
-public class Paciente
+public class Paciente  implements Subject
 {
 
 	//-----------------------------------------------------------
@@ -62,7 +67,7 @@ public class Paciente
     private String email;
 	
     /**
-     * Número de identificación del paciente
+     * Número de identificación del paciente. Alias cedula
      */
 	@Id
 	private int id;
@@ -91,12 +96,16 @@ public class Paciente
     @ElementCollection
     private List<Episodio> episodios;
     
+    /**
+     * Lista de ítems de medicamentos del paciente.
+     */
+    @OneToMany(fetch=FetchType.LAZY)
+    @ElementCollection
+    private List<Medicamento> medicamentos;
+    
     @ManyToMany
     public List<SecurityRole> roles;
     
-    @ElementCollection
-    @OneToMany(fetch=FetchType.LAZY)
-    private List<Medicamento> medicamentos;
     
     //-----------------------------------------------------------
     // Constructor
@@ -145,14 +154,14 @@ public class Paciente
 	}
 
 	public void setEpisodios(ArrayList<Episodio> episodios2) {
-		//this.episodios = episodios2;
+		this.episodios = episodios2;
 	}
 	
     /**
      * Devuelve el número único de identificación del paciente
      * @return id Número de identificación
      */
-    public long getIdentificacion()
+    public int getIdentificacion()
     {
         return id;
     }
@@ -181,25 +190,48 @@ public class Paciente
     }
 
     public List<Actividad> getActividades() {
-        return null;
+        return actividades;
     }
+    
+    public List<Medicamento> getMedicamentos() {
+        return medicamentos;
+    }
+    
+    public void addMedicamentos(Medicamento m) {
+        medicamentos.add(m);
+    }
+    
+    public void setMedicamentos(List<Medicamento> medicamentos) {
+		this.medicamentos = medicamentos;
+	}
 
     public void setActividades(List<Actividad> actividades) {
-        //this.actividades = actividades;
+        this.actividades = actividades;
     }
 
 	public void addEpisodio(Episodio e) {
-		// TODO Auto-generated method stub
 		episodios.add(e);
 		
 	}
-
-	public List<Medicamento> getMedicamentos() {
-		return medicamentos;
+	
+	public String getEmail(){
+		return email;
 	}
 
-	public void setMedicamentos(List<Medicamento> medicamentos) {
-		this.medicamentos = medicamentos;
+	@Override
+	public String getIdentifier() {
+		return email;
+	}
+
+	@Override
+	public List<? extends Permission> getPermissions() {
+		//TODO 
+		return null;
+	}
+
+	@Override
+	public List<? extends Role> getRoles() {
+		return roles;
 	}
  
 

@@ -15,6 +15,7 @@ public class SecurityRole implements Role
 
     @Column(nullable = false,
             unique = true)
+    
     public String roleName;
 
     public SecurityRole()
@@ -71,6 +72,13 @@ public class SecurityRole implements Role
         result = 31 * result + (roleName != null ? roleName.hashCode() : 0);
         return result;
     }
+    
+    /**
+     * Clase para crear un nuevo Rol. 
+     * 1. Inicializar con construcot con el nombre del rol
+     * 2. Lo crea con securityRol.build()
+     * @author David Ricardo
+     */
 
     public static final class Builder
     {

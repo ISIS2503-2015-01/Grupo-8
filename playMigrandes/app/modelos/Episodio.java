@@ -27,6 +27,7 @@ import org.eclipse.persistence.nosql.annotations.NoSql;
 
 
 
+
 import javax.validation.constraints.NotNull;
 
 /**
@@ -82,14 +83,29 @@ public class Episodio //extends Model
     @Column(name="grabacion")
     private String grabacion;
     
-    
-    
     /**
      * Posible catalizador que pudo haber ocasionado la migraña
      * Puede disminuir el episodio haciendo lo contrario a la actividad en referencia.
      */
     @OneToOne
     private Actividad catalizador;
+    
+    
+    @Column(name="descripcion")
+    private String descripcion;
+
+    /**
+     * Intensidad del dolor.
+     */
+	@Column(name="intensidad")
+    private int intensidad;
+
+
+    /**
+     * Ubicacion de la migraña
+     */
+	@Column(name="ubicacion")
+    private String ubicacion;
 
     //-----------------------------------------------------------
     // Constructor
@@ -117,7 +133,34 @@ public class Episodio //extends Model
         //this.catalizador = new ArrayList<Actividad>();
         //grabacion = null;
     }
+    
+    public Episodio(String fecha, List<Medicamento> medics, String nDescripcion, int nIntensidad, String nUbicacion) 
+    {
+        
+        this.medicamentos = new ArrayList<Medicamento>();
+        this.fecha = fecha;
+        this.dolor = descripcion;
+        medicamentos.addAll(medics);
+        
+        descripcion = nDescripcion;
+        intensidad = nIntensidad;
+        ubicacion = nUbicacion;
+        
+        //this.dolor = dolor;
+        //this.catalizador = new ArrayList<Actividad>();
+        //grabacion = null;
+    }
 
+    
+    public Episodio(String fecha, String notaVoz) 
+    {
+        this.fecha = fecha;
+        this.medicamentos = new ArrayList<Medicamento>();
+        this.grabacion = notaVoz;
+        //this.dolor = dolor;
+        //this.catalizador = new ArrayList<Actividad>();
+        //grabacion = null;
+    }
     
 
 
@@ -142,6 +185,18 @@ public class Episodio //extends Model
     
     public Actividad getCatalizador() {
         return catalizador;
+    }
+    
+    public String getDescripcion(){
+    	return descripcion;
+    }
+    
+    public int getIntensidad(){
+    	return intensidad;
+    }
+    
+    public String getUbicacion(){
+    	return ubicacion;
     }
     
     /*
