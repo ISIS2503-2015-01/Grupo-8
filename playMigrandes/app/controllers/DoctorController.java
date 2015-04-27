@@ -22,7 +22,6 @@ import modelos.Doctor;
 import modelos.Episodio;
 import modelos.Medicamento;
 import modelos.Paciente;
-import modelos.Principal;
 
 
 @Security.Authenticated(Secured.class)

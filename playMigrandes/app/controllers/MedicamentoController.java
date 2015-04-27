@@ -35,7 +35,7 @@ public class MedicamentoController {
 			return Results.ok("El paciente ya existe");
 		else
 		{
-			n=new Medicamento(nombre, componente, "asda", "asfas", "fafasa");
+			n=new Medicamento(nombre, componente);
 			JPA.em().persist(n);
 		}
 		return Results.created();		

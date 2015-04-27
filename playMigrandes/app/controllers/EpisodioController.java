@@ -19,10 +19,8 @@ import play.db.jpa.Transactional;
 import play.libs.Json;
 import play.mvc.*;
 import modelos.Doctor;
-import modelos.Dolor;
 import modelos.Episodio;
 import modelos.Paciente;
-import modelos.Principal;
 
 @Security.Authenticated(Secured.class)
 public class EpisodioController extends Controller
