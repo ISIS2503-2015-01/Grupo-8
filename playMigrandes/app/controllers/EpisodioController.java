@@ -12,6 +12,9 @@ import java.util.Random;
 
 import javax.persistence.Query;
 
+import be.objectify.deadbolt.java.actions.Group;
+import be.objectify.deadbolt.java.actions.Restrict;
+
 import com.fasterxml.jackson.databind.JsonNode;
 
 import play.db.jpa.JPA;
@@ -23,10 +26,11 @@ import modelos.Episodio;
 import modelos.Medicamento;
 import modelos.Paciente;
 
-@Security.Authenticated(Secured.class)
+
+@Security.Authenticated(SecuredP.class)
 public class EpisodioController extends Controller
 {
-
+	@Restrict({@Group("paciente")})
 	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
 	public static Result create() throws ParseException
@@ -84,6 +88,7 @@ public class EpisodioController extends Controller
 		return Results.created();		
 	}
 
+	@Restrict({@Group("paciente")})
 	public static Result delete(Long idp) throws ParseException
 	{
 		String datString = idp.toString();

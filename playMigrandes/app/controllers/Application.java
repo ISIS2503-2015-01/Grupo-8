@@ -118,7 +118,7 @@ public class Application extends Controller {
 				Logger.info("Estas logueado :"+email);
 				return ok(Json.toJson(d));
 			}
-			return badRequest();		
+			return badRequest("dont match");		
 		}
 	}
 

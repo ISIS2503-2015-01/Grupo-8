@@ -45,11 +45,11 @@ import play.db.jpa.Transactional;
 
 
 
-@Security.Authenticated(SecuredP.class)
+
 public class PacienteController extends Controller
 {
 
-	@Restrict(@Group("admin"))
+	@SubjectNotPresent
 	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
 	public static Result create()
@@ -67,7 +67,7 @@ public class PacienteController extends Controller
 		 */
 
 		JsonNode nodo = Controller.request().body().asJson();
-
+		Logger.info("entro al create");
 		int id =Integer.parseInt(nodo.findPath("id").asText()); 
 		String nombres=nodo.findPath("nombres").asText(); 
 		String usuario=nodo.findPath("usuario").asText(); 
@@ -79,15 +79,17 @@ public class PacienteController extends Controller
 			return Results.ok("El paciente ya existe");
 		else
 		{
+			Logger.info("creando paciente");
 			n=new Paciente(id, nombres, usuario, pass);
 			SecurityRole s=JPA.em().find(SecurityRole.class,(long) 3); 
 			n.agregarRol(s);
 			JPA.em().persist(n);
+			Logger.info("paciente creado");
 		}
 		return Results.created();		
 	}
 
-	
+	@Security.Authenticated(SecuredP.class)
 	@Restrict({@Group("admin")})
 	public static Result delete(int idp)
 	{
@@ -100,7 +102,8 @@ public class PacienteController extends Controller
 
 	}
 
-	@Restrict({@Group("admin")})
+	@Security.Authenticated(SecuredP.class)
+	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
 	public static Result getAll()
 	{
@@ -115,6 +118,7 @@ public class PacienteController extends Controller
 		return ok(Pacientes.render("Pacientes", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp));
 	}
 
+	@Security.Authenticated(SecuredP.class)
 	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
 	public static Result verEpisodiosPacienteFecha()
@@ -145,6 +149,7 @@ public class PacienteController extends Controller
 		return ok(Episodios.render("Episodios por Fecha", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp, idp));
 	}
 
+	@Security.Authenticated(SecuredP.class)
 	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
 	public static Result verEpisodiosPaciente() throws Exception
@@ -176,7 +181,7 @@ public class PacienteController extends Controller
 
 
 
-
+	@Security.Authenticated(SecuredP.class)
 	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
 	public static Result verEpisodioFull( )
@@ -204,6 +209,7 @@ public class PacienteController extends Controller
 
 	}
 
+	@Security.Authenticated(SecuredP.class)
 	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
 	public static Paciente darPaciente(String correo)

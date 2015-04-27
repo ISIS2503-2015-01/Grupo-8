@@ -36,84 +36,91 @@ public class MyDeadboltHandler extends AbstractDeadboltHandler
 		this.dynamicHandler = new CompositeDynamicResourceHandler(delegates);
 	}
 
-	//@play.db.jpa.Transactional
 	public Subject getSubject(final Http.Context context)
 	{
 		final MutableLong rol = new MutableLong();
 		final MutableLong subject=new MutableLong();
 
-		JPA.withTransaction(new play.libs.F.Callback0() {
-			@Override
-			public void invoke() throws Throwable 
+		if(context.session().get("email")!=null)
+		{
+			JPA.withTransaction(new play.libs.F.Callback0() {
+				@Override
+				public void invoke() throws Throwable 
+				{
+					String n=context.session().get("email");
+					Logger.info("Sesion abierta: "+n);
+
+					Subject s=null;
+
+					Doctor isD=JPA.em().find(Doctor.class, n);
+
+					Query query = JPA.em().createQuery("select p from Paciente p where p.email='"+n+"'" );
+					Paciente isP=null;
+					if(!query.getResultList().isEmpty())
+						isP=(Paciente)query.getSingleResult();
+
+					if(isD!=null)
+					{
+						s=isD;
+						subject.add(1); // 1 Si es Doctor
+					}
+					else if(isP!=null)
+					{
+						s=isP;
+						subject.add(2); // 2 Si es Paciente
+					}
+
+
+
+					List<? extends Role> l=s.getRoles();
+					if(l.get(0)!=null)
+					{
+						if(l.get(0).getName().equals("admin"))
+							rol.add(1);
+
+						if(l.get(0).getName().equals("doctor"))
+							rol.add(2);
+
+						if(l.get(0).getName().equals("paciente"))
+							rol.add(3);
+					}
+
+				}
+			});
+
+			long rolV=rol.getValue();
+			long subV=subject.getValue();
+			Builder b=new Builder();
+			Doctor d=null;
+			Paciente p=null;
+
+			if(subV==1)
 			{
-				String n=context.session().get("email");
-				Logger.info("Sesion abierta: "+n);
+				d=new Doctor("asd","asd","asd");
+				if(rolV==1)
+					b.roleName("admin");
 
-				Subject s=null;
+				if(rolV==2)
+					b.roleName("doctor");
 
-				Doctor isD=JPA.em().find(Doctor.class, n);
-				
-				Query query = JPA.em().createQuery("select p from Paciente p where p.email='"+n+"'" );
-				Paciente isP=null;
-				if(!query.getResultList().isEmpty())
-					isP=(Paciente)query.getSingleResult();
-				
-				if(isD!=null)
-				{
-					s=isD;
-					subject.add(1); // 1 Si es Doctor
-				}
-				else if(isP!=null)
-				{
-					s=isP;
-					subject.add(2); // 2 Si es Paciente
-				}
+				d.agregarRol(b.build());
 
+				return d;
+			}
+			else
+			{
+				p=new Paciente(1,"a","a","a");
+				b.roleName("paciente");
+				p.agregarRol(b.build());
 
-
-				List<? extends Role> l=s.getRoles();
-				if(l.get(0)!=null)
-				{
-					if(l.get(0).getName().equals("admin"))
-						rol.add(1);
-
-					if(l.get(0).getName().equals("doctor"))
-						rol.add(2);
-
-					if(l.get(0).getName().equals("paciente"))
-						rol.add(3);
-				}
+				return p;
 
 			}
-		});
-
-		long rolV=rol.getValue();
-		long subV=subject.getValue();
-		Builder b=new Builder();
-		Doctor d=null;
-		Paciente p=null;
-
-		if(subV==1)
-		{
-			d=new Doctor("asd","asd","asd");
-			if(rolV==1)
-				b.roleName("admin");
-
-			if(rolV==2)
-				b.roleName("doctor");
-
-			d.agregarRol(b.build());
-
-			return d;
 		}
 		else
 		{
-			p=new Paciente(1,"a","a","a");
-			b.roleName("paciente");
-			p.agregarRol(b.build());
-			
-			return p;
-			
+			Logger.info("retornando null");
+			return null;
 		}
 	}
 

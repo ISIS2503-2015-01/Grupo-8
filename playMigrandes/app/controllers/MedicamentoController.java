@@ -14,12 +14,15 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Results;
 import play.mvc.Security;
+import be.objectify.deadbolt.java.actions.Group;
+import be.objectify.deadbolt.java.actions.Restrict;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-@Security.Authenticated(Secured.class)
+@Security.Authenticated(SecuredP.class)
 public class MedicamentoController {
 	
+	@Restrict({@Group("paciente")})
 	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
 	public static Result create()
@@ -41,7 +44,8 @@ public class MedicamentoController {
 		return Results.created();		
 	}
 	
-	 @play.db.jpa.Transactional
+	@Restrict({@Group("paciente")})
+	@play.db.jpa.Transactional
 	public static Result getAll()
 	{
 		List<Medicamento> resp=null;
