@@ -77,14 +77,12 @@ public class Paciente
     @NotNull
 	private String password;
 
-
     /**
      * Lista de ítems de actividades del paciente.
      */
 	@ElementCollection
 	@OneToMany(fetch=FetchType.LAZY)
     private List<Actividad> actividades;
-    
     
     /**
      * Lista de ítems de episodios del paciente.
@@ -96,6 +94,9 @@ public class Paciente
     @ManyToMany
     public List<SecurityRole> roles;
     
+    @ElementCollection
+    @OneToMany(fetch=FetchType.LAZY)
+    private List<Medicamento> medicamentos;
     
     //-----------------------------------------------------------
     // Constructor
@@ -106,7 +107,9 @@ public class Paciente
      */
     public Paciente()
     {
-        //actividades = new ArrayList<Actividad>();
+        actividades = new ArrayList<Actividad>();
+        episodios = new ArrayList<Episodio>();
+        medicamentos = new ArrayList<Medicamento>();
     }
 
     /**
@@ -126,7 +129,10 @@ public class Paciente
         this.nombres=nnombres;
         this.email=usr;
         this.password=pass;
-        this.episodios = new ArrayList<Episodio>();
+
+        actividades = new ArrayList<Actividad>();
+        episodios = new ArrayList<Episodio>();
+        medicamentos = new ArrayList<Medicamento>();
     }
 
     //-----------------------------------------------------------
@@ -186,6 +192,14 @@ public class Paciente
 		// TODO Auto-generated method stub
 		episodios.add(e);
 		
+	}
+
+	public List<Medicamento> getMedicamentos() {
+		return medicamentos;
+	}
+
+	public void setMedicamentos(List<Medicamento> medicamentos) {
+		this.medicamentos = medicamentos;
 	}
  
 
