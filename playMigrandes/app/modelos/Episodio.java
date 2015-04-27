@@ -82,14 +82,7 @@ public class Episodio //extends Model
     //private NotaVoz grabacion;
     @Column(name="grabacion")
     private String grabacion;
-    
-    /**
-     * Posible catalizador que pudo haber ocasionado la migraña
-     * Puede disminuir el episodio haciendo lo contrario a la actividad en referencia.
-     */
-    @OneToOne
-    private Actividad catalizador;
-    
+      
     
     @Column(name="descripcion")
     private String descripcion;
@@ -183,10 +176,6 @@ public class Episodio //extends Model
         return medicamentos;
     }
     
-    public Actividad getCatalizador() {
-        return catalizador;
-    }
-    
     public String getDescripcion(){
     	return descripcion;
     }
@@ -199,53 +188,8 @@ public class Episodio //extends Model
     	return ubicacion;
     }
     
-    /*
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    
-
-    public void setMedicamentos(List<Medicamento> medicamentos) {
-        this.medicamentos = medicamentos;
-    }
-    
-     public void setItemMedicamentos(Medicamento medicamento)
-    {
-        this.medicamentos.add(medicamento);
-    }
-
-    public Dolor getDolor() {
-        return dolor;
-    }
-
-    public void setDolor(Dolor dolor) {
-        this.dolor = dolor;
-    }
-
-    
-
-    public void setCatalizador(Actividad catalizador) {
-        this.catalizador = catalizador;
-    }
-
-    public NotaVoz getGrabacion() {
-        return grabacion;
-    }
-
-    public void setGrabacion(NotaVoz grabacion) {
-        this.grabacion = grabacion;
-    }
-
-  */
     public void agregarMedicamento(Medicamento m)
     {
     	medicamentos.add(m);
     }
-    
-    public void agregarActividad(Actividad a)
-    {
-    	catalizador=a;
-    }
-
 }

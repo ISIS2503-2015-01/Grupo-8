@@ -31,20 +31,22 @@ public class Actividad //extends Model
     // Atributos
     //-----------------------------------------------------------
     /**
-     * Nombre de la empresa que ceritifica la actividad laboral.
+     * Nombre dela actividad del paciente.
      */
-	@Id 
+	@Column(name="nombre")
     private String nombre;
-
    
     /**
      * Descripcion de laa actividad.
      */
 	@Column(name="descripcion")
     private String descripcion;
-
-    
-
+	
+	@Id
+	private String fecha;
+	
+	@Column(name="tipo")
+	private String tipo;
     //-----------------------------------------------------------
     // Constructores
     //-----------------------------------------------------------
@@ -100,6 +102,22 @@ public class Actividad //extends Model
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
    
