@@ -19,6 +19,8 @@ import modelos.Doctor;
 import modelos.Episodio;
 import modelos.Medicamento;
 import modelos.Paciente;
+import modelos.SecurityRole;
+import modelos.SecurityRole.Builder;
 import be.objectify.deadbolt.java.actions.Group;
 import be.objectify.deadbolt.java.actions.Restrict;
 import be.objectify.deadbolt.java.actions.SubjectNotPresent;
@@ -43,11 +45,11 @@ import play.db.jpa.Transactional;
 
 
 
-@Security.Authenticated(Secured.class)
+@Security.Authenticated(SecuredP.class)
 public class PacienteController extends Controller
 {
 
-	@Restrict({@Group("paciente")})
+	@Restrict(@Group("admin"))
 	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
 	public static Result create()
@@ -78,11 +80,14 @@ public class PacienteController extends Controller
 		else
 		{
 			n=new Paciente(id, nombres, usuario, pass);
+			SecurityRole s=JPA.em().find(SecurityRole.class,(long) 3); 
+			n.agregarRol(s);
 			JPA.em().persist(n);
 		}
 		return Results.created();		
 	}
 
+	
 	@Restrict({@Group("admin")})
 	public static Result delete(int idp)
 	{

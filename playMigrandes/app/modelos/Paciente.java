@@ -20,8 +20,10 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 //import play.db.ebean.Model;
+
 
 
 
@@ -41,6 +43,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
 import be.objectify.deadbolt.core.models.Permission;
 import be.objectify.deadbolt.core.models.Role;
 import be.objectify.deadbolt.core.models.Subject;
@@ -142,6 +145,7 @@ public class Paciente  implements Subject
         actividades = new ArrayList<Actividad>();
         episodios = new ArrayList<Episodio>();
         medicamentos = new ArrayList<Medicamento>();
+        roles=new ArrayList<SecurityRole>();
     }
 
     //-----------------------------------------------------------
@@ -240,6 +244,10 @@ public class Paciente  implements Subject
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public void agregarRol(SecurityRole s)
+	{
+		roles.add(s);
 	}
  
 

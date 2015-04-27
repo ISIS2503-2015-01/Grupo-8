@@ -22,6 +22,7 @@ import modelos.Doctor;
 import modelos.Episodio;
 import modelos.Medicamento;
 import modelos.Paciente;
+import modelos.SecurityRole;
 
 
 @Security.Authenticated(Secured.class)
@@ -42,6 +43,8 @@ public class DoctorController extends Controller
 			return Results.ok("Ya existe");
 		
 		n=new Doctor(clave, nombres, correo);
+		SecurityRole s=JPA.em().find(SecurityRole.class,(long) 3);
+		n.agregarRol(s);
 		JPA.em().persist(n);
 		return Results.created();
 	}

@@ -51,7 +51,7 @@ public class Application extends Controller {
 		if(Secured.isLoggedIn(ctx()))
 		{
 			d=JPA.em().find(Doctor.class, Secured.getUser(ctx()));
-			
+
 		}
 
 		Form<LoginFormData> formData = Form.form(LoginFormData.class);
@@ -81,39 +81,55 @@ public class Application extends Controller {
 			return badRequest(Login.render("Login", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(),d), formData));
 		}
 		else {
+
 			// email/password OK, so now we set the session variable and only go to authenticated pages.
 			session().clear();
 			session("email", formData.get().email);
 			return redirect(routes.Application.profile());
 		}
 	}
-	
-	
-	
+
+
+
 	@play.db.jpa.Transactional
 	public static Result postLoginP() {
 		Paciente d=null;
-	
+		
 		JsonNode nodo = Controller.request().body().asJson();
 		String email = nodo.findPath("login").asText();
 		String password = nodo.findPath("password").asText();
+		Logger.info("current user :"+email);
 		Query query = JPA.em().createQuery("select p from Paciente p where p.email='"+email+"'" );
-
-		d=(Paciente)query.getSingleResult();
 		
+		if(!query.getResultList().isEmpty())
+			d=(Paciente)query.getSingleResult();
+
 		if(d==null)
 		{
-			return notFound();
+			return notFound("usuario no encontradp");
 		}
-		
+
 		else
 		{
 			if (d.getPassword().equals(password)) 
 			{
+				session().clear();
+				session("email",email);
+				Logger.info("Estas logueado :"+email);
 				return ok(Json.toJson(d));
 			}
 			return badRequest();		
 		}
+	}
+
+	@Security.Authenticated(SecuredP.class)
+	public static Result logoutP()
+	{
+		Logger.info("Finalizo");
+		session().clear();
+
+
+		return ok("Sesion Finalizada");
 	}
 
 	/**
