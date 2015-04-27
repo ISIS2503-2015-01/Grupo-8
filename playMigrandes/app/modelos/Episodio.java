@@ -70,13 +70,6 @@ public class Episodio //extends Model
     private List<Medicamento> medicamentos;
 
     /**
-     * Dolor descrito por el paciente
-     */
-    
-    @Column(name="dolor")
-    private String dolor;
-    
-    /**
     * Nota de voz grabada por el paciente
     */
     //private NotaVoz grabacion;
@@ -108,7 +101,7 @@ public class Episodio //extends Model
      */
     public Episodio()
     {
-        //this.medicamentos = new ArrayList<Medicamento>() {};
+    	this.medicamentos = new ArrayList<Medicamento>() {};
     }
 
     /**
@@ -122,27 +115,21 @@ public class Episodio //extends Model
         
         this.medicamentos = new ArrayList<Medicamento>();
         this.fecha = fecha;
-        //this.dolor = dolor;
-        //this.catalizador = new ArrayList<Actividad>();
-        //grabacion = null;
     }
     
-    public Episodio(String fecha, List<Medicamento> medics, String nDescripcion, int nIntensidad, String nUbicacion) 
+    public Episodio(String fecha, List<Medicamento> medics, String descripcion, int nIntensidad, String nUbicacion) 
     {
         
         this.medicamentos = new ArrayList<Medicamento>();
+        
         this.fecha = fecha;
-        this.dolor = descripcion;
-        medicamentos.addAll(medics);
-        
-        descripcion = nDescripcion;
-        intensidad = nIntensidad;
-        ubicacion = nUbicacion;
-        
-        //this.dolor = dolor;
-        //this.catalizador = new ArrayList<Actividad>();
-        //grabacion = null;
+        this.descripcion = descripcion;
+        this.medicamentos.addAll(medics);
+        this.intensidad = nIntensidad;
+        this.ubicacion = nUbicacion;
+    
     }
+    
 
     
     public Episodio(String fecha, String notaVoz) 
@@ -150,9 +137,6 @@ public class Episodio //extends Model
         this.fecha = fecha;
         this.medicamentos = new ArrayList<Medicamento>();
         this.grabacion = notaVoz;
-        //this.dolor = dolor;
-        //this.catalizador = new ArrayList<Actividad>();
-        //grabacion = null;
     }
     
 
