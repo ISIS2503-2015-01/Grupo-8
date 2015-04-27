@@ -81,14 +81,12 @@ public class Application extends Controller {
 			return badRequest(Login.render("Login", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(),d), formData));
 		}
 		else {
-
 			// email/password OK, so now we set the session variable and only go to authenticated pages.
 			session().clear();
 			session("email", formData.get().email);
-			return redirect(routes.Application.profile());
+			return redirect(routes.PacienteController.getAll());
 		}
 	}
-
 
 
 	@play.db.jpa.Transactional

@@ -29,12 +29,12 @@
           <!--  Display three horizontal lines when navbar collapsed. -->
           <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">MIGRANDES</a>
+        <a class="navbar-brand" href="@routes.PacienteController.getAll()">MIGRANDES</a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
           @if(isLoggedIn) {
-            <li class="@("active".when(page == "Profile"))"><a href="@routes.Application.profile()">Perfil</a></li>
+            <li class="@("active".when(page == "Pacientes"))"><a href="@routes.PacienteController.getAll()">&nbsp&nbsp Tus Pacientes</a></li>
           }
         </ul>
         <ul class="nav navbar-nav navbar-right">

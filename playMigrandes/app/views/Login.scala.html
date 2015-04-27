@@ -5,7 +5,16 @@
 @import bootstrap3._
 
 @main(page, isLoggedIn, userInfo) {
+
    <div class="container">
+   
+       <div style="text-align:center">
+       <h2>Bienvenido a Migrandes</h2>
+		</div>
+          
+   <br>
+   <div class="container">
+   <br><br><br>
      @loginform(routes.Application.postLogin(), loginForm("email"), loginForm("password"))
    </div>
 }
