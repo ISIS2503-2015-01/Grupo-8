@@ -1,0 +1,120 @@
+@* Episodios Template File *@
+@import modelos.Doctor
+@import modelos.Episodio
+@(page: String, isLoggedIn: Boolean, userInfo: Doctor, param:List[Episodio], idPaciente:String)
+
+@import bootstrap3._
+
+@main(page, isLoggedIn, userInfo) {
+
+
+<div class="container">
+     <div class="row">
+       <div class="col-sm-10 col-sm-offset-1">
+       
+       <h2>Episodios</h2>
+       <br><br>
+       
+  		
+
+<div>
+<table class = "table table-striped" style ="width:650px">
+ <tbody>
+    <tr>
+      <td>
+      <strong>
+	<form action = "@routes.PacienteController.verEpisodiosPaciente()" method="get">
+	<input type="text" name="id" id="id" placeholder="Buscar episodio por id de paciente" style="width:500px;font-size:14px"/>
+	<input type="submit" value="Buscar">
+	</form>
+</strong>
+      </td>
+    </tr>
+  </tbody>
+	
+</table>
+
+</div>
+
+<br>
+
+<table class="table table-striped">
+<tr>
+<td>
+<form name="fechas" action ="@routes.PacienteController.verEpisodiosPacienteFecha()" onSubmit="return validateForm()" method="get">
+<strong>Filtrar por fecha: </strong> &nbsp;&nbsp;&nbsp;&nbsp;
+Fecha Inicial: <input type="date" name="fechaIni">&nbsp;&nbsp;&nbsp;&nbsp;
+Fecha Final: <input type="date" name="fechaFin">&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="hidden" name="id" value="@idPaciente">
+<input type="submit" value="Filtrar">
+</form>
+</td>
+</tr>
+</table>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Descripcion</th>
+      <th>Intensidad</th>
+      <th>Ubicacion</th>
+      <th>Ver detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+  	@for((param,index) <- param.zipWithIndex){
+       <tr>
+      	<td>
+      	@if(param.getFecha()){
+    		@param.getFecha()
+    	}else{No hay fechas disponibles}
+      	</td>
+       <td>
+    	@if(param.getDescripcion()){
+    		@param.getDescripcion()
+    	}else{No hay descripcion disponible}
+      	</td>
+      	<td>
+      	@if(param.getIntensidad() != null){
+    		@param.getIntensidad()
+    	}else{No hay informacion de intensidad disponible}
+      	</td>
+      	<td>
+      	@if(param.getUbicacion()){
+    		@param.getUbicacion()
+    	}else{No hay ubicacion disponible}
+      	</td>
+      	<td>
+      	<form action="@routes.PacienteController.verEpisodioFull()" method="get"><input type="hidden" name="id" value="@param.getFecha()"/><button type="submit">Ver</button></form>
+       </tr>
+    }
+  
+  </tbody> 
+</table>
+
+<div id="chartcontainer">No hay informacion suficiente para desplegar la grafica</div>
+<script type="text/javascript">
+	var myData = new Array(@for((param,index) <- param.zipWithIndex){@if(index != 0){,}[@index,@param.getIntensidad()]});
+	var myChart = new JSChart('chartcontainer', 'line');
+	myChart.setDataArray(myData);
+	myChart.draw();
+</script>
+
+<script>
+function validateForm() {
+    var x = document.forms["fechas"]["fechaIni"].value;
+    var x = document.forms["fechas"]["fechaFin"].value;
+    if (x == null || x == "" || y == null || y == "") {
+        alert("Debe llenar fecha inicial y final primero");
+        return false;
+    }
+}
+</script>
+
+</div>
+</div>
+</div>   
+
+}

@@ -39,7 +39,6 @@ public class DoctorController extends Controller
 		String clave=nodo.findPath("password").asText();
 		
 		Doctor n=JPA.em().find(Doctor.class, correo);
-		
 		if(n!=null)
 			return Results.ok("Ya existe");
 		
@@ -76,7 +75,6 @@ public class DoctorController extends Controller
 		
 		Doctor d=JPA.em().getReference(Doctor.class,n);
 		d=JPA.em().getReference(Doctor.class,n);
-		d.setCedula(id);
 		d.setNombres(nombres);
 		d.setEmail(usuario);
 		return Results.ok();
