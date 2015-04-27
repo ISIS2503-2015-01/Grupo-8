@@ -87,6 +87,34 @@ public class Application extends Controller {
 			return redirect(routes.Application.profile());
 		}
 	}
+	
+	
+	
+	@play.db.jpa.Transactional
+	public static Result postLoginP() {
+		Paciente d=null;
+	
+		JsonNode nodo = Controller.request().body().asJson();
+		String email = nodo.findPath("login").asText();
+		String password = nodo.findPath("password").asText();
+		Query query = JPA.em().createQuery("select p from Paciente p where p.email='"+email+"'" );
+
+		d=(Paciente)query.getSingleResult();
+		
+		if(d==null)
+		{
+			return notFound();
+		}
+		
+		else
+		{
+			if (d.getPassword().equals(password)) 
+			{
+				return ok(Json.toJson(d));
+			}
+			return badRequest();		
+		}
+	}
 
 	/**
 	 * Logs out (only for authenticated users) and returns them to the Index page. 

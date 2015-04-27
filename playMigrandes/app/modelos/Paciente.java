@@ -233,6 +233,14 @@ public class Paciente  implements Subject
 	public List<? extends Role> getRoles() {
 		return roles;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
  
 
     
