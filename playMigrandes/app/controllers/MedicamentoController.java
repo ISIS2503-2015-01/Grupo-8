@@ -28,14 +28,14 @@ public class MedicamentoController {
 		
 		//TODO terminar
 		String nombre=nodo.findPath("nombre").asText();
-		String componente=nodo.findPath("componenente").asText();
+		String descripcion=nodo.findPath("descripcion").asText();
 		
 		Medicamento n= JPA.em().find(Medicamento.class, nombre);
 		if(n!=null)
 			return Results.ok("El paciente ya existe");
 		else
 		{
-			n=new Medicamento(nombre, componente);
+			n=new Medicamento(nombre, descripcion);
 			JPA.em().persist(n);
 		}
 		return Results.created();		

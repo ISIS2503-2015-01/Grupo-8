@@ -46,44 +46,55 @@ import play.db.jpa.Transactional;
 @Security.Authenticated(Secured.class)
 public class PacienteController extends Controller
 {
-	
+
 	@Restrict({@Group("paciente")})
 	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
 	public static Result create()
 	{
-		//JsonNode nodo = Controller.request().body().asJson();
-		//Form<LoginFormData> formData = Form.form(LoginFormData.class).bindFromRequest();
-		
-		DynamicForm nodo = Form.form().bindFromRequest();
 
-		int id =Integer.parseInt(nodo.get("id"));
-		String nombres=nodo.get("nombres");
-		String usuario=nodo.get("login");
-		String pass=nodo.get("password");
-		Paciente n= JPA.em().find(Paciente.class, id);
+
+		/** Usando Formas
+		 * 
+ 		DynamicForm nodo = Form.form().bindFromRequest();
+
+		int id =Integer.parseInt(nodo.findPath("id").asText());
+		String nombres=nodo.findPath("nombres").asText();
+		String usuario=nodo.findPath("usuario").asText();
+		String pass=nodo.findPath("password").asText();
+		 */
+
+		JsonNode nodo = Controller.request().body().asJson();
+
+		int id =Integer.parseInt(nodo.findPath("id").asText()); 
+		String nombres=nodo.findPath("nombres").asText(); 
+		String usuario=nodo.findPath("usuario").asText(); 
+		String pass=nodo.findPath("password").asText(); 
+		
+		Paciente n= JPA.em().find(Paciente.class, id); 
+
 		if(n!=null)
 			return Results.ok("El paciente ya existe");
 		else
 		{
-			n=new Paciente(id, nombres, usuario,pass);
+			n=new Paciente(id, nombres, usuario, pass);
 			JPA.em().persist(n);
 		}
 		return Results.created();		
 	}
-	
+
 	@Restrict({@Group("admin")})
 	public static Result delete(int idp)
 	{
 		Paciente p=JPA.em().find(Paciente.class, idp);
 		if(p==null)
 			return Results.notFound("Su tal paciente no existe");
-		
-     	JPA.em().remove(p);
-     	return Results.ok();
-     			
+
+		JPA.em().remove(p);
+		return Results.ok();
+
 	}
-	
+
 	@Restrict({@Group("admin")})
 	@play.db.jpa.Transactional
 	public static Result getAll()
@@ -91,14 +102,14 @@ public class PacienteController extends Controller
 		List<Paciente> resp=null;
 		Query q=JPA.em().createQuery("from Paciente");
 		resp=q.getResultList();
-		
+
 		Doctor d = null;
 		if(Secured.isLoggedIn(ctx()))
 			d=JPA.em().find(Doctor.class, Secured.getUser(ctx()));
-		
+
 		return ok(Pacientes.render("Pacientes", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp));
 	}
-	
+
 	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
 	public static Result verEpisodiosPacienteFecha()
@@ -107,25 +118,25 @@ public class PacienteController extends Controller
 		String idp = df.get("id");
 		String fechaIn = df.get("fechaIni");
 		String fechaFin = df.get("fechaFin");
-		
+
 		List<Episodio> resp=null;
 		Paciente p=JPA.em().find(Paciente.class, idp);
 		if(p==null)
 			return Results.notFound("el Paciente no existe");
-		
+
 		else if(p.getEpisodios()!=null)
 		{
 			Query q=JPA.em().createQuery("select ep from Paciente p join p.episodios ep where p.id=:id and ep.fecha between :fi and :ff");
 			q.setParameter("fi", fechaIn);
-	        q.setParameter("ff", fechaFin);
-	        q.setParameter("id", idp);
+			q.setParameter("ff", fechaFin);
+			q.setParameter("id", idp);
 			resp=q.getResultList();
 		}
-		
+
 		Doctor d = null;
 		if(Secured.isLoggedIn(ctx()))
 			d=JPA.em().find(Doctor.class, Secured.getUser(ctx()));
-		
+
 		return ok(Episodios.render("Episodios por Fecha", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp, idp));
 	}
 
@@ -135,39 +146,39 @@ public class PacienteController extends Controller
 	{
 		@SuppressWarnings("unused")
 		List<Episodio> resp=null;
-		
+
 		DynamicForm f = play.data.Form.form().bindFromRequest();
 		String idp = f.get("id");
-		
+
 		int donId = Integer.parseInt(idp);
-		
+
 		Paciente p=JPA.em().find(Paciente.class, donId);
 		if(p!=null)
 			resp=p.getEpisodios();
-		
+
 		else
 			throw new Exception("Paciente no encontrado");
-		
+
 		Doctor d = null;
 		if(Secured.isLoggedIn(ctx()))
 			d=JPA.em().find(Doctor.class, Secured.getUser(ctx()));
-		
+
 		return ok(Episodios.render("Episodios", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp, idp));
-				
+
 		//util para verificar inserciones
 		//return Results.ok("Debe ser X. Resultado: "+Integer.toString(resp.size()));
 	}
-	
-	
-	
-	
+
+
+
+
 	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
 	public static Result verEpisodioFull( )
 	{
 		DynamicForm f = play.data.Form.form().bindFromRequest();
 		String fe = f.get("id");
-		
+
 		ObjectNode r=Json.newObject();
 		Episodio resp=null;
 		List<Medicamento> med=null;
@@ -179,15 +190,15 @@ public class PacienteController extends Controller
 			return Results.notFound("el Episodio no existe");
 		else
 			resp=l.get(0);
-		
+
 		Doctor d = null;
 		if(Secured.isLoggedIn(ctx()))
 			d=JPA.em().find(Doctor.class, Secured.getUser(ctx()));
-		
+
 		return ok(DetailEpisodio.render("Episodio Detallado", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp));
 
 	}
-	
+
 	@Restrict({@Group("admin"),@Group("doctor")})
 	@play.db.jpa.Transactional
 	public static Paciente darPaciente(String correo)

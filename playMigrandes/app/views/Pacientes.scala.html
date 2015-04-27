@@ -39,7 +39,7 @@
 			      	</td>
 			      	
 			      	<td>
-			      	<form enctype="application/json" action="@routes.PacienteController.verEpisodiosPaciente()" method="get"><input type="hidden" name="id" value="@param.getIdentificacion()"/><button type="submit">Ver</button></form>
+			      	<form enctype="application/x-www-form-urlencoded" action="@routes.PacienteController.verEpisodiosPaciente()" method="get"><input type="hidden" name="id" value="@param.getIdentificacion()"/><button type="submit">Ver</button></form>
 			       </tr>
 			   		}
 			  	</tbody>
