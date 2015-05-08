@@ -84,7 +84,17 @@ public class Application extends Controller {
 			// email/password OK, so now we set the session variable and only go to authenticated pages.
 			session().clear();
 			session("email", formData.get().email);
-			return redirect(routes.PacienteController.getAll());
+			
+			if(formData.get().email.equals("admin"))
+			{
+				return redirect(routes.PacienteController.getAll());
+			}
+			
+			else
+			{
+				
+				return redirect(routes.DoctorController.darPacientesDoctor(formData.get().email));
+			}
 		}
 	}
 

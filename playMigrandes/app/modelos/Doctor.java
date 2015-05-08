@@ -55,6 +55,7 @@ public class Doctor implements Subject
      * Usuario del doctor.
      */
 	@Id
+	@NotNull
     private String email;
    
 	/**
@@ -83,6 +84,7 @@ public class Doctor implements Subject
 
 	
 	@Column(name="password")
+	@NotNull
 	private String password;
 
     //-----------------------------------------------------------
@@ -199,6 +201,10 @@ public class Doctor implements Subject
 	public void agregarRol(SecurityRole s)
 	{
 		roles.add(s);
+	}
+	public void agregarPaciente(Paciente p)
+	{
+		pacientes.add(p);
 	}
 	
 	

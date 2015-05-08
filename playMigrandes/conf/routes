@@ -27,6 +27,9 @@ GET     /doctor              controllers.DoctorController.darDoctores()
 #eliminar Doctor
 #DELETE /doctor/:id
 
+#Ver pacientes del doctor
+GET /doctor/:id/paciente         controllers.DoctorController.darPacientesDoctor(id: String)
+
 
 #-------------------------------PACIENTE-----------------------------------------------------------                                       
 
@@ -42,10 +45,6 @@ GET         /paciente                                            controllers.Pac
 #Eliminar Paciente
 DELETE		/paciente/:id                                        controllers.PacienteController.delete(id :Integer)
 
-#Ver un episodio de un paciente
-#GET 		/paciente/episodio/:idp/ide		                        controlllers.PacienteController.verEpisodioPaciente(idp: Long, ide:Long)
-
-
 #Ver todos los episodios de un paciente
 GET			/paciente/getAllEpisodios/			              controllers.PacienteController.verEpisodiosPaciente()
 
@@ -55,6 +54,9 @@ GET 	    /paciente/getEpisodios/       controllers.PacienteController.verEpisodi
 
 #Ver revisar un episodio completo
 GET         /paciente/episodioCompleto/                        controllers.PacienteController.verEpisodioFull()
+
+#Asignar un Doctor al Paciente
+POST      /paciente/asignarDoctor              controllers.PacienteController.asignarDoctor()
 	
 #--------------------------------MEDICAMENTO-----------------------------------------------------------------------------------------
 

@@ -43,29 +43,14 @@ import play.data.Form;
 import play.db.jpa.JPA;
 import play.db.jpa.Transactional;
 
-
-
-
 public class PacienteController extends Controller
 {
 
-	@SubjectNotPresent
+	
 	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
 	public static Result create()
 	{
-
-
-		/** Usando Formas
-		 * 
- 		DynamicForm nodo = Form.form().bindFromRequest();
-
-		int id =Integer.parseInt(nodo.findPath("id").asText());
-		String nombres=nodo.findPath("nombres").asText();
-		String usuario=nodo.findPath("usuario").asText();
-		String pass=nodo.findPath("password").asText();
-		 */
-
 		JsonNode nodo = Controller.request().body().asJson();
 		Logger.info("entro al create");
 		int id =Integer.parseInt(nodo.findPath("id").asText()); 
@@ -76,7 +61,7 @@ public class PacienteController extends Controller
 		Paciente n= JPA.em().find(Paciente.class, id); 
 
 		if(n!=null)
-			return Results.ok("El paciente ya existe");
+			return Results.badRequest("El paciente ya existe");
 		else
 		{
 			Logger.info("creando paciente");
@@ -103,7 +88,7 @@ public class PacienteController extends Controller
 	}
 
 	@Security.Authenticated(SecuredP.class)
-	@Restrict({@Group("admin"),@Group("doctor")})
+	@Restrict({@Group("admin")})
 	@play.db.jpa.Transactional
 	public static Result getAll()
 	{
@@ -218,4 +203,33 @@ public class PacienteController extends Controller
 		q.setParameter("c", correo);
 		return (Paciente)q.getResultList().get(0);
 	}
+	
+	@Security.Authenticated(SecuredP.class)
+	@Restrict({@Group("admin")})
+	@Transactional
+	@BodyParser.Of(BodyParser.Json.class)
+	public static Result asignarDoctor()
+	{
+		JsonNode nodo = Controller.request().body().asJson();
+		int pacienteId =Integer.parseInt(nodo.findPath("pacienteId").asText()); 
+		String doctorId=nodo.findPath("doctorId").asText(); 
+		
+		Paciente n= JPA.em().find(Paciente.class, pacienteId); 
+		Doctor d= JPA.em().find(Doctor.class, doctorId); 
+
+		if(n==null)
+			return Results.notFound("El paciente no exite");
+		
+		else if(d==null)
+			return Results.notFound("El doctor no existe");
+		
+		else
+		{
+			d.agregarPaciente(n);
+			//n.asignarDoctor(d);
+		}
+		return Results.ok();		
+	}
+	
+	
 }
