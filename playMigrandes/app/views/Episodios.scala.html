@@ -1,6 +1,7 @@
 @* Episodios Template File *@
 @import modelos.Doctor
 @import modelos.Episodio
+@import views.formdata.SecurityActions
 @(page: String, isLoggedIn: Boolean, userInfo: Doctor, param:List[Episodio], idPaciente:String)
 
 @import bootstrap3._
@@ -47,6 +48,18 @@
 Fecha Inicial: <input type="date" data-date-format="dd/mm/yyyy" name="fechaIni">&nbsp;&nbsp;&nbsp;&nbsp;
 Fecha Final: <input type="date" name="fechaFin">&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="hidden" name="id" value="@idPaciente">
+@*****TODO coger los 3 parametros, concatenarlos y calculateHMAC(secret: String): String 
+
+1. coger los inputs de fechaIni, fechaFin, 
+2. generar hash
+3. enviarlo como otro input
+***@
+
+@defining(SecurityActions.calculateHMAC("hola")){ hmac =>
+<input type="hidden" name="hmac" value="@hmac">
+)}
+
+
 <input type="submit" value="Filtrar">
 </form>
 </td>
@@ -98,7 +111,8 @@ Fecha Final: <input type="date" name="fechaFin">&nbsp;&nbsp;&nbsp;&nbsp;
     	}else{No hay ubicacion disponible}
       	</td>
       	<td>
-      	<form action="@routes.PacienteController.verEpisodioFull()" method="get"><input type="hidden" name="id" value="@param.getFecha()"/><button type="submit">Ver</button></form>
+      	<form action="@routes.PacienteController.verEpisodioFull()" method="get">
+      	<input type="hidden" name="id" value="@param.getFecha()"/><button type="submit">Ver</button></form>
        </tr>
     }
   
@@ -118,7 +132,8 @@ Fecha Final: <input type="date" name="fechaFin">&nbsp;&nbsp;&nbsp;&nbsp;
 function validateForm() {
     var x = document.forms["fechas"]["fechaIni"].value;
     var x = document.forms["fechas"]["fechaFin"].value;
-    if (x == null || x == "" || y == null || y == "") {
+    if (x == null || x == "" || y == null || y == "") 
+    {
         alert("Debe llenar fecha inicial y final primero");
         return false;
     }
