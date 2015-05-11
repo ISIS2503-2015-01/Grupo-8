@@ -39,6 +39,16 @@ public class DoctorController extends Controller
 		String correo=nodo.findPath("login").asText();
 		String clave=nodo.findPath("password").asText();
 
+		//Verifica integridad
+		String hmacRec = nodo.findPath("hmac").asText();
+		String[] params = {nombres,correo,clave};
+		boolean integ = Secured.verificarIntegridad(params, hmacRec);
+		if(!integ)
+		{
+			return Results.notFound("La información ha sido alterada.");
+		}
+		
+		
 		Doctor n=JPA.em().find(Doctor.class, correo);
 		if(n!=null)
 			return Results.ok("Ya existe");
