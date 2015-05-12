@@ -112,6 +112,15 @@ public class PacienteController extends Controller
 		String idp = df.get("id");
 		String fechaIn = df.get("fechaIni");
 		String fechaFin = df.get("fechaFin");
+		
+		//Verifica integridad
+		String hmacRec = df.get("hmac");
+		String[] params = {idp,fechaIn,fechaFin};
+		boolean integ = Secured.verificarIntegridad(params, hmacRec);
+		if(!integ)
+		{
+			return Results.notFound("La información ha sido alterada.");
+		}
 
 		List<Episodio> resp=null;
 		Paciente p=JPA.em().find(Paciente.class, idp);
@@ -144,6 +153,15 @@ public class PacienteController extends Controller
 
 		DynamicForm f = play.data.Form.form().bindFromRequest();
 		String idp = f.get("id");
+		
+		//Verifica integridad
+				String hmacRec = f.get("hmac");
+				String[] params = {idp};
+				boolean integ = Secured.verificarIntegridad(params, hmacRec);
+				if(!integ)
+				{
+					return Results.notFound("La información ha sido alterada.");
+				}
 
 		int donId = Integer.parseInt(idp);
 
@@ -173,6 +191,15 @@ public class PacienteController extends Controller
 	{
 		DynamicForm f = play.data.Form.form().bindFromRequest();
 		String fe = f.get("id");
+		
+		//Verifica integridad
+		String hmacRec = f.get("hmac");
+		String[] params = {fe};
+		boolean integ = Secured.verificarIntegridad(params, hmacRec);
+		if(!integ)
+		{
+			return Results.notFound("La información ha sido alterada.");
+		}
 
 		ObjectNode r=Json.newObject();
 		Episodio resp=null;
