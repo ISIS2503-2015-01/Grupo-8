@@ -112,6 +112,8 @@ public class PacienteController extends Controller
 		String idp = df.get("id");
 		String fechaIn = df.get("fechaIni");
 		String fechaFin = df.get("fechaFin");
+		int k = Integer.parseInt(idp);
+		
 		
 		//Verifica integridad
 		String hmacRec = df.get("hmac");
@@ -123,7 +125,7 @@ public class PacienteController extends Controller
 		}
 
 		List<Episodio> resp=null;
-		Paciente p=JPA.em().find(Paciente.class, idp);
+		Paciente p=JPA.em().find(Paciente.class, k);
 		if(p==null)
 			return Results.notFound("el Paciente no existe");
 
@@ -132,7 +134,7 @@ public class PacienteController extends Controller
 			Query q=JPA.em().createQuery("select ep from Paciente p join p.episodios ep where p.id=:id and ep.fecha between :fi and :ff");
 			q.setParameter("fi", fechaIn);
 			q.setParameter("ff", fechaFin);
-			q.setParameter("id", idp);
+			q.setParameter("id", k);
 			resp=q.getResultList();
 		}
 
