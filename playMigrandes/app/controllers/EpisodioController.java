@@ -43,6 +43,9 @@ public class EpisodioController extends Controller
 		String ubicacion = nodo.findPath("ubicacion").asText();
 		String intensidad = nodo.findPath("intensidad").asText();
 		String medicamentos = nodo.findPath("medicamentos").asText();
+		
+		
+		
 
 		Episodio n = JPA.em().find(Episodio.class, id);
 		if(n!=null)
@@ -52,11 +55,22 @@ public class EpisodioController extends Controller
 			if(notaVoz.isEmpty()&&descripcion.isEmpty()&&ubicacion.isEmpty()&&intensidad.isEmpty())
 			{
 				//si entra 	quiere decir que se trata de jmeter y solo llega una fecha por parametro
+				
+				
 				n = new Episodio(id);
 			}
 			else if(descripcion.isEmpty()&&ubicacion.isEmpty()&&intensidad.isEmpty())
 			{
 				//Si entra quiere decir que el paciente creo una nota de voz y por lo tanto solo se recibe la nota de voz y la fecha
+				
+				//Integridad
+				String hmacRec = nodo.findPath("hmac").asText();
+				String[] params = {id,notaVoz};
+				boolean integ = Secured.verificarIntegridad(params, hmacRec);
+				if(!integ)
+				{
+					return Results.unauthorized("La información ha sido alterada.");
+				}
 				
 				n= new Episodio(id,notaVoz);
 			}
@@ -64,6 +78,15 @@ public class EpisodioController extends Controller
 
 				//La interfaz web se asegura de que los separadores no pueden ser ingresados por el paciente.
 				//Si entra quiere decir que el paciente creo un episodio completo, solo la lista de medicamentos puede estar vacia
+				String hmacRec = nodo.findPath("hmac").asText();
+				String[] params = {id,descripcion,ubicacion,intensidad};
+				boolean integ = Secured.verificarIntegridad(params, hmacRec);
+				if(!integ)
+				{
+					return Results.unauthorized("La información ha sido alterada.");
+				}
+				
+				
 				List<Medicamento> medicamentosL = new ArrayList<Medicamento>();
 				if(!medicamentos.isEmpty())
 				{

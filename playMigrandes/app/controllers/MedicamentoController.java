@@ -33,6 +33,14 @@ public class MedicamentoController {
 		String nombre=nodo.findPath("nombre").asText();
 		String descripcion=nodo.findPath("descripcion").asText();
 		
+		String hmacRec = nodo.findPath("hmac").asText();
+		String[] params = {nombre,descripcion};
+		boolean integ = Secured.verificarIntegridad(params, hmacRec);
+		if(!integ)
+		{
+			return Results.unauthorized("La información ha sido alterada.");
+		}
+		
 		Medicamento n= JPA.em().find(Medicamento.class, nombre);
 		if(n!=null)
 			return Results.ok("El paciente ya existe");

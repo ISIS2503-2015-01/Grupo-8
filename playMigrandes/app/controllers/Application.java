@@ -160,5 +160,8 @@ public class Application extends Controller {
 		Doctor d=JPA.em().find(Doctor.class, Secured.getUser(ctx()));
 		return ok(Profile.render("Profile", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(),d)));
 	}
+	
+	
+	
 
 }

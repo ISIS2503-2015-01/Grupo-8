@@ -137,6 +137,25 @@ public class DoctorController extends Controller
 		return ok(Pacientes.render("Pacientes", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp));
 
 	}
+	
+	@Security.Authenticated(SecuredP.class)
+	@Restrict({@Group("admin"),@Group("doctor")})
+	@play.db.jpa.Transactional
+	public static Result darDoctorLoggeado()
+	{
+		Doctor d = null;
+		if(Secured.isLoggedIn(ctx()))
+		{
+			d=JPA.em().find(Doctor.class, Secured.getUser(ctx()));
+			return ok(Json.toJson(d));
+		}
+
+		else
+			return forbidden("No hay ningun doctor loggeado.");
+	}
+	
+	
+	
 
 }
 

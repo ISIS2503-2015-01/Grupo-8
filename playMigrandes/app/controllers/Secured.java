@@ -1,4 +1,5 @@
 package controllers;
+import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import java.util.Base64;
 
@@ -7,6 +8,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 import modelos.Doctor;
 import modelos.Paciente;
+import play.Logger;
 import play.mvc.Result;
 import play.mvc.Security;
 import play.mvc.Http.Context;
@@ -75,12 +77,12 @@ public class Secured  extends Security.Authenticator
 	   * @param secret
 	   * @return
 	   */
-	  	private static 	String calculateHMAC(String secret) {
+		private static String calculateHMAC(String secret) {
 			try {
-				SecretKeySpec signingKey = new SecretKeySpec(secret.getBytes(),	"HmacSHA1");
+				SecretKeySpec signingKey = new SecretKeySpec(secret.getBytes("UTF-8"),	"HmacSHA1");
 				Mac mac = Mac.getInstance("HmacSHA1");
 				mac.init(signingKey);
-				byte[] rawHmac = mac.doFinal();
+				byte[] rawHmac = mac.doFinal(secret.getBytes("UTF-8"));
 				String result = new String(Base64.getEncoder().encode(rawHmac));
 				System.out.println("Codigo Hash: "+ result);
 
@@ -88,8 +90,14 @@ public class Secured  extends Security.Authenticator
 			} catch (GeneralSecurityException e) {
 				System.out.println("Unexpected error while creating hash: " + e.getMessage());
 				throw new IllegalArgumentException();
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return "";
 			}
 		}
+	  	
+	  
 		
 		/**
 		 * Recibe los parametros en un arreglo de strings, los concatena, genera el codigo de hash y lo compara con el recibido
@@ -149,12 +157,12 @@ public class Secured  extends Security.Authenticator
 			//compare
 			if(!hmLocal.equals(hmRecibido))
 			{
-				System.out.println("ERROR - el codigo recibido "+hmRecibido+" y el generado "+hmLocal+" no coinciden");
+				Logger.info("ERROR - el codigo recibido "+hmRecibido+" y el generado "+hmLocal+" no coinciden");
 				return false;
 			}
 			else
 			{
-				System.out.println("El codigo recibido "+hmRecibido+" y el generado "+hmLocal+" SI coinciden. La integridad se mantuvo.");
+				Logger.info("El codigo recibido "+hmRecibido+" y el generado "+hmLocal+" SI coinciden. La integridad se mantuvo.");
 				return true;
 			}	
 		}

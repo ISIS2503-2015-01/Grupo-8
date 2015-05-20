@@ -65,10 +65,12 @@ public class Actividad //extends Model
      * @param descripcion DescripciÃ³n de las funcionaes del cargo
      * @param fecha fecha en que reporto el evento
      */
-    public Actividad( String nombre, String cargo, String descripcion, String fecha)
+    public Actividad( String nombre, String descripcion, String tipo, String fecha)
     {
         this.setNombre(nombre);
         this.descripcion = descripcion;
+        this.tipo = tipo;
+        this.fecha = fecha;
     }
 
     //-----------------------------------------------------------

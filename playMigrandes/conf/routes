@@ -31,6 +31,9 @@ GET     /doctor              controllers.DoctorController.darDoctores()
 GET /doctor/:id/paciente         controllers.DoctorController.darPacientesDoctor(id: String)
 
 
+#Ver doctor loggeado
+GET /doctor/logged         controllers.DoctorController.darDoctorLoggeado()
+
 #-------------------------------PACIENTE-----------------------------------------------------------                                       
 
 #Crear Paciente
@@ -57,6 +60,17 @@ GET         /paciente/episodioCompleto/                        controllers.Pacie
 
 #Asignar un Doctor al Paciente
 POST      /paciente/asignarDoctor              controllers.PacienteController.asignarDoctor()
+
+
+#Ver todos los episodios de un paciente
+GET			/paciente/getAllEpisodiosMovil/			              controllers.PacienteController.verEpisodiosPacienteMovil()
+
+
+#Ver episodios en fecha
+GET 	    /paciente/getEpisodiosMovil/      					controllers.PacienteController.verEpisodiosPacienteFechaMovil()
+
+#Ver revisar un episodio completo
+GET         /paciente/episodioCompletoMovil/                        controllers.PacienteController.verEpisodioFullMovil()
 	
 #--------------------------------MEDICAMENTO-----------------------------------------------------------------------------------------
 
@@ -70,5 +84,8 @@ GET   /medicamento                                                controllers.Me
 
 #Crear Episodio
 POST /episodio/new                                                  controllers.EpisodioController.create()
+
+#Crear Actividad
+POST /actividad/new                                                  controllers.PacienteController.createActividad()
 
   
