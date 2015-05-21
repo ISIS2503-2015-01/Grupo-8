@@ -197,4 +197,20 @@ public class Application extends Controller {
 	
 	
 
+	
+	@play.db.jpa.Transactional
+	public static Result registrar() 
+	{
+		Doctor d=null;
+
+		if(Secured.isLoggedIn(ctx()))
+		{
+			d=JPA.em().find(Doctor.class, Secured.getUser(ctx()));
+
+		}
+
+		return ok(Register.render("Registrar",Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(),d)));
+	}
+
+	
 }
