@@ -49,8 +49,10 @@ public class MedicamentoController {
 			n=new Medicamento(nombre, descripcion);
 			JPA.em().persist(n);
 		}
-		return Results.created();		
+		return Results.ok(Json.toJson(n));		
 	}
+	
+	
 	
 	@Restrict({@Group("paciente")})
 	@play.db.jpa.Transactional

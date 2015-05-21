@@ -130,6 +130,39 @@ public class Application extends Controller {
 		}
 	}
 
+	@play.db.jpa.Transactional
+	public static Result postLoginD() {
+		Doctor d=null;
+		
+		JsonNode nodo = Controller.request().body().asJson();
+		String email = nodo.findPath("login").asText();
+		String password = nodo.findPath("password").asText();
+		Logger.info("current user :"+email);
+		Query query = JPA.em().createQuery("select p from Doctor p where p.email='"+email+"'" );
+		
+		if(!query.getResultList().isEmpty())
+			d=(Doctor)query.getSingleResult();
+
+		if(d==null)
+		{
+			return notFound("usuario no encontradp");
+		}
+
+		else
+		{
+			if (d.getPassword().equals(password)) 
+			{
+				session().clear();
+				session("email",email);
+				Logger.info("Estas logueado :"+email);
+				return ok(Json.toJson(d));
+			}
+			return badRequest("dont match");		
+		}
+	}
+
+	
+	
 	@Security.Authenticated(SecuredP.class)
 	public static Result logoutP()
 	{

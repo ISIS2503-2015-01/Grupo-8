@@ -143,7 +143,7 @@ public class PacienteController extends Controller
 			a=new Actividad(nombre, descripcion,tipo,fecha);
 			JPA.em().persist(a);
 		}
-		return Results.created();		
+		return Results.ok(Json.toJson(a));		
 	}
 
 	@Security.Authenticated(SecuredP.class)
@@ -510,6 +510,22 @@ public class PacienteController extends Controller
 
 		//return ok(DetailEpisodio.render("Episodio Detallado", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp));
 		return ok(Json.toJson(resp));
+	}
+	
+	@Security.Authenticated(SecuredP.class)
+	@Restrict({@Group("paciente")})
+	@play.db.jpa.Transactional
+	public static Result darPacienteLoggeado()
+	{
+		Paciente p = null;
+		if(Secured.isLoggedIn(ctx()))
+		{
+			p=JPA.em().find(Paciente.class, Secured.getUser(ctx()));
+			return ok(Json.toJson(p));
+		}
+
+		else
+			return forbidden("No hay ningun paciente loggeado.");
 	}
 
 }

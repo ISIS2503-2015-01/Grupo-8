@@ -139,7 +139,11 @@ public class Secured  extends Security.Authenticator
 			}
 			*/
 			
-			
+			if(hmRecibido.equals("")||hmRecibido==null)
+			{
+				Logger.info("No se recibio nungun hmac. No se puede verificar la integridad");
+				return true;
+			}
 		
 			String paramsJuntos = "";
 			

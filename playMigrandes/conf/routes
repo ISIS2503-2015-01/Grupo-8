@@ -12,6 +12,9 @@ GET     /logout                      controllers.Application.logout()
 
 
 POST     /loginMovil                 controllers.Application.postLoginP()
+POST     /loginMovilDoctor                 controllers.Application.postLoginD()
+
+
 GET     /logoutMovil                 controllers.Application.logoutP()
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
@@ -71,6 +74,9 @@ GET 	    /paciente/getEpisodiosMovil/      					controllers.PacienteController.v
 
 #Ver revisar un episodio completo
 GET         /paciente/episodioCompletoMovil/                        controllers.PacienteController.verEpisodioFullMovil()
+
+#Ver paciente loggeado
+GET /paciente/logged         controllers.PacienteController.darPacienteLoggeado()
 	
 #--------------------------------MEDICAMENTO-----------------------------------------------------------------------------------------
 
