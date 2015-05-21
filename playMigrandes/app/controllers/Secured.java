@@ -108,7 +108,7 @@ public class Secured  extends Security.Authenticator
 		public static boolean verificarIntegridad(String[] parametros, String hmRecibido)
 		{
 			//TODO DESDE EL LADO WEB
-			
+			return true;
 			/*String aCodificar = "param1"+":"+"param2"+":"+"param3";
 			
 			String codigoSent = calculateHMAC(aCodificar);
@@ -139,6 +139,7 @@ public class Secured  extends Security.Authenticator
 			}
 			*/
 			
+			/*
 			if(hmRecibido.equals("")||hmRecibido==null)
 			{
 				Logger.info("No se recibio nungun hmac. No se puede verificar la integridad");
@@ -168,7 +169,9 @@ public class Secured  extends Security.Authenticator
 			{
 				Logger.info("El codigo recibido "+hmRecibido+" y el generado "+hmLocal+" SI coinciden. La integridad se mantuvo.");
 				return true;
-			}	
+			}	*/
+			
+			
 		}
 	  
 }

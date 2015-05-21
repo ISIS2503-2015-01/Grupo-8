@@ -21,10 +21,13 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 #--------------------------------DOCTOR----------------------------------------------------------------------------
 
-#Crear Doctor
+#Registrar Doctor
 GET    /registrar               controllers.Application.registrar()
 
-POST   /crear					controllers.DoctorController.create()
+#POST   /crear					controllers.DoctorController.create()
+
+#Crear Doctor
+POST    /doctor               controllers.DoctorController.create()
 
 #Ver todos los doctores
 GET     /doctor              controllers.DoctorController.darDoctores()

@@ -17,6 +17,7 @@ import be.objectify.deadbolt.java.actions.Restrict;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
+import play.Logger;
 import play.db.jpa.JPA;
 import play.db.jpa.Transactional;
 import play.libs.Json;
@@ -30,7 +31,8 @@ import modelos.Paciente;
 @Security.Authenticated(SecuredP.class)
 public class EpisodioController extends Controller
 {
-	@Restrict({@Group("paciente")})
+	
+	
 	@Transactional
 	@BodyParser.Of(BodyParser.Json.class)
 	public static Result create() throws ParseException
@@ -43,13 +45,19 @@ public class EpisodioController extends Controller
 		String ubicacion = nodo.findPath("ubicacion").asText();
 		String intensidad = nodo.findPath("intensidad").asText();
 		String medicamentos = nodo.findPath("medicamentos").asText();
-		
-		
-		
-
+		String pacienteId = nodo.findPath("pacienteId").asText();
+		int idp=Integer.parseInt(pacienteId);
 		Episodio n = JPA.em().find(Episodio.class, id);
+		Paciente p= JPA.em().find(Paciente.class, idp);
+		
 		if(n!=null)
-			return Results.ok("El epsodio ya existe");
+			return Results.notFound("El epsodio ya existe");
+		
+		else if(p==null)
+		{
+			Logger.info("paciente no encontrado al crear episodio");
+			return Results.notFound("el paciente no existe");
+		}
 		else
 		{
 			if(notaVoz.isEmpty()&&descripcion.isEmpty()&&ubicacion.isEmpty()&&intensidad.isEmpty())
@@ -69,7 +77,7 @@ public class EpisodioController extends Controller
 				boolean integ = Secured.verificarIntegridad(params, hmacRec);
 				if(!integ)
 				{
-					return Results.unauthorized("La información ha sido alterada.");
+					return Results.unauthorized("La informaciÃ³n ha sido alterada.");
 				}
 				
 				n= new Episodio(id,notaVoz);
@@ -83,7 +91,7 @@ public class EpisodioController extends Controller
 				boolean integ = Secured.verificarIntegridad(params, hmacRec);
 				if(!integ)
 				{
-					return Results.unauthorized("La información ha sido alterada.");
+					return Results.unauthorized("La informaciÃ³n ha sido alterada.");
 				}
 				
 				
@@ -106,10 +114,13 @@ public class EpisodioController extends Controller
 			}
 
 			JPA.em().persist(n);
+			p=JPA.em().getReference(Paciente.class, idp);
+			p.addEpisodio(n);
 		}
 
 		return Results.created();		
 	}
+	
 
 	@Restrict({@Group("paciente")})
 	public static Result delete(Long idp) throws ParseException
