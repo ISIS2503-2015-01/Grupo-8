@@ -29,15 +29,29 @@
           <!--  Display three horizontal lines when navbar collapsed. -->
           <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" >MIGRANDES</a>
+         @if(isLoggedIn) {
+            <li class="@("active".when(page == "Pacientes"))">
+        <a class="navbar-brand" href="@routes.DoctorController.darPacientesDoctor(userInfo.getEmail())">MIGRANDES</a></li>
+        }
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
           @if(isLoggedIn) {
-            <li class="@("active".when(page == "Pacientes"))"><a href="@routes.DoctorController.darPacientesDoctor(userInfo.getEmail())">&nbsp&nbsp Tus Pacientes</a></li>
+            <li class="@("active".when(page == "Pacientes"))"><a href="@routes.DoctorController.darPacientesDoctor(userInfo.getEmail())">&nbsp&nbsp Mis Pacientes</a></li>
           }
-        </ul>1
-        <ul class="nav navbar-nav navbar-right">
+        </ul>
+        
+		<ul class="nav navbar-nav navbar-right">
+					@if(isLoggedIn) {
+
+					<form class="navbar-form navbar-left" role="search" action = "@routes.PacienteController.verEpisodiosPaciente()" method="get">
+					<div class="form-group">
+						<input type="text" name="id" id="id" class="form-control" placeholder="ID del paciente">
+					</div>
+					<button type="submit" class="btn btn-default">Buscar</button>
+				</form>
+				}
+				
           @if(isLoggedIn) {
             <li><p class="navbar-text">@userInfo.getEmail()</p></li>
             <li><a href="@routes.Application.logout()">Logout</a></li>

@@ -22,7 +22,9 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 #--------------------------------DOCTOR----------------------------------------------------------------------------
 
 #Crear Doctor
-POST    /doctor               controllers.DoctorController.create()
+GET    /registrar               controllers.Application.registrar()
+
+POST   /crear					controllers.DoctorController.create()
 
 #Ver todos los doctores
 GET     /doctor              controllers.DoctorController.darDoctores()
@@ -91,6 +93,7 @@ GET   /medicamento                                                controllers.Me
 #Crear Episodio
 POST /episodio/new                                                  controllers.EpisodioController.create()
 
+#GET / dafuq														controllers.Secured.calculateHMAC(secret: String)
 #Crear Actividad
 POST /actividad/new                                                  controllers.PacienteController.createActividad()
 

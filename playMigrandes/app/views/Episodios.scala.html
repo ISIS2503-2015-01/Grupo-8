@@ -1,8 +1,9 @@
 @* Episodios Template File *@
 @import modelos.Doctor
 @import modelos.Episodio
+@import modelos.Paciente
 @import views.formdata.SecurityActions
-@(page: String, isLoggedIn: Boolean, userInfo: Doctor, param:List[Episodio], idPaciente:String)
+@(page: String, isLoggedIn: Boolean, userInfo: Doctor, param:List[Episodio], paciente:Paciente)
 
 @import bootstrap3._
 
@@ -14,57 +15,12 @@
      <div class="row">
        <div class="col-sm-10 col-sm-offset-1">
        
-       <h2>Episodios</h2>
-       <br><br>
-       <strong><h4>&nbsp&nbsp Filtros</h4></strong>
-         		
-
-<div>
-<table class = "table table-striped">
- <tbody>
-    <tr>
-      <td>
-      
-	<form action = "@routes.PacienteController.verEpisodiosPaciente()" method="get">
-	<input type="text" name="id" id="id" placeholder="Buscar episodio por id de paciente" style="width:500px;font-size:14px"/>
-	<input type="submit" value="Buscar">
-	</form>
-
-      </td>
-    </tr>
-  </tbody>
-	
-</table>
-
-</div>
-
+       <h2>Episodios de @paciente.getNombres</h2>
+       <a href="@routes.DoctorController.darPacientesDoctor(userInfo.getEmail())"> &lt Volver </a>
+     
 <br>
 
-<table id="datetimepicker"  class="table table-striped">
-<tr>
-<td>
-<form name="fechas" action ="@routes.PacienteController.verEpisodiosPacienteFecha()" onSubmit="return validateForm()" method="get">
-<strong>Filtrar por fecha: </strong> &nbsp;&nbsp;&nbsp;&nbsp;
-Fecha Inicial: <input type="date" data-date-format="dd/mm/yyyy" name="fechaIni">&nbsp;&nbsp;&nbsp;&nbsp;
-Fecha Final: <input type="date" name="fechaFin">&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="hidden" name="id" value="@idPaciente">
-@*****TODO coger los 3 parametros, concatenarlos y calculateHMAC(secret: String): String 
 
-1. coger los inputs de fechaIni, fechaFin, 
-2. generar hash
-3. enviarlo como otro input
-***@
-
-@defining(SecurityActions.calculateHMAC("hola")){ hmac =>
-<input type="hidden" name="hmac" value="@hmac">
-)}
-
-
-<input type="submit" value="Filtrar">
-</form>
-</td>
-</tr>
-</table>
 
 <script type="text/javascript">
             $(function () {
@@ -77,14 +33,14 @@ Fecha Final: <input type="date" name="fechaFin">&nbsp;&nbsp;&nbsp;&nbsp;
 
 <br><br><br>
 
-<table class="table table-striped">
+<table class="table table-striped table-bordered table-hover ">
   <thead>
     <tr>
       <th>Fecha</th>
       <th>Descripcion</th>
       <th>Intensidad</th>
       <th>Ubicacion</th>
-      <th>Ver detalles</th>
+      <th>Ver mas detalles</th>
     </tr>
   </thead>
   <tbody>
@@ -119,25 +75,70 @@ Fecha Final: <input type="date" name="fechaFin">&nbsp;&nbsp;&nbsp;&nbsp;
   </tbody> 
 </table>
 
+
+<br><br><br>
+
+<table class="table table-striped table-bordered">
+<tr>
+<td>
+<form name="fechas" action ="@routes.PacienteController.verEpisodiosPacienteFecha()" onSubmit="return validateForm()" method="get">
+<strong>Filtrar por fecha: </strong> &nbsp;&nbsp;&nbsp;&nbsp;
+Fecha Inicial: <input type="date" data-date-format="dd/mm/yyyy" name="fechaIni">&nbsp;&nbsp;&nbsp;&nbsp;
+Fecha Final: <input type="date" name="fechaFin">&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="hidden" name="id" value="@paciente.getIdentificacion">
+
+<!-- 
+<script>
+    function encrypt() {
+   		var s = document.getElementById("fechaIni").value;
+   		var d = document.getElementById("fechaFin").value;
+   		var e = document.getElementById("id").value;
+   		var g = ":";
+   		var x = s.concat(g,d,g,e);
+		$.ajax({
+			type : 'GET',
+			
+			data : {
+				secret : x
+			}
+			success : function(data){
+
+			}
+		});
+
+}
+    
+</script>
+ -->
+<script>
+function validateForm() {
+    var x = document.forms["fechas"]["fechaIni"].value;
+    var y = document.forms["fechas"]["fechaFin"].value;
+    if (x == null || x == "" || y == null || y == "") 
+    {
+        alert("Debe llenar fecha inicial y final primero");
+        return false;
+    }
+  <!--  encrypt();-->
+}
+</script>
+
+<input type="submit" value="Filtrar">
+</form>
+</td>
+</tr>
+</table>
+
 <br><br>
+
+
+
 <div id="chartcontainer">No hay informacion suficiente para desplegar la grafica</div>
 <script type="text/javascript">
 	var myData = new Array(@for((param,index) <- param.zipWithIndex){@if(index != 0){,}[@index,@param.getIntensidad()]});
 	var myChart = new JSChart('chartcontainer', 'line');
 	myChart.setDataArray(myData);
 	myChart.draw();
-</script>
-
-<script>
-function validateForm() {
-    var x = document.forms["fechas"]["fechaIni"].value;
-    var x = document.forms["fechas"]["fechaFin"].value;
-    if (x == null || x == "" || y == null || y == "") 
-    {
-        alert("Debe llenar fecha inicial y final primero");
-        return false;
-    }
-}
 </script>
 
 </div>

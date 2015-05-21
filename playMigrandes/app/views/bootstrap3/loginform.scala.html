@@ -20,7 +20,7 @@
             <div class="form-group @if(emailField.hasErrors) {has-error}" >
               <input id="@emailField.id" name="@emailField.name" value="@emailField.value.getOrElse("")" class="form-control" placeholder="E-mail" type="text">
             </div>
-            <div class="form-group @if(passwordField.hasErrors) {has-error}" >
+            <div class="form-group @if(passwordField.hasErrors) {has-error}" >	
               <input id="@passwordField.id" name="@passwordField.name" value="@passwordField.value.getOrElse("")" class="form-control" placeholder="Password" type="password">
             </div>
             <input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
@@ -31,6 +31,9 @@
              @flash.get("error")
            </div>
          }
+         
+         <br>
+           	No tienes cuenta aun?   <a href ="@routes.Application.registrar()">Registrate</a>
       </div>
     </div>
   </div>

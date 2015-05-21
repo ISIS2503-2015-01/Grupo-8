@@ -158,14 +158,14 @@ public class PacienteController extends Controller
 		int k = Integer.parseInt(idp);
 		
 		
-		//Verifica integridad
-		String hmacRec = df.get("hmac");
-		String[] params = {idp,fechaIn,fechaFin};
-		boolean integ = Secured.verificarIntegridad(params, hmacRec);
-		if(!integ)
-		{
-			return Results.notFound("La información ha sido alterada.");
-		}
+//		//Verifica integridad
+//		String hmacRec = df.get("hmac");
+//		String[] params = {idp,fechaIn,fechaFin};
+//		boolean integ = Secured.verificarIntegridad(params, hmacRec);
+//		if(!integ)
+//		{
+//			return Results.notFound("La información ha sido alterada.");
+//		}
 
 		List<Episodio> resp=null;
 		Paciente p=JPA.em().find(Paciente.class, k);
@@ -185,7 +185,7 @@ public class PacienteController extends Controller
 		if(Secured.isLoggedIn(ctx()))
 			d=JPA.em().find(Doctor.class, Secured.getUser(ctx()));
 
-		return ok(Episodios.render("Episodios por Fecha", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp, idp));
+		return ok(Episodios.render("Episodios por Fecha", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp, p));
 	}
 
 	@Security.Authenticated(SecuredP.class)
@@ -199,14 +199,14 @@ public class PacienteController extends Controller
 		DynamicForm f = play.data.Form.form().bindFromRequest();
 		String idp = f.get("id");
 		
-		//Verifica integridad
-				String hmacRec = f.get("hmac");
-				String[] params = {idp};
-				boolean integ = Secured.verificarIntegridad(params, hmacRec);
-				if(!integ)
-				{
-					return Results.notFound("La información ha sido alterada.");
-				}
+//		//Verifica integridad
+//				String hmacRec = f.get("hmac");
+//				String[] params = {idp};
+//				boolean integ = Secured.verificarIntegridad(params, hmacRec);
+//				if(!integ)
+//				{
+//					return Results.notFound("La información ha sido alterada.");
+//				}
 
 		int donId = Integer.parseInt(idp);
 
@@ -221,7 +221,7 @@ public class PacienteController extends Controller
 		if(Secured.isLoggedIn(ctx()))
 			d=JPA.em().find(Doctor.class, Secured.getUser(ctx()));
 
-		return ok(Episodios.render("Episodios", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp, idp));
+		return ok(Episodios.render("Episodios", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx(), d), resp, p));
 
 		//util para verificar inserciones
 		//return Results.ok("Debe ser X. Resultado: "+Integer.toString(resp.size()));
@@ -237,14 +237,14 @@ public class PacienteController extends Controller
 		DynamicForm f = play.data.Form.form().bindFromRequest();
 		String fe = f.get("id");
 		
-		//Verifica integridad
-		String hmacRec = f.get("hmac");
-		String[] params = {fe};
-		boolean integ = Secured.verificarIntegridad(params, hmacRec);
-		if(!integ)
-		{
-			return Results.notFound("La información ha sido alterada.");
-		}
+//		//Verifica integridad
+//		String hmacRec = f.get("hmac");
+//		String[] params = {fe};
+//		boolean integ = Secured.verificarIntegridad(params, hmacRec);
+//		if(!integ)
+//		{
+//			return Results.notFound("La información ha sido alterada.");
+//		}
 
 		ObjectNode r=Json.newObject();
 		Episodio resp=null;
